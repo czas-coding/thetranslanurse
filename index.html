@@ -17,6 +17,7 @@
       --accent-coral: #f79d9c;
       --bg: #f4f9f9;
       --card-bg: #ffffff;
+      --card-elevated: #f8fcfd;
       --text: #0f172a;
       --text-muted: #52667a;
       --border: #d8e6e8;
@@ -32,19 +33,20 @@
       --translation-bg: #f0fdf4;
       --translation-border: #16a34a;
       --translation-text: #14532d;
-      --shadow: 0 10px 25px -5px rgba(0, 95, 107, 0.08), 0 4px 10px -2px rgba(0, 95, 107, 0.04);
-      --radius: 14px;
+      --shadow: 0 12px 28px -6px rgba(0, 95, 107, 0.08), 0 4px 12px -2px rgba(0, 95, 107, 0.04);
+      --radius: 16px;
     }
 
     [data-theme="dark"] {
       --primary: #4bc0c8;
       --primary-dark: #38a3ab;
-      --primary-light: #11323b;
+      --primary-light: #133540;
       --accent-teal: #4bc0c8;
       --accent-mint: #76b89a;
       --accent-coral: #f79d9c;
       --bg: #0b151c;
       --card-bg: #15242e;
+      --card-elevated: #1b2e3b;
       --text: #f1f5f9;
       --text-muted: #94a3b8;
       --border: #263d4d;
@@ -60,15 +62,15 @@
       --translation-bg: #072d18;
       --translation-border: #22c55e;
       --translation-text: #bbf7d0;
-      --shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.55);
+      --shadow: 0 12px 28px -6px rgba(0, 0, 0, 0.55);
     }
 
     /* =========================================
-       GLOBAL RESET & TYPOGRAPHY
+       GLOBAL RESET & SPACIOUS TYPOGRAPHY
        ========================================= */
     * {
       box-sizing: border-box;
-      transition: background-color 0.25s ease, color 0.25s ease, border-color 0.25s ease;
+      transition: background-color 0.22s ease, color 0.22s ease, border-color 0.22s ease, transform 0.18s ease;
     }
 
     body {
@@ -77,13 +79,13 @@
       color: var(--text);
       margin: 0;
       padding: 0;
-      line-height: 1.6;
+      line-height: 1.72;
     }
 
     .container {
-      max-width: 1320px;
+      max-width: 1420px;
       margin: 0 auto;
-      padding: 16px 24px 48px;
+      padding: 22px 28px 60px;
     }
 
     /* =========================================
@@ -95,7 +97,7 @@
       align-items: center;
       flex-wrap: wrap;
       gap: 16px;
-      padding: 14px 24px;
+      padding: 14px 28px;
       background: var(--card-bg);
       border-bottom: 2px solid var(--border);
       box-shadow: var(--shadow);
@@ -112,7 +114,7 @@
 
     .brand-title-group h1 {
       margin: 0;
-      font-size: 1.55rem;
+      font-size: 1.6rem;
       font-weight: 800;
       letter-spacing: -0.02em;
       color: var(--primary);
@@ -125,7 +127,7 @@
 
     .brand-title-group p {
       margin: 0;
-      font-size: 0.82rem;
+      font-size: 0.84rem;
       color: var(--text-muted);
       font-weight: 500;
     }
@@ -141,7 +143,7 @@
       background: var(--bg);
       border: 1px solid var(--border);
       color: var(--text);
-      padding: 8px 15px;
+      padding: 9px 16px;
       border-radius: 999px;
       cursor: pointer;
       font-weight: 600;
@@ -172,7 +174,7 @@
       background: var(--primary);
       color: #fff;
       border-radius: 999px;
-      padding: 1px 7px;
+      padding: 1px 8px;
       font-size: 0.75rem;
       font-weight: 700;
     }
@@ -215,8 +217,8 @@
       background: var(--card-bg);
       border: 1px solid var(--border);
       border-radius: 24px;
-      padding: 48px 36px;
-      max-width: 780px;
+      padding: 48px 38px;
+      max-width: 800px;
       width: 100%;
       box-shadow: var(--shadow);
       position: relative;
@@ -234,9 +236,9 @@
     }
 
     .hero-logo-box {
-      width: 240px;
-      height: 240px;
-      margin: 0 auto 20px;
+      width: 230px;
+      height: 230px;
+      margin: 0 auto 22px;
       background: #ffffff;
       border-radius: 24px;
       padding: 16px;
@@ -269,15 +271,15 @@
     .hero-subtitle {
       font-size: 1.12rem;
       color: var(--text-muted);
-      max-width: 620px;
-      margin: 0 auto 28px;
+      max-width: 630px;
+      margin: 0 auto 30px;
     }
 
     .hero-features {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
-      gap: 14px;
-      margin-bottom: 32px;
+      gap: 16px;
+      margin-bottom: 34px;
       text-align: left;
     }
 
@@ -290,23 +292,23 @@
     .hero-feature-item {
       background: var(--bg);
       border: 1px solid var(--border);
-      border-radius: 12px;
-      padding: 14px;
-      font-size: 0.9rem;
+      border-radius: 14px;
+      padding: 16px;
+      font-size: 0.92rem;
     }
 
     .hero-feature-item strong {
       display: block;
       color: var(--primary);
-      margin-bottom: 4px;
-      font-size: 0.95rem;
+      margin-bottom: 6px;
+      font-size: 0.98rem;
     }
 
     .btn-hero-cta {
       background: linear-gradient(135deg, var(--primary), var(--accent-teal));
       color: #ffffff;
       border: none;
-      padding: 18px 36px;
+      padding: 18px 38px;
       border-radius: 999px;
       font-size: 1.2rem;
       font-weight: 800;
@@ -324,22 +326,22 @@
     }
 
     /* =========================================
-       MAIN CLINICAL WORKSPACE VIEW
+       MAIN CLINICAL WORKSPACE VIEW (SPACIOUS GRID)
        ========================================= */
     #app-view {
       display: none;
-      margin-top: 12px;
+      margin-top: 14px;
     }
 
     .grid-main {
       display: grid;
-      grid-template-columns: 1fr 1.15fr;
-      gap: 24px;
-      margin-bottom: 24px;
+      grid-template-columns: 430px 1fr;
+      gap: 28px;
+      margin-bottom: 28px;
       align-items: start;
     }
 
-    @media (max-width: 992px) {
+    @media (max-width: 1080px) {
       .grid-main {
         grid-template-columns: 1fr;
       }
@@ -349,31 +351,31 @@
       background: var(--card-bg);
       border: 1px solid var(--border);
       border-radius: var(--radius);
-      padding: 24px;
+      padding: 28px;
       box-shadow: var(--shadow);
     }
 
     .card-header {
       margin-top: 0;
-      font-size: 1.28rem;
+      font-size: 1.32rem;
       border-bottom: 1px solid var(--border);
-      padding-bottom: 12px;
-      margin-bottom: 18px;
+      padding-bottom: 14px;
+      margin-bottom: 20px;
       display: flex;
       justify-content: space-between;
       align-items: center;
       flex-wrap: wrap;
-      gap: 10px;
+      gap: 12px;
       color: var(--primary);
     }
 
     /* =========================================
-       FORMS, CAMERA & LAB FILE UPLOAD
+       FORMS, CAMERA & ROBUST LAB FILE UPLOAD
        ========================================= */
     label.field-label {
       display: block;
       font-weight: 700;
-      margin: 16px 0 8px 0;
+      margin: 18px 0 8px 0;
       font-size: 0.84rem;
       text-transform: uppercase;
       letter-spacing: 0.05em;
@@ -382,14 +384,15 @@
 
     textarea, select, input[type="text"] {
       width: 100%;
-      padding: 12px 14px;
+      padding: 13px 15px;
       border: 1px solid var(--border);
-      border-radius: 10px;
+      border-radius: 12px;
       font-family: inherit;
       font-size: 0.98rem;
       background-color: var(--bg);
       color: var(--text);
       outline: none;
+      line-height: 1.55;
     }
 
     textarea:focus, select:focus, input[type="text"]:focus {
@@ -399,21 +402,28 @@
 
     textarea {
       resize: vertical;
-      min-height: 125px;
+      min-height: 130px;
     }
 
     .scanner-panel {
       background: var(--bg);
       border: 2px dashed var(--accent-teal);
-      border-radius: 12px;
-      padding: 16px;
+      border-radius: 14px;
+      padding: 18px;
       margin-top: 8px;
+      transition: all 0.2s ease;
+    }
+
+    .scanner-panel.drag-over {
+      background: var(--primary-light);
+      border-color: var(--primary);
+      transform: scale(1.01);
     }
 
     .scanner-actions {
       display: grid;
       grid-template-columns: 1fr 1fr;
-      gap: 10px;
+      gap: 12px;
     }
 
     @media (max-width: 520px) {
@@ -424,9 +434,9 @@
 
     .btn-scan {
       background: var(--card-bg);
-      border: 1px solid var(--primary);
+      border: 1.5px solid var(--primary);
       color: var(--primary);
-      padding: 11px 14px;
+      padding: 12px 14px;
       border-radius: 10px;
       font-weight: 700;
       font-size: 0.9rem;
@@ -436,6 +446,8 @@
       justify-content: center;
       gap: 8px;
       text-align: center;
+      margin: 0;
+      user-select: none;
     }
 
     .btn-scan:hover {
@@ -443,13 +455,26 @@
       color: #ffffff;
     }
 
+    .scanner-hint {
+      text-align: center;
+      font-size: 0.79rem;
+      color: var(--text-muted);
+      margin-top: 10px;
+    }
+
     .attachment-preview {
       display: none;
-      margin-top: 12px;
-      padding: 10px 12px;
+      margin-top: 14px;
+      padding: 12px 14px;
       background: var(--card-bg);
-      border: 1px solid var(--border);
-      border-radius: 10px;
+      border: 1.5px solid var(--primary);
+      border-radius: 12px;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    .attachment-top-row {
+      display: flex;
       align-items: center;
       justify-content: space-between;
       gap: 12px;
@@ -458,14 +483,14 @@
     .attachment-info {
       display: flex;
       align-items: center;
-      gap: 10px;
+      gap: 12px;
       overflow: hidden;
     }
 
     .attachment-thumb {
-      width: 48px;
-      height: 48px;
-      border-radius: 6px;
+      width: 56px;
+      height: 56px;
+      border-radius: 8px;
       object-fit: cover;
       border: 1px solid var(--border);
       background: var(--bg);
@@ -473,33 +498,34 @@
       align-items: center;
       justify-content: center;
       font-weight: 800;
-      font-size: 0.75rem;
+      font-size: 0.78rem;
       color: var(--primary);
       flex-shrink: 0;
     }
 
     .attachment-name {
-      font-size: 0.88rem;
-      font-weight: 600;
+      font-size: 0.92rem;
+      font-weight: 700;
       white-space: nowrap;
       overflow: hidden;
       text-overflow: ellipsis;
     }
 
     .attachment-sub {
-      font-size: 0.76rem;
-      color: var(--text-muted);
+      font-size: 0.8rem;
+      color: var(--pass);
+      font-weight: 600;
     }
 
     #camera-modal {
       display: none;
-      margin-top: 12px;
+      margin-top: 14px;
       background: #000;
       border-radius: 12px;
       overflow: hidden;
       position: relative;
       text-align: center;
-      padding: 10px;
+      padding: 12px;
     }
 
     #camera-video {
@@ -514,21 +540,22 @@
       justify-content: center;
       gap: 10px;
       margin-top: 10px;
+      flex-wrap: wrap;
     }
 
     .btn-primary {
-      margin-top: 22px;
+      margin-top: 24px;
       background: linear-gradient(135deg, var(--primary), var(--accent-teal));
       color: #ffffff;
       border: none;
-      padding: 15px 24px;
-      border-radius: 10px;
+      padding: 16px 24px;
+      border-radius: 12px;
       font-weight: 800;
       cursor: pointer;
       width: 100%;
       font-size: 1.08rem;
       letter-spacing: 0.02em;
-      box-shadow: 0 4px 12px rgba(0, 122, 135, 0.28);
+      box-shadow: 0 6px 16px rgba(0, 122, 135, 0.28);
     }
 
     .btn-primary:hover {
@@ -545,19 +572,19 @@
 
     .btn-action-group {
       display: flex;
-      gap: 10px;
-      margin-top: 16px;
+      gap: 12px;
+      margin-top: 22px;
     }
 
     .btn-secondary {
       background-color: var(--bg);
       color: var(--text);
       border: 1px solid var(--border);
-      padding: 9px 14px;
-      border-radius: 8px;
+      padding: 11px 16px;
+      border-radius: 10px;
       font-weight: 600;
       cursor: pointer;
-      font-size: 0.88rem;
+      font-size: 0.9rem;
       flex: 1;
     }
 
@@ -569,13 +596,15 @@
        SAFETY STATUS BADGES (3 STRICT TIERS)
        ========================================= */
     .status-banner {
-      padding: 14px 18px;
-      border-radius: 12px;
+      padding: 16px 20px;
+      border-radius: 14px;
       font-weight: 800;
-      font-size: 1.05rem;
-      margin-bottom: 16px;
+      font-size: 1.08rem;
+      margin-bottom: 22px;
       display: flex;
       align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
       gap: 10px;
       border: 2px solid transparent;
     }
@@ -599,168 +628,363 @@
     }
 
     /* =========================================
-       DROPDOWN ACCORDION SECTIONS FOR RESULTS
+       SIDEBAR OF CLICKABLE SQUARES + SPACIOUS INFO STAGE
        ========================================= */
-    details.result-dropdown {
+    .Guidance-workspace {
+      display: grid;
+      grid-template-columns: 235px 1fr;
+      gap: 22px;
+      align-items: start;
+    }
+
+    @media (max-width: 760px) {
+      .Guidance-workspace {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    .squares-sidebar {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 11px;
+    }
+
+    @media (max-width: 760px) {
+      .squares-sidebar {
+        grid-template-columns: repeat(3, 1fr);
+      }
+    }
+
+    @media (max-width: 480px) {
+      .squares-sidebar {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    .info-square {
       background: var(--bg);
-      border: 1px solid var(--border);
-      border-radius: 12px;
-      margin-bottom: 12px;
-      overflow: hidden;
-    }
-
-    details.result-dropdown[open] {
-      border-color: var(--primary);
-      box-shadow: 0 2px 8px rgba(0, 122, 135, 0.06);
-    }
-
-    details.result-dropdown summary {
-      padding: 14px 18px;
-      font-weight: 700;
-      font-size: 0.96rem;
+      border: 2px solid var(--border);
+      border-radius: 14px;
+      padding: 14px 10px;
+      min-height: 102px;
       cursor: pointer;
-      list-style: none;
       display: flex;
-      justify-content: space-between;
+      flex-direction: column;
       align-items: center;
-      background: var(--card-bg);
-      color: var(--text);
+      justify-content: center;
+      text-align: center;
+      gap: 6px;
+      position: relative;
       user-select: none;
     }
 
-    details.result-dropdown summary::-webkit-details-marker {
-      display: none;
-    }
-
-    details.result-dropdown summary::after {
-      content: "▼";
-      font-size: 0.78rem;
-      color: var(--primary);
-      transition: transform 0.2s ease;
-    }
-
-    details.result-dropdown[open] summary::after {
-      transform: rotate(180deg);
-    }
-
-    details.result-dropdown summary:hover {
+    .info-square:hover {
+      border-color: var(--primary);
       background: var(--primary-light);
+      transform: translateY(-2px);
     }
 
-    .dropdown-body {
-      padding: 16px 18px;
-      border-top: 1px solid var(--border);
+    .info-square.active {
+      background: var(--primary-light);
+      border-color: var(--primary);
+      box-shadow: 0 6px 16px rgba(0, 122, 135, 0.18);
+    }
+
+    .info-square .sq-icon {
+      font-size: 1.55rem;
+      line-height: 1;
+    }
+
+    .info-square .sq-title {
+      font-size: 0.8rem;
+      font-weight: 800;
+      color: var(--text);
+      line-height: 1.25;
+    }
+
+    .info-square.active .sq-title {
+      color: var(--primary);
+    }
+
+    .info-square .sq-badge {
+      font-size: 0.68rem;
+      font-weight: 700;
+      padding: 2px 7px;
+      border-radius: 999px;
+      background: var(--card-bg);
+      color: var(--text-muted);
+      border: 1px solid var(--border);
+    }
+
+    .info-square.full-width-square {
+      grid-column: span 2;
+      min-height: 76px;
+      flex-direction: row;
+      justify-content: flex-start;
+      padding: 12px 14px;
+      text-align: left;
+      gap: 12px;
+    }
+
+    @media (max-width: 760px) {
+      .info-square.full-width-square {
+        grid-column: span 1;
+        flex-direction: column;
+        text-align: center;
+      }
+    }
+
+    /* Right-side Spacious Info Display Stage */
+    .info-stage {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+
+    .stage-panel {
+      display: none;
       background: var(--bg);
-      font-size: 0.97rem;
+      border: 1.5px solid var(--border);
+      border-radius: 16px;
+      padding: 24px 26px;
+      animation: fadeIn 0.2s ease;
+    }
+
+    .stage-panel.active-panel {
+      display: block;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(4px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    .stage-panel-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 10px;
+      border-bottom: 1.5px solid var(--border);
+      padding-bottom: 14px;
+      margin-bottom: 18px;
+    }
+
+    .stage-panel-title {
+      font-size: 1.15rem;
+      font-weight: 800;
+      color: var(--primary);
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      margin: 0;
     }
 
     .medical-disclaimer-note {
       background: var(--warn-bg);
       color: var(--warn);
       border-left: 4px solid var(--warn);
-      padding: 12px 14px;
-      border-radius: 0 8px 8px 0;
-      font-size: 0.88rem;
+      padding: 14px 18px;
+      border-radius: 0 10px 10px 0;
+      font-size: 0.9rem;
       font-weight: 700;
-      margin-bottom: 14px;
+      margin-bottom: 18px;
+      line-height: 1.6;
     }
 
-    /* Structured Breakdown Cards inside What This Means */
-    .explain-grid {
+    /* Spacious Content Blocks & Individual Lab Flag Cards */
+    .spacious-block-list {
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+    }
+
+    .spacious-item-card {
+      background: var(--card-bg);
+      border: 1px solid var(--border);
+      border-left: 4px solid var(--primary);
+      border-radius: 12px;
+      padding: 16px 20px;
+      font-size: 0.98rem;
+      line-height: 1.75;
+      color: var(--text);
+    }
+
+    .spacious-item-card.symptoms-border {
+      border-left-color: #f97316;
+    }
+
+    .spacious-item-card.doctor-border {
+      border-left-color: var(--pass);
+      margin-top: 14px;
+    }
+
+    /* Lab Flag Filter Pills */
+    .flag-filter-bar {
+      display: flex;
+      gap: 8px;
+      flex-wrap: wrap;
+      margin-bottom: 16px;
+    }
+
+    .flag-filter-btn {
+      background: var(--card-bg);
+      border: 1px solid var(--border);
+      color: var(--text-muted);
+      padding: 6px 13px;
+      border-radius: 999px;
+      font-size: 0.82rem;
+      font-weight: 700;
+      cursor: pointer;
+    }
+
+    .flag-filter-btn.active {
+      background: var(--primary);
+      color: #ffffff;
+      border-color: var(--primary);
+    }
+
+    /* Individual Lab Result Flag Card (Replaces Clumped Text!) */
+    .lab-flag-grid {
       display: flex;
       flex-direction: column;
       gap: 12px;
     }
 
-    .explain-section-card {
+    .lab-flag-card {
       background: var(--card-bg);
       border: 1px solid var(--border);
-      border-left: 4px solid var(--primary);
-      border-radius: 8px;
-      padding: 13px 15px;
+      border-left: 5px solid var(--accent-teal);
+      border-radius: 12px;
+      padding: 15px 18px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 14px;
+      flex-wrap: wrap;
     }
 
-    .explain-section-card.range-card {
-      border-left-color: var(--accent-teal);
+    .lab-flag-card.flag-high,
+    .lab-flag-card.flag-low {
+      border-left-color: var(--fail);
+      background: var(--card-elevated);
     }
 
-    .explain-section-card.symptoms-card {
-      border-left-color: #f97316;
-    }
-
-    .explain-section-card.limits-card {
-      border-left-color: #e11d48;
-    }
-
-    .explain-section-card.doctor-card {
+    .lab-flag-card.flag-normal {
       border-left-color: var(--pass);
     }
 
-    .explain-section-title {
-      font-weight: 800;
-      font-size: 0.88rem;
-      text-transform: uppercase;
-      letter-spacing: 0.04em;
-      color: var(--primary);
-      margin-bottom: 6px;
-      display: flex;
-      align-items: center;
-      gap: 6px;
+    .lab-flag-text {
+      flex: 1;
+      min-width: 220px;
+      font-size: 0.96rem;
+      line-height: 1.65;
     }
 
-    .explain-section-body {
-      font-size: 0.95rem;
-      white-space: pre-wrap;
-      color: var(--text);
+    .lab-flag-pill {
+      padding: 5px 12px;
+      border-radius: 999px;
+      font-size: 0.78rem;
+      font-weight: 800;
+      letter-spacing: 0.03em;
+      text-transform: uppercase;
+      white-space: nowrap;
+    }
+
+    .pill-high {
+      background: var(--fail-bg);
+      color: var(--fail);
+      border: 1px solid var(--fail);
+    }
+
+    .pill-low {
+      background: var(--warn-bg);
+      color: var(--warn);
+      border: 1px solid var(--warn);
+    }
+
+    .pill-normal {
+      background: var(--pass-bg);
+      color: var(--pass);
+      border: 1px solid var(--pass);
+    }
+
+    /* Action Plan Spacious Cards */
+    .action-step-card {
+      background: var(--card-bg);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 14px 18px;
+      margin-bottom: 12px;
+      display: flex;
+      align-items: flex-start;
+      gap: 12px;
+      font-size: 0.97rem;
+      line-height: 1.7;
+    }
+
+    .action-step-num {
+      background: var(--primary);
+      color: #fff;
+      width: 28px;
+      height: 28px;
+      border-radius: 50%;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 800;
+      font-size: 0.84rem;
+      flex-shrink: 0;
+      margin-top: 2px;
     }
 
     /* NCR Hotline Box inside What Can I Do (Caution / ALERT) */
     .ncr-hotline-alert {
       display: none;
-      margin-top: 14px;
+      margin-top: 18px;
       background: var(--fail-bg);
       border: 1.5px solid var(--fail);
-      border-radius: 10px;
-      padding: 14px 16px;
+      border-radius: 12px;
+      padding: 18px 20px;
       color: var(--fail);
     }
 
     .ncr-hotline-alert h4 {
-      margin: 0 0 6px 0;
-      font-size: 0.98rem;
+      margin: 0 0 8px 0;
+      font-size: 1.02rem;
       display: flex;
       align-items: center;
-      gap: 6px;
+      gap: 8px;
     }
 
     .ncr-hotline-alert p {
-      margin: 0 0 10px 0;
-      font-size: 0.88rem;
+      margin: 0 0 12px 0;
+      font-size: 0.92rem;
       color: var(--text);
     }
 
     .hotline-card-selected {
-      margin-top: 10px;
+      margin-top: 12px;
       background: var(--card-bg);
       border: 1px solid var(--border);
-      border-radius: 8px;
-      padding: 12px;
+      border-radius: 10px;
+      padding: 14px 16px;
       color: var(--text);
       display: flex;
       justify-content: space-between;
       align-items: center;
       flex-wrap: wrap;
-      gap: 10px;
+      gap: 12px;
     }
 
     .btn-call-now {
       background: var(--fail);
       color: #ffffff;
       text-decoration: none;
-      padding: 8px 16px;
+      padding: 10px 18px;
       border-radius: 8px;
       font-weight: 700;
-      font-size: 0.88rem;
+      font-size: 0.9rem;
       display: inline-flex;
       align-items: center;
       gap: 6px;
@@ -774,51 +998,56 @@
       background-color: var(--translation-bg);
       border-left: 4px solid var(--translation-border);
       color: var(--translation-text);
-      padding: 14px 16px;
-      border-radius: 0 8px 8px 0;
-      font-size: 0.98rem;
+      padding: 18px 20px;
+      border-radius: 0 12px 12px 0;
+      font-size: 1rem;
       font-weight: 500;
       white-space: pre-wrap;
-      margin-top: 10px;
+      margin-top: 14px;
+      line-height: 1.8;
     }
 
     .analogy-box {
       background-color: var(--analogy-bg);
       border-left: 4px solid var(--analogy-border);
       color: var(--analogy-text);
-      padding: 14px 16px;
-      border-radius: 0 8px 8px 0;
-      font-size: 0.98rem;
+      padding: 18px 20px;
+      border-radius: 0 12px 12px 0;
+      font-size: 1rem;
       font-weight: 500;
+      line-height: 1.8;
     }
 
     .jargon-list {
       list-style-type: none;
       padding: 0;
       margin: 0;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
     }
 
     .jargon-list li {
       background-color: var(--card-bg);
       border: 1px solid var(--border);
-      padding: 12px;
-      border-radius: 8px;
-      margin-bottom: 8px;
-      font-size: 0.93rem;
+      padding: 16px 18px;
+      border-radius: 12px;
+      font-size: 0.96rem;
+      line-height: 1.7;
     }
 
     .jargon-term {
-      font-weight: 700;
+      font-weight: 800;
       color: var(--primary);
       display: block;
-      margin-bottom: 3px;
-      font-size: 0.98rem;
+      margin-bottom: 4px;
+      font-size: 1.02rem;
     }
 
     .metric-grid {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
-      gap: 12px;
+      gap: 14px;
     }
 
     @media (max-width: 520px) {
@@ -830,22 +1059,22 @@
     .metric-card {
       border: 1px solid var(--border);
       background-color: var(--card-bg);
-      padding: 12px;
-      border-radius: 8px;
+      padding: 16px;
+      border-radius: 12px;
       text-align: center;
     }
 
     .metric-title {
-      font-size: 0.74rem;
+      font-size: 0.76rem;
       text-transform: uppercase;
       color: var(--text-muted);
       font-weight: 700;
     }
 
     .metric-score {
-      font-size: 0.98rem;
+      font-size: 1.02rem;
       font-weight: 800;
-      margin-top: 6px;
+      margin-top: 8px;
       color: var(--primary);
     }
 
@@ -954,10 +1183,10 @@
       background-color: var(--primary);
       color: #fff;
       border: none;
-      padding: 5px 10px;
-      border-radius: 4px;
-      font-size: 0.76rem;
-      font-weight: 600;
+      padding: 6px 11px;
+      border-radius: 6px;
+      font-size: 0.78rem;
+      font-weight: 700;
       cursor: pointer;
       margin-right: 4px;
       margin-bottom: 4px;
@@ -987,13 +1216,13 @@
 
     @media print {
       body { background-color: #fff; color: #000; }
-      header.top-navbar, #home-view, .grid-main > div:first-child, .btn-action-group, .modal-backdrop {
+      header.top-navbar, #home-view, .grid-main > div:first-child, .btn-action-group, .modal-backdrop, .squares-sidebar {
         display: none !important;
       }
       #app-view { display: block !important; }
-      .grid-main { grid-template-columns: 1fr; display: block; }
+      .grid-main, .Guidance-workspace { grid-template-columns: 1fr; display: block; }
       .card { border: none; box-shadow: none; padding: 0; }
-      details.result-dropdown { border: 1px solid #ccc; margin-bottom: 10px; }
+      .stage-panel { display: block !important; margin-bottom: 16px; border: 1px solid #ccc; }
     }
   </style>
 </head>
@@ -1054,9 +1283,8 @@
     <button class="btn-nav" onclick="toggleTheme()" id="theme-toggle">
       🌙 Dark Mode
     </button>
-    <!-- Upper-Right Corner TranslaNurse Logo -->
     <div class="upper-right-logo" onclick="showHomePage()" title="TranslaNurse Home">
-      <img src="logo.png" alt="TranslaNurse Logo" onerror="replaceWithSvgLogo(this)">
+      <img src="logo.jpg" alt="TranslaNurse Logo" onerror="replaceWithSvgLogo(this)">
     </div>
   </div>
 </header>
@@ -1069,12 +1297,12 @@
   <section id="home-view">
     <div class="hero-card">
       <div class="hero-logo-box">
-        <img src="logo.png" alt="TranslaNurse Logo" onerror="replaceWithSvgLogo(this)">
+        <img src="logo.jpg" alt="TranslaNurse Logo" onerror="replaceWithSvgLogo(this)">
       </div>
 
       <h2 class="hero-title">Welcome to TranslaNurse</h2>
       <p class="hero-subtitle">
-        Ask any health question, describe what you feel, or scan a PNG/PDF lab result. TranslaNurse explains what your symptoms or labs mean, what your body might feel, our safe limits, and what you can do right now.
+        Ask any health question, describe what you feel, or upload/scan any lab result. Explore your personalized guidance through clean, spacious clickable squares.
       </p>
 
       <div class="hero-features">
@@ -1083,12 +1311,12 @@
           Type any health problem or question to understand what you feel, red-flag limits, and safe first-aid steps.
         </div>
         <div class="hero-feature-item">
-          <strong>📷 Camera &amp; Lab Scanner</strong>
-          Scan PNG, JPG, or PDF lab results to see normal reference ranges and out-of-range explanations.
+          <strong>📷 Instant Upload &amp; Lab Scan</strong>
+          Upload or drag-and-drop PNG, JPG, JFIF, WEBP, or PDF lab files for individual flag cards.
         </div>
         <div class="hero-feature-item">
-          <strong>🌏 10 Asian Languages &amp; Hotlines</strong>
-          Automatic Tagalog translation plus 9 more Asian languages &amp; direct NCR emergency hotlines.
+          <strong>🗂️ Clickable Info Squares</strong>
+          Browse explanations, lab flags, 10 Asian languages, and NCR hotlines one spacious square at a time.
         </div>
       </div>
 
@@ -1108,7 +1336,7 @@
       <div class="card">
         <h2 class="card-header">
           <span>1. Clinical Input</span>
-          <button class="btn-nav" onclick="toggleFollowUpDrawer(true)" style="font-size:0.8rem; padding:5px 12px;">
+          <button class="btn-nav" onclick="toggleFollowUpDrawer(true)" style="font-size:0.8rem; padding:6px 12px;">
             💬 Follow-Up Inquiry
           </button>
         </h2>
@@ -1116,39 +1344,55 @@
         <label class="field-label" for="clinical-input">What is the problem, symptom, question, or lab result?</label>
         <textarea id="clinical-input" placeholder="Ask any health question, describe what you feel, or paste lab results...&#10;&#10;Examples:&#10;- 'I think I broke my bone / my wrist is swollen after a fall'&#10;- 'I have a high fever, headache, and body aches for 2 days'&#10;- 'Fasting Blood Sugar: 148 mg/dL, HbA1c: 7.4%, Creatinine: 1.5 mg/dL'"></textarea>
 
-        <!-- CAMERA & PNG/PDF LAB RESULT SCANNER -->
-        <label class="field-label">Optional: Scan or Upload Lab Result (Camera, PNG, JPG, or PDF)</label>
-        <div class="scanner-panel">
+        <!-- CAMERA &UNIVERSAL IMAGE/PDF LAB RESULT SCANNER (WITH DRAG-AND-DROP & NATIVE LABEL) -->
+        <label class="field-label">Optional: Scan or Upload Lab Result (All Image Formats or PDF)</label>
+        <div class="scanner-panel" id="scanner-dropzone"
+             ondragover="handleDragOver(event)"
+             ondragleave="handleDragLeave(event)"
+             ondrop="handleFileDrop(event)">
           <div class="scanner-actions">
             <button type="button" class="btn-scan" onclick="startLiveCamera()">
               📷 Open Camera Scan
             </button>
-            <button type="button" class="btn-scan" onclick="document.getElementById('lab-file-input').click()">
-              📎 Upload PNG / PDF Lab File
-            </button>
+            <!-- Native label guarantees file picker opens in all browsers, mobile & iframes -->
+            <label for="lab-file-input" class="btn-scan">
+              📎 Upload Image / PDF Lab
+            </label>
           </div>
 
-          <input type="file" id="lab-file-input" accept=".png,.jpg,.jpeg,.pdf,image/png,image/jpeg,application/pdf" style="display:none;" onchange="handleLabFileSelect(event)">
+          <div class="scanner-hint">
+            💡 Supports <strong>PNG, JPG, JFIF, WEBP, HEIC, BMP, or PDF</strong> • You can also <strong>Drag &amp; Drop</strong> or <strong>Paste (Ctrl+V)</strong> a lab screenshot here!
+          </div>
+
+          <input type="file" id="lab-file-input" accept="image/*,.pdf,application/pdf,.png,.jpg,.jpeg,.jfif,.webp,.bmp,.heic" style="display:none;" onchange="handleLabFileSelect(event)">
           <input type="file" id="mobile-camera-input" accept="image/*" capture="environment" style="display:none;" onchange="handleLabFileSelect(event)">
 
+          <!-- Live Camera Modal -->
           <div id="camera-modal">
             <video id="camera-video" autoplay playsinline></video>
             <canvas id="camera-canvas" style="display:none;"></canvas>
             <div class="camera-controls">
               <button type="button" class="btn-small-action" style="padding:8px 16px; font-size:0.9rem;" onclick="captureCameraFrame()">📸 Capture Lab Photo</button>
-              <button type="button" class="btn-small-action btn-small-danger" style="padding:8px 16px; font-size:0.9rem;" onclick="stopLiveCamera()">✖ Close Camera</button>
+              <label for="mobile-camera-input" class="btn-small-action" style="padding:8px 16px; font-size:0.9rem; background:var(--accent-teal); cursor:pointer;">📂 Pick Photo Instead</label>
+              <button type="button" class="btn-small-action btn-small-danger" style="padding:8px 16px; font-size:0.9rem;" onclick="stopLiveCamera()">✖ Close</button>
             </div>
           </div>
 
+          <!-- Attached File Preview + Instant Scan Button -->
           <div id="attachment-preview" class="attachment-preview">
-            <div class="attachment-info">
-              <div id="attachment-thumb" class="attachment-thumb">LAB</div>
-              <div>
-                <div id="attachment-name" class="attachment-name">lab_result.png</div>
-                <div id="attachment-sub" class="attachment-sub">Ready for AI Lab Summary Scan</div>
+            <div class="attachment-top-row">
+              <div class="attachment-info">
+                <div id="attachment-thumb" class="attachment-thumb">LAB</div>
+                <div>
+                  <div id="attachment-name" class="attachment-name">lab_result.png</div>
+                  <div id="attachment-sub" class="attachment-sub">✅ Lab File Attached &amp; Normalized</div>
+                </div>
               </div>
+              <button type="button" class="btn-small-action btn-small-danger" onclick="clearLabAttachment()">Remove</button>
             </div>
-            <button type="button" class="btn-small-action btn-small-danger" onclick="clearLabAttachment()">Remove</button>
+            <button type="button" class="btn-small-action" style="width:100%; padding:9px; font-size:0.88rem; background:var(--primary);" onclick="runTranslationEngine()">
+              ⚡ Scan &amp; Explain This Uploaded Lab File Now →
+            </button>
           </div>
         </div>
 
@@ -1174,12 +1418,12 @@
         </button>
       </div>
 
-      <!-- RIGHT COLUMN: RESULTS PANEL WITH COLLAPSIBLE DROPDOWNS -->
+      <!-- RIGHT COLUMN: SPACIOUS RESULTS PANEL WITH CLICKABLE SIDEBAR SQUARES -->
       <div class="card" id="output-panel">
         <h2 class="card-header">
           <span>2. Clinical Guidance &amp; Explanation</span>
-          <button type="button" class="btn-nav" onclick="toggleAllDropdowns()" id="toggle-all-btn" style="font-size:0.78rem; padding:4px 10px;">
-            ↕ Expand / Collapse All
+          <button type="button" class="btn-nav" onclick="toggleShowAllPanels()" id="toggle-all-btn" style="font-size:0.82rem; padding:6px 14px;">
+            ⊞ Open All Squares
           </button>
         </h2>
 
@@ -1187,160 +1431,242 @@
         <div id="lab-safety-container">
           <div class="status-banner lab-safe">
             <span>✅ Safe - Great Job in being healthy</span>
+            <span style="font-size:0.8rem; font-weight:600; opacity:0.9;">Click any square on the left sidebar to explore details</span>
           </div>
         </div>
 
-        <!-- DROPDOWN 1: Why is this safe/unsafe -->
-        <details class="result-dropdown" open>
-          <summary>🔍 Why is this Safe / Unsafe?</summary>
-          <div class="dropdown-body" id="safety-reasoning-output">
-            <em>Submit a clinical question, symptom, or lab result to see why your situation is classified as Safe, Caution, or ALERT.</em>
-          </div>
-        </details>
+        <!-- INTERACTIVE SIDEBAR SQUARES + SPACIOUS READING STAGE -->
+        <div class="Guidance-workspace">
 
-        <!-- DROPDOWN 2: What this means (Adapts automatically between Consult Mode and Lab Result Mode!) -->
-        <details class="result-dropdown" open>
-          <summary id="what-this-means-summary">📋 What This Means (Explanation, What You Feel &amp; Clinical Limits)</summary>
-          <div class="dropdown-body">
-            <div class="medical-disclaimer-note">
-              ⚕️ <strong>Important Medical Note:</strong> Seeking a qualified health professional is strongly recommended. TranslaNurse is for patient education and consultation guidance only, and is <strong>not</strong> intended to replace doctors or licensed health professionals.
+          <!-- LEFT SIDEBAR: CLICKABLE SQUARES -->
+          <div class="squares-sidebar" role="tablist" aria-label="Clinical Information Sections">
+
+            <div class="info-square active" id="sq-meaning" onclick="selectInfoSquare('meaning')">
+              <span class="sq-icon">🩺</span>
+              <span class="sq-title" id="sq-meaning-label">What It Means</span>
+              <span class="sq-badge">Overview</span>
             </div>
 
-            <div class="explain-grid">
-              <!-- Card 1: Meaning of Input / Question / Symptom / Lab -->
-              <div class="explain-section-card">
-                <div class="explain-section-title" id="explain-meaning-title">🩺 1. What Your Input / Situation Means</div>
-                <div class="explain-section-body" id="explain-meaning-output">
-                  <em>Type your symptom, health question, or lab test to get a clear, plain-language explanation...</em>
+            <div class="info-square" id="sq-safety" onclick="selectInfoSquare('safety')">
+              <span class="sq-icon">🔍</span>
+              <span class="sq-title">Why Safe / Unsafe</span>
+              <span class="sq-badge" id="sq-safety-badge">Triage</span>
+            </div>
+
+            <!-- Lab Ranges Square (Automatically shown when Lab Results exist, hidden on pure symptom consults!) -->
+            <div class="info-square" id="sq-ranges" onclick="selectInfoSquare('ranges')" style="display:none;">
+              <span class="sq-icon">📏</span>
+              <span class="sq-title">Lab Ranges &amp; Flags</span>
+              <span class="sq-badge" id="sq-ranges-badge">Normal vs Result</span>
+            </div>
+
+            <div class="info-square" id="sq-symptoms" onclick="selectInfoSquare('symptoms')">
+              <span class="sq-icon">⚡</span>
+              <span class="sq-title">What You Feel &amp; Limits</span>
+              <span class="sq-badge">Red Flags</span>
+            </div>
+
+            <div class="info-square" id="sq-actions" onclick="selectInfoSquare('actions')">
+              <span class="sq-icon">🛡️</span>
+              <span class="sq-title">What Can I Do?</span>
+              <span class="sq-badge" id="sq-actions-badge">First Aid &amp; Hotlines</span>
+            </div>
+
+            <div class="info-square" id="sq-translation" onclick="selectInfoSquare('translation')">
+              <span class="sq-icon">🌏</span>
+              <span class="sq-title">10 Asian Languages</span>
+              <span class="sq-badge">Tagalog + 9</span>
+            </div>
+
+            <div class="info-square" id="sq-analogy" onclick="selectInfoSquare('analogy')">
+              <span class="sq-icon">🧸</span>
+              <span class="sq-title">Kid-Friendly Analogy</span>
+              <span class="sq-badge">Simple Story</span>
+            </div>
+
+            <div class="info-square" id="sq-jargon" onclick="selectInfoSquare('jargon')">
+              <span class="sq-icon">📖</span>
+              <span class="sq-title">Jargon &amp; Audit</span>
+              <span class="sq-badge" id="sq-jargon-badge">Dictionary</span>
+            </div>
+
+          </div>
+
+          <!-- RIGHT STAGE: SPACIOUS CONTENT PANELS -->
+          <div class="info-stage">
+
+            <!-- PANEL 1: WHAT IT MEANS + PROFESSIONAL RECOMMENDATION -->
+            <div class="stage-panel active-panel" id="panel-meaning">
+              <div class="stage-panel-header">
+                <h3 class="stage-panel-title" id="explain-meaning-title">🩺 What Your Input / Situation Means</h3>
+              </div>
+
+              <div class="medical-disclaimer-note">
+                ⚕️ <strong>Important Medical Note:</strong> Seeking a qualified health professional is strongly recommended. TranslaNurse is for patient education and consultation guidance only, and is <strong>not</strong> intended to replace doctors or licensed health professionals.
+              </div>
+
+              <div class="spacious-block-list" id="explain-meaning-output">
+                <div class="spacious-item-card">
+                  <em>Type your symptom, health question, or upload a lab report on the left to get a clear, well-spaced explanation...</em>
                 </div>
               </div>
 
-              <!-- Card 2: Normal Reference Range (ONLY shown when a Lab Result or Vital Sign is actually present!) -->
-              <div class="explain-section-card range-card" id="explain-range-card" style="display:none;">
-                <div class="explain-section-title">📏 2. Normal Reference Range vs. Your Lab Result</div>
-                <div class="explain-section-body" id="explain-range-output"></div>
-              </div>
-
-              <!-- Card 3: What the Patient Feels & Clinical Limits / Red Flags -->
-              <div class="explain-section-card symptoms-card">
-                <div class="explain-section-title" id="explain-symptoms-title">⚡ What You Might Feel &amp; Safe Limits to Know</div>
-                <div class="explain-section-body" id="explain-symptoms-output">
-                  <em>How this condition or result feels in your body—and the important limits where urgent medical care is needed—will appear here...</em>
+              <div class="spacious-item-card doctor-border">
+                <div style="font-weight:800; font-size:0.86rem; text-transform:uppercase; color:var(--pass); margin-bottom:6px;">
+                  👩‍⚕️ Professional Recommendation
                 </div>
-              </div>
-
-              <!-- Card 4: Recommendation to Seek Health Professional -->
-              <div class="explain-section-card doctor-card">
-                <div class="explain-section-title">👩‍⚕️ Professional Recommendation</div>
-                <div class="explain-section-body" id="explain-recommend-output">
+                <div id="explain-recommend-output">
                   <em>Seeking a licensed doctor or health professional is strongly recommended for an accurate diagnosis and safe care plan.</em>
                 </div>
               </div>
             </div>
-          </div>
-        </details>
 
-        <!-- DROPDOWN 3: What can I do (No Medication + NCR Hotline Dropdown on Caution/ALERT) -->
-        <details class="result-dropdown" open>
-          <summary>🛡️ What Can I Do? (Safe Non-Medication Actions &amp; First-Aid Limits)</summary>
-          <div class="dropdown-body">
-            <div style="font-size:0.82rem; color:var(--text-muted); margin-bottom:8px; font-weight:600;">
-              🚫 <em>Safety Policy &amp; Limits: TranslaNurse never suggests or prescribes medications. Here is what you can safely do right now:</em>
-            </div>
-            <div id="action-plan-output">
-              <em>Practical, safe non-medication steps and first-aid limits tailored to your inquiry will appear here...</em>
-            </div>
-
-            <!-- NCR Hotline Box (Automatically shown when Caution or ALERT) -->
-            <div id="ncr-hotline-box" class="ncr-hotline-alert">
-              <h4>🚨 Please Call a Health Professional or NCR Emergency Hotline</h4>
-              <p>Because your consultation or result is marked under <strong>Caution</strong> or <strong>ALERT</strong>, please reach out to a doctor, family member, or an NCR-based medical hotline below right away:</p>
-
-              <label class="field-label" for="ncr-hotline-select" style="margin-top:4px; color:var(--fail);">Select an NCR (Metro Manila) Hotline:</label>
-              <select id="ncr-hotline-select" onchange="updateSelectedHotline()">
-                <option value="911|National Emergency Hotline (NCR / Nationwide)|https://ncr.dilg.gov.ph/dilg-leads-nationwide-campaign-for-unified-911-emergency-hotline/">National Emergency Hotline (NCR) — Dial 911</option>
-                <option value="1555|DOH One Hospital Command / Telemedicine Hotline|https://caro.doh.gov.ph/doh-hospital-hotlines/">DOH Medical &amp; Hospital Referral Hotline — Dial 1555 or (02) 8865-0500</option>
-                <option value="143|Philippine Red Cross EMS (Mandaluyong / NCR)|https://redcross.org.ph/contact-us/">Philippine Red Cross Emergency EMS — Dial 143 or (02) 8790-2300</option>
-                <option value="+63285548400|UP-Philippine General Hospital (Ermita, Manila)|https://www.pgh.gov.ph/contact-us/">UP-Philippine General Hospital (Manila) — (02) 8554-8400</option>
-                <option value="+63288888999|Makati Medical Center (Makati City)|https://www.makatimed.net.ph/contact-form/">Makati Medical Center (Makati) — (02) 8888-8999</option>
-                <option value="+63287230101|St. Luke's Medical Center (Quezon City)|https://www.stlukes.com.ph/contact-us">St. Luke's Medical Center (Quezon City) — (02) 8723-0101</option>
-                <option value="+63287897700|St. Luke's Medical Center (Global City, Taguig)|https://www.stlukes.com.ph/contact-us">St. Luke's Medical Center (BGC, Taguig) — (02) 8789-7700</option>
-                <option value="1553|National Center for Mental Health (Mandaluyong, NCR)|https://ncmh.gov.ph/contact-us/">NCMH 24/7 Crisis Hotline (Mandaluyong) — Dial 1553 or 0917-899-8727</option>
-                <option value="136|MMDA Metro Manila Emergency Rescue|https://www.instagram.com/reel/DbyF8YZAasT/">MMDA Metro Manila Rescue — Dial 136</option>
-              </select>
-
-              <div class="hotline-card-selected" id="hotline-detail-card">
-                <div>
-                  <strong id="hotline-name-display" style="display:block; font-size:0.95rem;">National Emergency Hotline (NCR / Nationwide)</strong>
-                  <span id="hotline-num-display" style="font-size:0.86rem; color:var(--text-muted);">Number: 911 • <a id="hotline-link-display" href="https://ncr.dilg.gov.ph/dilg-leads-nationwide-campaign-for-unified-911-emergency-hotline/" target="_blank" rel="noopener" style="color:var(--primary);">Official Info</a></span>
+            <!-- PANEL 2: WHY IS THIS SAFE / UNSAFE -->
+            <div class="stage-panel" id="panel-safety">
+              <div class="stage-panel-header">
+                <h3 class="stage-panel-title">🔍 Why Is This Classified as Safe, Caution, or ALERT?</h3>
+              </div>
+              <div class="spacious-block-list">
+                <div class="spacious-item-card" id="safety-reasoning-output">
+                  <em>Submit a clinical question, symptom, or lab result to see why your situation is classified as Safe, Caution, or ALERT.</em>
                 </div>
-                <a id="hotline-call-btn" href="tel:911" class="btn-call-now">📞 Call 911 Now</a>
               </div>
             </div>
-          </div>
-        </details>
 
-        <!-- DROPDOWN 4: 10 Asian Languages Translation Menu (Initial = Tagalog) -->
-        <details class="result-dropdown" open>
-          <summary>🌏 Asian Language Translation (Initial: Tagalog)</summary>
-          <div class="dropdown-body">
-            <label class="field-label" for="asian-lang-select" style="margin-top:0;">Choose among 10 Asian Languages (Defaults to Tagalog):</label>
-            <select id="asian-lang-select" onchange="switchAsianLanguage()">
-              <option value="Tagalog" selected>🇵🇭 Tagalog (Default Initial Translation)</option>
-              <option value="Cebuano">🇵🇭 Cebuano / Bisaya</option>
-              <option value="Ilocano">🇵🇭 Ilocano</option>
-              <option value="Japanese">🇯🇵 Japanese (日本語)</option>
-              <option value="Korean">🇰🇷 Korean (한국어)</option>
-              <option value="Mandarin Chinese">🇨🇳 Mandarin Chinese (简体中文)</option>
-              <option value="Vietnamese">🇻🇳 Vietnamese (Tiếng Việt)</option>
-              <option value="Thai">🇹🇭 Thai (ภาษาไทย)</option>
-              <option value="Bahasa Indonesia">🇮🇩 Bahasa Indonesia</option>
-              <option value="Hindi">🇮🇳 Hindi (हिन्दी)</option>
-            </select>
-            <div id="asian-translation-output" class="translation-box">
-              <em>Maikling paliwanag sa Tagalog para madaling maintindihan (Initial translation in Tagalog will appear here)...</em>
-            </div>
-          </div>
-        </details>
-
-        <!-- DROPDOWN 5: Kid-Friendly Analogy -->
-        <details class="result-dropdown">
-          <summary>🧸 Kid-Friendly Analogy</summary>
-          <div class="dropdown-body">
-            <div id="kid-analogy-output" class="analogy-box">
-              <em>A simple, relatable analogy for children will appear here...</em>
-            </div>
-          </div>
-        </details>
-
-        <!-- DROPDOWN 6: Detailed Jargon Breakdown -->
-        <details class="result-dropdown">
-          <summary>📖 Detailed Jargon Breakdown</summary>
-          <div class="dropdown-body" id="jargon-details">
-            <p style="margin:0; font-size: 0.94rem; color: var(--text-muted);">A dictionary-style breakdown of each complex medical or clinical term will appear here.</p>
-          </div>
-        </details>
-
-        <!-- DROPDOWN 7: Quality Audit Dashboard -->
-        <details class="result-dropdown">
-          <summary>📊 Quality Audit Dashboard</summary>
-          <div class="dropdown-body">
-            <div class="metric-grid">
-              <div class="metric-card">
-                <div class="metric-title">Health Literacy</div>
-                <div id="score-literacy" class="metric-score">-</div>
+            <!-- PANEL 3: LAB REFERENCE RANGES & FLAGS (SPACIOUS INDIVIDUAL CARDS + FILTER) -->
+            <div class="stage-panel" id="panel-ranges">
+              <div class="stage-panel-header">
+                <h3 class="stage-panel-title">📏 Normal Reference Range vs. Your Lab Result</h3>
               </div>
-              <div class="metric-card">
-                <div class="metric-title">Cultural Fit</div>
-                <div id="score-cultural" class="metric-score">-</div>
+
+              <div class="flag-filter-bar">
+                <button type="button" class="flag-filter-btn active" id="filter-all" onclick="filterLabFlags('all')">All Lab Items</button>
+                <button type="button" class="flag-filter-btn" id="filter-flagged" onclick="filterLabFlags('flagged')">🚩 Out of Range Only (High / Low)</button>
+                <button type="button" class="flag-filter-btn" id="filter-normal" onclick="filterLabFlags('normal')">✅ Within Normal Range</button>
               </div>
-              <div class="metric-card">
-                <div class="metric-title">Clinical Safety Audit</div>
-                <div id="score-safety" class="metric-score">-</div>
+
+              <div class="lab-flag-grid" id="explain-range-output">
+                <div class="spacious-item-card">
+                  <em>Upload or enter lab values to see individual Normal vs. Out-of-Range flag cards here.</em>
+                </div>
               </div>
             </div>
+
+            <!-- PANEL 4: WHAT YOU MIGHT FEEL & CLINICAL LIMITS (RED FLAGS) -->
+            <div class="stage-panel" id="panel-symptoms">
+              <div class="stage-panel-header">
+                <h3 class="stage-panel-title" id="explain-symptoms-title">⚡ What You Might Feel &amp; Safe Clinical Limits</h3>
+              </div>
+              <div class="spacious-block-list" id="explain-symptoms-output">
+                <div class="spacious-item-card symptoms-border">
+                  <em>How this condition or lab result feels in your body—and the important red-flag limits where urgent medical care is needed—will appear here with generous spacing...</em>
+                </div>
+              </div>
+            </div>
+
+            <!-- PANEL 5: WHAT CAN I DO (SAFE NON-MEDICATION STEPS + NCR HOTLINES) -->
+            <div class="stage-panel" id="panel-actions">
+              <div class="stage-panel-header">
+                <h3 class="stage-panel-title">🛡️ What Can I Do Right Now? (Safe Non-Medication Steps)</h3>
+              </div>
+
+              <div style="font-size:0.86rem; color:var(--text-muted); margin-bottom:14px; font-weight:600;">
+                🚫 <em>Safety Policy &amp; Limits: TranslaNurse never suggests or prescribes medications. Here are safe steps you can take right now:</em>
+              </div>
+
+              <div id="action-plan-output">
+                <div class="spacious-item-card">
+                  <em>Practical, safe non-medication steps and first-aid limits tailored to your inquiry will appear here...</em>
+                </div>
+              </div>
+
+              <!-- NCR Hotline Box (Automatically shown when Caution or ALERT) -->
+              <div id="ncr-hotline-box" class="ncr-hotline-alert">
+                <h4>🚨 Please Call a Health Professional or NCR Emergency Hotline</h4>
+                <p>Because your consultation or result is marked under <strong>Caution</strong> or <strong>ALERT</strong>, please reach out to a doctor, family member, or an NCR-based medical hotline below right away:</p>
+
+                <label class="field-label" for="ncr-hotline-select" style="margin-top:4px; color:var(--fail);">Select an NCR (Metro Manila) Hotline:</label>
+                <select id="ncr-hotline-select" onchange="updateSelectedHotline()">
+                  <option value="911|National Emergency Hotline (NCR / Nationwide)|https://ncr.dilg.gov.ph/dilg-leads-nationwide-campaign-for-unified-911-emergency-hotline/">National Emergency Hotline (NCR) — Dial 911</option>
+                  <option value="1555|DOH One Hospital Command / Telemedicine Hotline|https://caro.doh.gov.ph/doh-hospital-hotlines/">DOH Medical &amp; Hospital Referral Hotline — Dial 1555 or (02) 8865-0500</option>
+                  <option value="143|Philippine Red Cross EMS (Mandaluyong / NCR)|https://redcross.org.ph/contact-us/">Philippine Red Cross Emergency EMS — Dial 143 or (02) 8790-2300</option>
+                  <option value="+63285548400|UP-Philippine General Hospital (Ermita, Manila)|https://www.pgh.gov.ph/contact-us/">UP-Philippine General Hospital (Manila) — (02) 8554-8400</option>
+                  <option value="+63288888999|Makati Medical Center (Makati City)|https://www.makatimed.net.ph/contact-form/">Makati Medical Center (Makati) — (02) 8888-8999</option>
+                  <option value="+63287230101|St. Luke's Medical Center (Quezon City)|https://www.stlukes.com.ph/contact-us">St. Luke's Medical Center (Quezon City) — (02) 8723-0101</option>
+                  <option value="+63287897700|St. Luke's Medical Center (Global City, Taguig)|https://www.stlukes.com.ph/contact-us">St. Luke's Medical Center (BGC, Taguig) — (02) 8789-7700</option>
+                  <option value="1553|National Center for Mental Health (Mandaluyong, NCR)|https://ncmh.gov.ph/contact-us/">NCMH 24/7 Crisis Hotline (Mandaluyong) — Dial 1553 or 0917-899-8727</option>
+                  <option value="136|MMDA Metro Manila Emergency Rescue|https://www.instagram.com/reel/DbyF8YZAasT/">MMDA Metro Manila Rescue — Dial 136</option>
+                </select>
+
+                <div class="hotline-card-selected" id="hotline-detail-card">
+                  <div>
+                    <strong id="hotline-name-display" style="display:block; font-size:0.96rem;">National Emergency Hotline (NCR / Nationwide)</strong>
+                    <span id="hotline-num-display" style="font-size:0.86rem; color:var(--text-muted);">Number: 911 • <a id="hotline-link-display" href="https://ncr.dilg.gov.ph/dilg-leads-nationwide-campaign-for-unified-911-emergency-hotline/" target="_blank" rel="noopener" style="color:var(--primary);">Official Info</a></span>
+                  </div>
+                  <a id="hotline-call-btn" href="tel:911" class="btn-call-now">📞 Call 911 Now</a>
+                </div>
+              </div>
+            </div>
+
+            <!-- PANEL 6: 10 ASIAN LANGUAGES TRANSLATION -->
+            <div class="stage-panel" id="panel-translation">
+              <div class="stage-panel-header">
+                <h3 class="stage-panel-title">🌏 Asian Language Translation (Initial: Tagalog)</h3>
+              </div>
+              <label class="field-label" for="asian-lang-select" style="margin-top:0;">Choose among 10 Asian Languages (Defaults to Tagalog):</label>
+              <select id="asian-lang-select" onchange="switchAsianLanguage()">
+                <option value="Tagalog" selected>🇵🇭 Tagalog (Default Initial Translation)</option>
+                <option value="Cebuano">🇵🇭 Cebuano / Bisaya</option>
+                <option value="Ilocano">🇵🇭 Ilocano</option>
+                <option value="Japanese">🇯🇵 Japanese (日本語)</option>
+                <option value="Korean">🇰🇷 Korean (한국어)</option>
+                <option value="Mandarin Chinese">🇨🇳 Mandarin Chinese (简体中文)</option>
+                <option value="Vietnamese">🇻🇳 Vietnamese (Tiếng Việt)</option>
+                <option value="Thai">🇹🇭 Thai (ภาษาไทย)</option>
+                <option value="Bahasa Indonesia">🇮🇩 Bahasa Indonesia</option>
+                <option value="Hindi">🇮🇳 Hindi (हिन्दी)</option>
+              </select>
+              <div id="asian-translation-output" class="translation-box">
+                <em>Maikling paliwanag sa Tagalog para madaling maintindihan (Initial translation in Tagalog will appear here)...</em>
+              </div>
+            </div>
+
+            <!-- PANEL 7: KID-FRIENDLY ANALOGY -->
+            <div class="stage-panel" id="panel-analogy">
+              <div class="stage-panel-header">
+                <h3 class="stage-panel-title">🧸 Kid-Friendly Analogy</h3>
+              </div>
+              <div id="kid-analogy-output" class="analogy-box">
+                <em>A simple, relatable story analogy for children and families will appear here...</em>
+              </div>
+            </div>
+
+            <!-- PANEL 8: DETAILED JARGON BREAKDOWN & QUALITY AUDIT -->
+            <div class="stage-panel" id="panel-jargon">
+              <div class="stage-panel-header">
+                <h3 class="stage-panel-title">📖 Medical Jargon Dictionary &amp; Quality Audit</h3>
+              </div>
+              <div id="jargon-details" style="margin-bottom:20px;">
+                <p style="margin:0; font-size: 0.95rem; color: var(--text-muted);">A dictionary-style breakdown of each complex medical or clinical term will appear here.</p>
+              </div>
+              <div class="metric-grid">
+                <div class="metric-card">
+                  <div class="metric-title">Health Literacy</div>
+                  <div id="score-literacy" class="metric-score">-</div>
+                </div>
+                <div class="metric-card">
+                  <div class="metric-title">Cultural Fit</div>
+                  <div id="score-cultural" class="metric-score">-</div>
+                </div>
+                <div class="metric-card">
+                  <div class="metric-title">Clinical Safety Audit</div>
+                  <div id="score-safety" class="metric-score">-</div>
+                </div>
+              </div>
+            </div>
+
           </div>
-        </details>
+        </div>
 
         <div class="btn-action-group">
           <button class="btn-secondary" onclick="window.print()">🖨️ Print Patient Guide</button>
@@ -1411,7 +1737,6 @@
     ? process.env.GEMINI_API_KEY
     : (keyPart1 + keyPart2);
 
-  // Prioritizes gemini-3.5-flash-lite as requested, with automatic fallback models
   const GEMINI_MODELS = [
     "gemini-3.5-flash-lite",
     "gemini-2.5-flash-lite",
@@ -1423,8 +1748,8 @@
   let cameraStream = null;
   let latestAnalysisData = null;
   let lastRawInput = "";
+  let showAllMode = false;
 
-  // Embedded copy of your uploaded TranslaNurse (2).jpg logo
   const EMBEDDED_LOGO_DATA_URI = "data:image/jpeg;base64,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";
 
   function replaceWithSvgLogo(imgElement) {
@@ -1483,17 +1808,91 @@
   document.addEventListener('DOMContentLoaded', () => {
     renderHistory();
     updateSelectedHotline();
+
+    // Support Ctrl+V Paste of Lab Screenshots anywhere on the page!
+    window.addEventListener('paste', (event) => {
+      const items = (event.clipboardData || event.originalEvent?.clipboardData)?.items;
+      if (!items) return;
+      for (const item of items) {
+        if (item.type.indexOf('image') !== -1) {
+          const blob = item.getAsFile();
+          if (blob) {
+            openClinicalInput();
+            processUploadedFileObject(blob);
+          }
+        }
+      }
+    });
   });
 
-  function toggleAllDropdowns() {
-    const dropdowns = document.querySelectorAll('details.result-dropdown');
-    const anyClosed = Array.from(dropdowns).some(d => !d.open);
-    dropdowns.forEach(d => { d.open = anyClosed; });
+  /* =========================================
+     INTERACTIVE SIDEBAR SQUARES CONTROLLER
+     ========================================= */
+  function selectInfoSquare(sectionKey) {
+    showAllMode = false;
+    const toggleBtn = document.getElementById('toggle-all-btn');
+    if (toggleBtn) toggleBtn.textContent = "⊞ Open All Squares";
+
+    const allSquares = document.querySelectorAll('.info-square');
+    allSquares.forEach(sq => sq.classList.remove('active'));
+
+    const targetSquare = document.getElementById(`sq-${sectionKey}`);
+    if (targetSquare) targetSquare.classList.add('active');
+
+    const allPanels = document.querySelectorAll('.stage-panel');
+    allPanels.forEach(p => p.classList.remove('active-panel'));
+
+    const targetPanel = document.getElementById(`panel-${sectionKey}`);
+    if (targetPanel) targetPanel.classList.add('active-panel');
+  }
+
+  function toggleShowAllPanels() {
+    showAllMode = !showAllMode;
+    const toggleBtn = document.getElementById('toggle-all-btn');
+    const allPanels = document.querySelectorAll('.stage-panel');
+    const hasLab = document.getElementById('sq-ranges').style.display !== 'none';
+
+    if (showAllMode) {
+      toggleBtn.textContent = "🗂️ Single Square View";
+      allPanels.forEach(p => {
+        if (p.id === 'panel-ranges' && !hasLab) {
+          p.classList.remove('active-panel');
+        } else {
+          p.classList.add('active-panel');
+        }
+      });
+    } else {
+      toggleBtn.textContent = "⊞ Open All Squares";
+      selectInfoSquare('meaning');
+    }
   }
 
   /* =========================================
-     CAMERA CAPTURE & PNG / PDF LAB UPLOAD
+     UNIVERSAL FILE UPLOAD, DRAG-DROP & IMAGE NORMALIZER
+     (Converts JFIF, WEBP, PNG, JPG, BMP via HTML5 Canvas so Gemini NEVER fails!)
      ========================================= */
+  function handleDragOver(event) {
+    event.preventDefault();
+    event.stopPropagation();
+    document.getElementById('scanner-dropzone').classList.add('drag-over');
+  }
+
+  function handleDragLeave(event) {
+    event.preventDefault();
+    event.stopPropagation();
+    document.getElementById('scanner-dropzone').classList.remove('drag-over');
+  }
+
+  function handleFileDrop(event) {
+    event.preventDefault();
+    event.stopPropagation();
+    document.getElementById('scanner-dropzone').classList.remove('drag-over');
+    const files = event.dataTransfer?.files;
+    if (files && files.length > 0) {
+      processUploadedFileObject(files[0]);
+    }
+  }
+
   async function startLiveCamera() {
     const modal = document.getElementById('camera-modal');
     const video = document.getElementById('camera-video');
@@ -1511,8 +1910,8 @@
       video.srcObject = cameraStream;
       modal.style.display = 'block';
     } catch (err) {
-      console.warn("Live webcam unavailable, falling back to file camera capture:", err);
-      document.getElementById('mobile-camera-input').click();
+      console.warn("Live webcam unavailable, showing camera file picker:", err);
+      modal.style.display = 'block';
     }
   }
 
@@ -1528,19 +1927,22 @@
   function captureCameraFrame() {
     const video = document.getElementById('camera-video');
     const canvas = document.getElementById('camera-canvas');
-    if (!video.videoWidth) return;
+    if (!video.videoWidth) {
+      document.getElementById('mobile-camera-input').click();
+      return;
+    }
 
     canvas.width = video.videoWidth;
     canvas.height = video.videoHeight;
     const ctx = canvas.getContext('2d');
     ctx.drawImage(video, 0, 0, canvas.width, canvas.height);
 
-    const dataUrl = canvas.toDataURL('image/png');
+    const dataUrl = canvas.toDataURL('image/jpeg', 0.92);
     const base64Data = dataUrl.split(',')[1];
 
     currentAttachment = {
-      name: `Camera_Lab_Scan_${new Date().toLocaleTimeString([], {hour: '2-digit', minute:'2-digit'})}.png`,
-      mimeType: 'image/png',
+      name: `Camera_Lab_Scan_${new Date().toLocaleTimeString([], {hour: '2-digit', minute:'2-digit'})}.jpg`,
+      mimeType: 'image/jpeg',
       base64Data: base64Data,
       previewUrl: dataUrl
     };
@@ -1550,28 +1952,79 @@
   }
 
   function handleLabFileSelect(event) {
-    const file = event.target.files[0];
+    const file = event.target.files && event.target.files[0];
     if (!file) return;
+    processUploadedFileObject(file);
+    // Reset input value so uploading the same file again still triggers onchange!
+    event.target.value = "";
+  }
 
-    const validTypes = ['image/png', 'image/jpeg', 'image/jpg', 'application/pdf'];
-    if (!validTypes.includes(file.type) && !file.name.match(/\.(png|jpe?g|pdf)$/i)) {
-      alert("Please upload a PNG, JPG, or PDF lab result file.");
+  function processUploadedFileObject(file) {
+    const fileName = file.name || "Uploaded_Lab_Result.jpg";
+    const isPdf = file.type === 'application/pdf' || /\.pdf$/i.test(fileName);
+
+    if (isPdf) {
+      const reader = new FileReader();
+      reader.onload = function(e) {
+        const dataUrl = e.target.result;
+        currentAttachment = {
+          name: fileName,
+          mimeType: 'application/pdf',
+          base64Data: dataUrl.split(',')[1],
+          previewUrl: null
+        };
+        renderAttachmentPreview();
+      };
+      reader.readAsDataURL(file);
       return;
     }
 
+    // For ANY image (.jfif, .webp, .png, .jpg, .jpeg, .bmp, .heic), normalize via HTML5 Canvas to clean image/jpeg!
     const reader = new FileReader();
     reader.onload = function(e) {
-      const dataUrl = e.target.result;
-      const base64Data = dataUrl.split(',')[1];
-      const mimeType = file.type || (file.name.toLowerCase().endsWith('.pdf') ? 'application/pdf' : 'image/png');
+      const rawDataUrl = e.target.result;
+      const img = new Image();
+      img.onload = function() {
+        const canvas = document.createElement('canvas');
+        const maxDim = 2000;
+        let w = img.naturalWidth || img.width;
+        let h = img.naturalHeight || img.height;
+        if (w > maxDim || h > maxDim) {
+          if (w > h) {
+            h = Math.round(h * (maxDim / w));
+            w = maxDim;
+          } else {
+            w = Math.round(w * (maxDim / h));
+            h = maxDim;
+          }
+        }
+        canvas.width = w;
+        canvas.height = h;
+        const ctx = canvas.getContext('2d');
+        ctx.fillStyle = "#FFFFFF";
+        ctx.fillRect(0, 0, w, h);
+        ctx.drawImage(img, 0, 0, w, h);
 
-      currentAttachment = {
-        name: file.name,
-        mimeType: mimeType,
-        base64Data: base64Data,
-        previewUrl: mimeType.startsWith('image/') ? dataUrl : null
+        const normalizedJpegUrl = canvas.toDataURL('image/jpeg', 0.92);
+        currentAttachment = {
+          name: fileName,
+          mimeType: 'image/jpeg',
+          base64Data: normalizedJpegUrl.split(',')[1],
+          previewUrl: normalizedJpegUrl
+        };
+        renderAttachmentPreview();
       };
-      renderAttachmentPreview();
+      img.onerror = function() {
+        // Fallback if browser cannot decode image onto canvas
+        currentAttachment = {
+          name: fileName,
+          mimeType: 'image/jpeg',
+          base64Data: rawDataUrl.split(',')[1],
+          previewUrl: rawDataUrl
+        };
+        renderAttachmentPreview();
+      };
+      img.src = rawDataUrl;
     };
     reader.readAsDataURL(file);
   }
@@ -1590,11 +2043,11 @@
     previewBox.style.display = 'flex';
     nameEl.textContent = currentAttachment.name;
     subEl.textContent = currentAttachment.mimeType === 'application/pdf'
-      ? 'PDF Lab Report Ready for Full Summary Scan'
-      : 'Image Lab Report Ready for Full Summary Scan';
+      ? '✅ PDF Lab Report Attached — Click Scan below!'
+      : '✅ Image Lab Report Attached & Optimized — Click Scan below!';
 
     if (currentAttachment.previewUrl) {
-      thumb.innerHTML = `<img src="${currentAttachment.previewUrl}" alt="Lab Preview" style="width:100%;height:100%;object-fit:cover;border-radius:5px;">`;
+      thumb.innerHTML = `<img src="${currentAttachment.previewUrl}" alt="Lab Preview" style="width:100%;height:100%;object-fit:cover;border-radius:6px;">`;
     } else {
       thumb.innerHTML = `PDF`;
     }
@@ -1651,7 +2104,7 @@
     const btnText = document.getElementById('btn-text');
 
     if (!rawInput && !currentAttachment) {
-      alert("Please type your health question, symptom, or scan/upload a PNG, JPG, or PDF lab result.");
+      alert("Please type your health question, symptom, or upload/scan a lab result.");
       return;
     }
 
@@ -1659,11 +2112,8 @@
 
     btn.disabled = true;
     loader.style.display = 'inline-block';
-    btnText.textContent = currentAttachment ? "Scanning Lab File & Translating..." : "Analyzing Consultation...";
-    document.getElementById('explain-meaning-output').innerText = "Analyzing your inquiry and clinical context...";
-    document.getElementById('explain-symptoms-output').innerText = "Evaluating what you might feel and important clinical limits...";
-    document.getElementById('asian-translation-output').innerText = "Isinasalin sa Tagalog (Translating to Tagalog)...";
-    document.getElementById('action-plan-output').innerText = "Preparing safe, non-medication steps you can do right now...";
+    btnText.textContent = currentAttachment ? "Scanning Uploaded Lab & Explaining..." : "Analyzing Consultation...";
+    document.getElementById('explain-meaning-output').innerHTML = `<div class="spacious-item-card">⏳ Scanning your input / uploaded lab report and preparing spacious cards...</div>`;
 
     const systemPrompt = `
 You are TranslaNurse, an expert, compassionate clinical nurse educator and triage guide in the Philippines.
@@ -1675,24 +2125,25 @@ Target Specifications:
 
 CRITICAL DISTINCTION — LAB RESULT vs. SYMPTOM/QUESTION CONSULT:
 1. Set "isLabResult": true ONLY if the patient entered lab test values, vital sign numbers, or uploaded a lab report file.
-   Set "isLabResult": false if this is a symptom, injury, or general health consultation (for example, "I think I broke my bone", "my head hurts", "I have a fever", "what should I do for a sprain?").
+   Set "isLabResult": false if this is a symptom, injury, or general health consultation (for example, "I think I broke my bone", "my head hurts", "I have a fever").
 2. If "isLabResult" is false (General Consultation / Symptom / Injury):
    - Set "normalRangeComparison" to "" (empty string — do NOT output unrelated lab reference ranges when the user is only asking about a symptom or injury!).
-   - In "inputMeaning", directly answer the patient's question and explain what their symptom, injury, or condition means in the body.
+   - In "inputMeaning", directly answer the patient's question and explain what their symptom, injury, or condition means in the body. Separate distinct points with newline (\n).
    - In "outOfRangeSymptoms", explain:
      (a) What the patient might feel physically right now, AND
      (b) The Clinical Limits & Red Flags (what cannot be known without an in-person doctor's exam/X-ray, and what warning signs mean they must go to the Emergency Room immediately).
 3. If "isLabResult" is true (Lab Result / Vital Signs):
-   - In "inputMeaning", explain what the lab test(s) measure in plain language.
-   - In "normalRangeComparison", state the exact standard Normal Reference Range and whether the patient's result is Within Normal Range, Low, or High.
-   - In "outOfRangeSymptoms", explain what the patient might feel if the value is out of range and the limits/red flags to watch for.
+   - In "inputMeaning", explain what the lab test(s) or panels measure in plain language.
+   - In "normalRangeComparison", list EACH test on its own separate line (separated by \n) in this clear format:
+     "Test Name: Result [Value] (Normal Range: [Range]) - [Within Normal Range | High | Low]"
+   - In "outOfRangeSymptoms", explain what the patient might feel for the out-of-range items and the limits/red flags to watch for.
 
 STRICT SAFETY RULES:
 - "labSafetyStatus" MUST be EXACTLY ONE of:
   - "Safe - Great Job in being healthy"
   - "Caution - Consult to a health professional"
   - "ALERT - Seek a Health Professional"
-- In "actionPlan": Give 4-5 specific, practical, non-medication steps the patient can safely do right now (first-aid, positioning, immobilization, hydration, monitoring, and limits on what NOT to do). NEVER suggest or name any medication.
+- In "actionPlan": Give 4-5 specific, practical, non-medication steps the patient can safely do right now. NEVER suggest or name any medication.
 - Provide accurate translations in all 10 Asian languages ("Tagalog", "Cebuano", "Ilocano", "Japanese", "Korean", "Mandarin Chinese", "Vietnamese", "Thai", "Bahasa Indonesia", "Hindi").
 
 Respond ONLY with a valid JSON object matching this exact schema:
@@ -1701,7 +2152,7 @@ Respond ONLY with a valid JSON object matching this exact schema:
   "labSafetyStatus": "Safe - Great Job in being healthy | Caution - Consult to a health professional | ALERT - Seek a Health Professional",
   "safetyReasoning": "Clear explanation of why this situation or lab result is Safe, Caution, or ALERT.",
   "inputMeaning": "Direct answer to the patient's question and plain-language explanation of what their symptom, injury, or lab test means.",
-  "normalRangeComparison": "Itemized normal reference range vs. patient result ONLY if isLabResult is true; otherwise empty string \"\".",
+  "normalRangeComparison": "One test per line (Test Name: Result X (Normal Range: Y) - Within Normal Range / High / Low) ONLY if isLabResult is true; otherwise empty string \"\".",
   "outOfRangeSymptoms": "What the patient might feel right now AND the clinical limits / red-flag warning signs.",
   "seekProfessionalRecommendation": "Specific recommendation on seeking a doctor/ER and why in-person care is needed.",
   "actionPlan": [
@@ -1730,7 +2181,7 @@ Respond ONLY with a valid JSON object matching this exact schema:
 }`;
 
     const userParts = [
-      { text: `${systemPrompt}\n\nPatient Clinical Input / Inquiry: "${rawInput || 'Please scan and summarize all findings in the attached lab result.'}"` }
+      { text: `${systemPrompt}\n\nPatient Clinical Input / Inquiry: "${rawInput || 'Please scan and summarize all findings in the attached lab result image/PDF.'}"` }
     ];
 
     if (currentAttachment && currentAttachment.base64Data) {
@@ -1790,69 +2241,67 @@ Respond ONLY with a valid JSON object matching this exact schema:
 
   /* =========================================
      COMPREHENSIVE CLINICAL CONSULTATION & LAB ENGINE
-     (Answers ALL Symptom/Injury/Medical Questions WITHOUT dumping lab ranges,
-      and analyzes Lab Results WITH Normal Ranges when labs are entered)
      ========================================= */
   const CLINICAL_LAB_DB = [
     {
       keys: [/fasting blood sugar|\bfbs\b|fasting glucose|\bglucose\b|\brbs\b|random blood sugar/i],
-      name: "Fasting Blood Sugar (FBS / Blood Glucose)",
+      name: "Fasting Blood Sugar (FBS)",
       unit: "mg/dL",
       min: 70, max: 99, alertHigh: 126, alertLow: 60,
-      meaning: "Fasting Blood Sugar (FBS) measures the amount of sugar (glucose) circulating in your blood after fasting for at least 8 hours. Glucose is your body's primary fuel, and insulin keeps it within a safe window.",
-      normalText: "70 to 99 mg/dL (Normal Fasting) • 100 to 125 mg/dL (Prediabetes / Borderline High) • 126 mg/dL or higher (Elevated / Diabetes range)",
-      feelHigh: "If your blood sugar is ABOVE the normal range (hyperglycemia), you might feel increased thirst (polydipsia), frequent urination, unusual tiredness, blurry vision, or dry mouth.",
-      feelLow: "If your blood sugar is BELOW the normal range (hypoglycemia), you might feel shaky, dizzy, cold sweats, sudden hunger, or a fast heartbeat."
+      meaning: "Fasting Blood Sugar (FBS) measures the amount of sugar (glucose) circulating in your blood after fasting for at least 8 hours.",
+      normalText: "70 - 99 mg/dL",
+      feelHigh: "If Blood Sugar is High: You might feel increased thirst, frequent urination, unusual tiredness, or blurry vision.",
+      feelLow: "If Blood Sugar is Low: You might feel shaky, dizzy, cold sweats, sudden hunger, or a fast heartbeat."
     },
     {
       keys: [/hba1c|a1c|glycosylated hemoglobin/i],
-      name: "HbA1c (3-Month Average Blood Sugar)",
+      name: "HbA1c (3-Month Sugar)",
       unit: "%",
       min: 4.0, max: 5.6, alertHigh: 6.5, alertLow: 3.8,
-      meaning: "HbA1c measures how much glucose has attached to your red blood cells over the past 2 to 3 months, showing your long-term blood sugar average.",
-      normalText: "Below 5.7% (Normal) • 5.7% to 6.4% (Prediabetes / Caution range) • 6.5% or higher (Diabetes / Alert range)",
-      feelHigh: "If HbA1c is ABOVE normal, your blood sugar has been running high over recent months. You might feel ongoing fatigue, increased thirst, frequent nighttime urination, tingling in hands/feet, or blurry vision.",
-      feelLow: "If HbA1c is unusually low, you might experience episodes of low blood sugar such as shakiness, dizziness, or sweating."
+      meaning: "HbA1c measures your average blood sugar level over the past 2 to 3 months.",
+      normalText: "4.0 - 5.6 %",
+      feelHigh: "If HbA1c is High: You might feel ongoing fatigue, increased thirst, frequent nighttime urination, or tingling in hands/feet.",
+      feelLow: "If HbA1c is Low: You might experience episodes of shakiness, dizziness, or cold sweats."
     },
     {
       keys: [/creatinine|\bcrea\b|\begfr\b/i],
-      name: "Serum Creatinine (Kidney Filtering Marker)",
+      name: "Serum Creatinine",
       unit: "mg/dL",
       min: 0.6, max: 1.2, alertHigh: 1.5, alertLow: 0.4,
-      meaning: "Creatinine is a natural muscle waste product that healthy kidneys filter out of the blood into the urine. It is one of the best indicators of how well your kidneys are working.",
-      normalText: "0.6 to 1.2 mg/dL for adults",
-      feelHigh: "If Creatinine is ABOVE normal, your kidneys may be filtering more slowly. A patient might feel swelling in the feet, ankles, or around the eyes (edema), foamy or changed urination, fatigue, nausea, or flank discomfort.",
-      feelLow: "If Creatinine is slightly BELOW normal, it is usually related to lower muscle mass."
+      meaning: "Creatinine is a muscle waste product filtered out by healthy kidneys; it shows how well your kidneys are working.",
+      normalText: "0.6 - 1.2 mg/dL",
+      feelHigh: "If Creatinine is High: A patient might feel swelling in the feet/ankles or around the eyes, foamy urination, fatigue, or flank discomfort.",
+      feelLow: "If Creatinine is Low: Usually linked to lower muscle mass."
     },
     {
       keys: [/\bbun\b|blood urea nitrogen|\burea\b/i],
       name: "Blood Urea Nitrogen (BUN)",
       unit: "mg/dL",
       min: 7, max: 20, alertHigh: 30, alertLow: 5,
-      meaning: "BUN measures urea nitrogen (a protein waste product) in your blood to evaluate kidney function and hydration.",
-      normalText: "7 to 20 mg/dL (Normal Adult Range)",
-      feelHigh: "If BUN is ABOVE normal (from dehydration or reduced kidney filtering), you might feel dry mouth, concentrated dark urine, fatigue, or dizziness.",
+      meaning: "BUN measures protein waste nitrogen in your blood to evaluate kidney function and hydration.",
+      normalText: "7 - 20 mg/dL",
+      feelHigh: "If BUN is High: You might feel dry mouth, concentrated dark urine, fatigue, or dizziness.",
       feelLow: "Low BUN is usually linked to low protein intake or overhydration."
     },
     {
       keys: [/uric acid|\bbua\b/i],
-      name: "Blood Uric Acid (BUA)",
+      name: "Blood Uric Acid",
       unit: "mg/dL",
       min: 3.4, max: 7.0, alertHigh: 8.5, alertLow: 2.0,
       meaning: "Uric acid is produced when your body breaks down purines from food and cells.",
-      normalText: "3.4 to 7.0 mg/dL (Men) • 2.4 to 6.0 mg/dL (Women)",
-      feelHigh: "If Uric Acid is ABOVE normal, crystals can settle in joints or kidneys. A patient might feel sudden redness, heat, swelling, or sharp pain in the big toe, ankle, or knee (gout).",
+      normalText: "3.4 - 7.0 mg/dL",
+      feelHigh: "If Uric Acid is High: A patient might feel sudden redness, heat, swelling, or sharp pain in the big toe, ankle, or knee (gout).",
       feelLow: "Low uric acid rarely causes physical symptoms."
     },
     {
       keys: [/hemoglobin|\bhgb\b|\bhb\b|hematocrit|\bhct\b|\bcbc\b/i],
-      name: "Hemoglobin / Complete Blood Count (Hgb)",
+      name: "Hemoglobin (Hgb)",
       unit: "g/dL",
       min: 12.0, max: 17.0, alertHigh: 18.5, alertLow: 10.0,
-      meaning: "Hemoglobin is the oxygen-carrying protein in red blood cells that delivers oxygen from your lungs to your brain, heart, and muscles.",
-      normalText: "12.0 to 15.5 g/dL (Women) • 13.5 to 17.5 g/dL (Men)",
-      feelHigh: "If Hemoglobin is ABOVE normal (often from dehydration or low oxygen), a patient might feel headaches, dizziness, or flushed skin.",
-      feelLow: "If Hemoglobin is BELOW normal (anemia), your tissues receive less oxygen and you might feel pale, easily tired, dizzy when standing up, cold hands/feet, or short of breath."
+      meaning: "Hemoglobin is the oxygen-carrying protein in red blood cells that delivers oxygen throughout your body.",
+      normalText: "12.0 - 17.0 g/dL",
+      feelHigh: "If Hemoglobin is High: A patient might feel headaches, dizziness, or flushed skin.",
+      feelLow: "If Hemoglobin is Low (Anemia): You might feel pale, easily tired, dizzy when standing up, or short of breath."
     },
     {
       keys: [/\bwbc\b|white blood cell|leukocyte/i],
@@ -1860,87 +2309,63 @@ Respond ONLY with a valid JSON object matching this exact schema:
       unit: "x10³/µL",
       min: 4.5, max: 11.0, alertHigh: 14.0, alertLow: 3.5,
       meaning: "White blood cells are your immune system's defense cells that fight infection and inflammation.",
-      normalText: "4.5 to 11.0 x10³/µL (4,500 to 11,000 cells/mcL)",
-      feelHigh: "If WBC is ABOVE normal, your body is fighting an infection or inflammation; you might feel fever, chills, body aches, or localized pain.",
-      feelLow: "If WBC is BELOW normal, your immune defenses are lower and you might feel fatigued or feverish."
+      normalText: "4.5 - 11.0 x10³/µL",
+      feelHigh: "If WBC is High: Your body is fighting an infection or inflammation; you might feel fever, chills, or localized pain.",
+      feelLow: "If WBC is Low: Immune defenses are lower and you might feel fatigued or feverish."
     },
     {
       keys: [/platelet|\bplt\b|thrombocyte/i],
-      name: "Platelet Count (Blood Clotting Cells)",
+      name: "Platelet Count",
       unit: "x10³/µL",
       min: 150, max: 450, alertHigh: 500, alertLow: 100,
       meaning: "Platelets help your blood clot and stop bleeding when blood vessels are injured.",
-      normalText: "150 to 450 x10³/µL (150,000 to 450,000 per mcL)",
-      feelHigh: "If Platelets are ABOVE normal, a patient might feel headaches, dizziness, or tingling in hands/feet.",
-      feelLow: "If Platelets are BELOW normal (thrombocytopenia, such as in dengue), a patient might notice easy bruising, tiny red skin spots (petechiae), bleeding gums, or nosebleeds."
+      normalText: "150 - 450 x10³/µL",
+      feelHigh: "If Platelets are High: A patient might feel headaches, dizziness, or tingling in hands/feet.",
+      feelLow: "If Platelets are Low: A patient might notice easy bruising, tiny red skin spots (petechiae), bleeding gums, or nosebleeds."
     },
     {
       keys: [/cholesterol|lipid|\bldl\b|\bhdl\b|triglyceride/i],
-      name: "Cholesterol / Lipid Profile",
+      name: "Total Cholesterol",
       unit: "mg/dL",
       min: 120, max: 199, alertHigh: 240, alertLow: 100,
       meaning: "Cholesterol and triglycerides are blood lipids; excess levels can narrow arteries over time.",
-      normalText: "Total Cholesterol: < 200 mg/dL • LDL: < 100 mg/dL • HDL: 40–60+ mg/dL • Triglycerides: < 150 mg/dL",
-      feelHigh: "High cholesterol is often 'silent' with no early symptoms, though long-term elevation increases cardiovascular strain (chest heaviness or fatigue on exertion).",
+      normalText: "120 - 199 mg/dL",
+      feelHigh: "If Cholesterol is High: Often has no early symptoms, though long-term elevation increases cardiovascular strain.",
       feelLow: "Low cholesterol rarely causes direct physical symptoms."
     },
     {
       keys: [/sgpt|\balt\b|sgot|\bast\b|liver enzyme|bilirubin/i],
-      name: "Liver Enzymes (SGPT / ALT & SGOT / AST)",
+      name: "Liver Enzymes (SGPT / ALT)",
       unit: "U/L",
       min: 7, max: 45, alertHigh: 80, alertLow: 5,
-      meaning: "SGPT (ALT) and SGOT (AST) are enzymes inside liver cells that rise in the blood when the liver is inflamed or stressed.",
-      normalText: "SGPT (ALT): 7 to 45 U/L • SGOT (AST): 8 to 40 U/L",
-      feelHigh: "If Liver Enzymes are ABOVE normal, a patient might feel fatigue, mild right-upper belly fullness, nausea, poor appetite, or yellowish eyes/skin (jaundice).",
-      feelLow: "Values within or below range indicate minimal liver cell release."
+      meaning: "SGPT (ALT) and SGOT (AST) are enzymes inside liver cells that rise when the liver is inflamed or stressed.",
+      normalText: "7 - 45 U/L",
+      feelHigh: "If Liver Enzymes are High: A patient might feel fatigue, mild right-upper belly fullness, nausea, or yellowish eyes/skin.",
+      feelLow: "Values within range indicate minimal liver cell irritation."
     },
     {
-      keys: [/potassium|\bk\+\b/i],
-      name: "Serum Potassium (K+ Electrolyte)",
-      unit: "mmol/L",
-      min: 3.5, max: 5.0, alertHigh: 5.5, alertLow: 3.2,
-      meaning: "Potassium is an essential electrolyte that regulates nerve signals and heart/muscle contractions.",
-      normalText: "3.5 to 5.0 mmol/L",
-      feelHigh: "If Potassium is ABOVE normal, a patient might feel muscle weakness, tingling, nausea, or irregular heartbeats.",
-      feelLow: "If Potassium is BELOW normal, a patient might feel leg cramps, muscle twitches, weakness, or palpitations."
-    },
-    {
-      keys: [/sodium|\bna\+\b/i],
-      name: "Serum Sodium (Na+ Electrolyte)",
-      unit: "mmol/L",
-      min: 135, max: 145, alertHigh: 148, alertLow: 132,
-      meaning: "Sodium regulates fluid balance, blood pressure, and nerve function.",
-      normalText: "135 to 145 mmol/L",
-      feelHigh: "If Sodium is ABOVE normal, a patient might feel intense thirst, dry mouth, and restlessness.",
-      feelLow: "If Sodium is BELOW normal, a patient might feel headache, nausea, dizziness, muscle cramps, or confusion."
-    },
-    {
-      keys: [/urinalysis|pus cells|\bproteinuria\b|\bhematuria\b/i],
-      name: "Urinalysis (Urine Screening Test)",
-      unit: "/hpf",
-      min: 0, max: 4, alertHigh: 10, alertLow: 0,
-      meaning: "A urinalysis checks your urine for white blood cells (pus cells), red blood cells, protein, sugar, and bacteria to screen for urinary tract infections or kidney stress.",
-      normalText: "WBC / Pus Cells: 0–4 /hpf • RBC: 0–2 /hpf • Protein & Glucose: Negative • Color: Pale Yellow / Clear",
-      feelHigh: "If Pus Cells (WBC) or bacteria are ABOVE normal, a patient might feel a burning sensation when urinating (dysuria), frequent urges to pee, cloudy or strong-smelling urine, or lower belly/back ache.",
-      feelLow: "Normal negative findings indicate a clear urinary tract."
+      keys: [/\btsh\b|thyroid|free t4|ft4|ft3/i],
+      name: "TSH (Thyroid Stimulating Hormone)",
+      unit: "uIU/mL",
+      min: 0.4, max: 4.5, alertHigh: 10.0, alertLow: 0.1,
+      meaning: "TSH is a hormone that signals your thyroid gland to control your body's metabolism, energy, and temperature.",
+      normalText: "0.4 - 4.5 uIU/mL",
+      feelHigh: "If TSH is High (Hypothyroidism): Your thyroid is underactive; you might feel sluggish/tired, sensitive to cold, dry skin, weight gain, or constipation.",
+      feelLow: "If TSH is Low (Hyperthyroidism): Your thyroid is overactive; you might feel a fast heartbeat, shakiness, feeling warm/sweaty, or weight loss."
     }
   ];
 
-  // Comprehensive Symptom, Injury & Consultation Knowledge Base (No Lab Results Needed!)
   const CONSULT_KNOWLEDGE_DB = [
     {
       keys: [/broke|broken|fracture|crack.*bone|bone.*hurt|dislocat|sprain|twisted|swollen.*arm|swollen.*leg|swollen.*wrist|swollen.*ankle|fell on|pilay|bali/i],
       topic: "Suspected Bone Fracture or Severe Joint Injury",
       severity: "ALERT",
       safetyReason: "A suspected broken bone (fracture) or joint dislocation requires an X-ray and professional orthopedic/emergency evaluation to prevent permanent bone misalignment, nerve injury, or blood vessel damage.",
-      meaning: "When you suspect a broken bone (fracture), it means a bone may have cracked or snapped due to a fall, impact, or twisting force. Even if you can still wiggle your fingers or toes, a bone can still be fractured—only an X-ray can tell the difference between a bone fracture and a severe ligament sprain.",
+      meaning: "When you suspect a broken bone (fracture), it means a bone may have cracked or snapped due to a fall, impact, or twisting force.\nEven if you can still wiggle your fingers or toes, a bone can still be fractured—only an X-ray can tell the difference between a bone fracture and a severe ligament sprain.",
       feelAndLimits:
-        "• What You Might Feel Right Now:\n" +
-        "  - Sharp, intense, or throbbing pain at the injury site that worsens when you try to move it or put weight on it.\n" +
-        "  - Rapid swelling, bruising, tenderness to touch, or a grinding/snapping sensation when it happened.\n\n" +
-        "• Clinical Limits & Urgent Red Flags (When to Go to the ER Immediately):\n" +
-        "  - Our Limit: An online consult cannot see through skin—an X-ray at a hospital or clinic is strictly required to check bone alignment.\n" +
-        "  - EMERGENCY RED FLAGS: Seek emergency care (Dial 911 / 143) immediately if the limb looks crooked/deformed, if bone is poking through the skin (open fracture), or if your fingers/toes feel numb, tingly, pale, bluish, or cold (signs of pinched nerves or blocked blood flow).",
+        "What You Might Feel Right Now: Sharp, intense, or throbbing pain at the injury site that worsens when you try to move it or put weight on it, along with rapid swelling, bruising, or tenderness.\n" +
+        "Our Clinical Limit: An online consult cannot see through skin—an X-ray at a hospital or clinic is strictly required to check bone alignment.\n" +
+        "EMERGENCY RED FLAGS (Go to ER Immediately): Seek emergency care (Dial 911 / 143) immediately if the limb looks crooked/deformed, if bone is poking through the skin, or if your fingers/toes feel numb, tingly, pale, bluish, or cold.",
       recommend: "Please go to an Emergency Room or Urgent Care clinic with X-ray facilities right away so a physician can image the bone and splint or cast it safely.",
       actions: [
         "IMMOBILIZE THE AREA: Keep the injured arm, wrist, leg, or ankle completely still. Do NOT try to straighten, realign, massage ('hilot'), or push a swollen or deformed bone back into place.",
@@ -1952,8 +2377,7 @@ Respond ONLY with a valid JSON object matching this exact schema:
       analogy: "Think of a bone like a sturdy tree branch that holds up a treehouse. If the branch cracks in a storm, you shouldn't climb on it or bend it—you wrap a strong splint around it and let a master builder (your doctor with an X-ray camera) secure it so it grows back strong and straight!",
       jargon: [
         { term: "Fracture vs. Sprain", explanation: "A fracture is a crack or break in the bone itself, while a sprain is a stretched or torn ligament connecting bones. Both cause pain and swelling, so an X-ray is needed to tell them apart." },
-        { term: "Immobilization (Splinting)", explanation: "Keeping an injured bone or joint from moving so the sharp bone edges do not injure nearby nerves or blood vessels." },
-        { term: "Neurovascular Check (Circulation, Sensation, Movement)", explanation: "Doctors check if your fingers or toes are warm, pink, and can feel light touch to make sure blood flow and nerves past the injury are safe." }
+        { term: "Immobilization (Splinting)", explanation: "Keeping an injured bone or joint from moving so the sharp bone edges do not injure nearby nerves or blood vessels." }
       ]
     },
     {
@@ -1963,50 +2387,21 @@ Respond ONLY with a valid JSON object matching this exact schema:
       safetyReason: "Chest discomfort, racing heartbeat, or difficulty breathing can involve the heart or lungs and must always be treated as a high-priority medical alert requiring immediate evaluation.",
       meaning: "Chest pain, tightness, or shortness of breath means your heart muscle, lungs, or chest wall may be experiencing reduced oxygen flow, airway narrowing, or acute strain.",
       feelAndLimits:
-        "• What You Might Feel Right Now:\n" +
-        "  - Pressure, squeezing, fullness, or sharpness in the center or left side of the chest.\n" +
-        "  - Feeling like you cannot catch a full breath, wheezing, or feeling your heart pounding, fluttering, or skipping beats.\n\n" +
-        "• Clinical Limits & Urgent Red Flags:\n" +
-        "  - Our Limit: Chest and breathing symptoms require an in-person stethoscope exam, oxygen check (pulse oximetry), and an ECG (heart tracing)—an app cannot rule out a heart or lung emergency.\n" +
-        "  - EMERGENCY RED FLAGS: Call 911 or 143 immediately if chest pain spreads to your left arm, shoulder, neck, jaw, or back; if you feel cold sweats, dizziness, or nausea; or if your lips/fingertips turn bluish or you struggle to speak full sentences.",
+        "What You Might Feel Right Now: Pressure, squeezing, fullness, or sharpness in the chest, feeling like you cannot catch a full breath, or feeling your heart pounding.\n" +
+        "Our Clinical Limit: Chest and breathing symptoms require an in-person stethoscope exam, oxygen check, and an ECG (heart tracing).\n" +
+        "EMERGENCY RED FLAGS: Call 911 or 143 immediately if chest pain spreads to your left arm, shoulder, neck, jaw, or back; if you feel cold sweats or dizziness; or if your lips/fingertips turn bluish.",
       recommend: "Please seek immediate emergency medical evaluation at the nearest hospital Emergency Room or call 911 / 143 right away.",
       actions: [
-        "STOP ALL PHYSICAL ACTIVITY: Sit down immediately in a comfortable upright or semi-reclined position (sitting upright makes it easier for your lungs to expand and reduces strain on your heart).",
+        "STOP ALL PHYSICAL ACTIVITY: Sit down immediately in a comfortable upright position to make breathing easier and reduce strain on your heart.",
         "LOOSEN TIGHT CLOTHING: Unbutton tight collars, belts, or waistbands and stay in a cool, well-ventilated space.",
-        "BREATHE SLOWLY (PURSED-LIP BREATHING): Breathe in gently through your nose and exhale slowly through pursed lips while someone stays beside you.",
-        "CALL FOR EMERGENCY HELP: Do not drive yourself to the hospital—call a family member and dial 911, 143 (Red Cross), or one of the NCR hospital hotlines below immediately.",
+        "BREATHE SLOWLY: Take slow, steady breaths while someone stays beside you.",
+        "CALL FOR EMERGENCY HELP: Do not drive yourself to the hospital—dial 911, 143 (Red Cross), or one of the NCR hospital hotlines below immediately.",
         "NEVER SELF-MEDICATE: Do not take unprescribed pills; wait for emergency medical personnel to check your vital signs."
       ],
-      analogy: "Think of your heart and lungs like the main water pump and air filter of a house. If the pump feels tight or the air feels blocked, you pause everything in the house right away so the repair crew (emergency doctors) can check the pipes!",
+      analogy: "Think of your heart and lungs like the main water pump and air filter of a house. If the pump feels tight or the air feels blocked, you pause everything right away so emergency doctors can check the pipes!",
       jargon: [
         { term: "ECG / EKG (Electrocardiogram)", explanation: "A quick, painless test that records the electrical signals of your heart to check for heart strain or rhythm changes." },
         { term: "Dyspnea", explanation: "Medical word for shortness of breath or feeling winded." }
-      ]
-    },
-    {
-      keys: [/stroke|slurred speech|face droop|numbness|tingling|manhid|weakness.*side|paralyz|seizure|convulsion/i],
-      topic: "Neurological Symptoms (Numbness, Weakness, or Stroke Warning Signs)",
-      severity: "ALERT",
-      safetyReason: "Sudden numbness, weakness on one side of the body, facial drooping, slurred speech, or seizures can signal an urgent neurological or stroke emergency where every minute counts.",
-      meaning: "Nerves carry messages between your brain and your body. Sudden numbness, tingling, or weakness—especially on one side of the face, arm, or leg—means a nerve pathway may be pinched or blood flow to part of the brain may be interrupted.",
-      feelAndLimits:
-        "• What You Might Feel Right Now:\n" +
-        "  - 'Pins and needles' tingling, loss of sensation, heaviness in an arm or leg, difficulty smiling evenly, or trouble finding/speaking words clearly.\n\n" +
-        "• Clinical Limits & FAST Stroke Red Flags:\n" +
-        "  - Our Limit: Neurological symptoms require an immediate in-person neurological exam and brain imaging (CT/MRI).\n" +
-        "  - FAST RED FLAGS (Dial 911 Immediately): F = Face drooping on one side; A = Arm weakness (one arm drifts down); S = Speech slurred or confused; T = Time to call emergency services immediately.",
-      recommend: "If symptoms started suddenly, go to the nearest hospital Emergency Room immediately or call 911 / 143.",
-      actions: [
-        "CHECK THE 'F.A.S.T.' SIGNS RIGHT NOW: Ask the person to smile (check if one side droops), raise both arms (check if one drifts down), and repeat a simple phrase.",
-        "NOTE THE EXACT TIME SYMPTOMS STARTED: Doctors at the Emergency Room need to know the exact minute symptoms began.",
-        "SIT OR LIE SAFELY ON ONE SIDE: Keep the person resting safely with their head slightly raised; if they feel faint or nauseous, have them lie on their side.",
-        "DO NOT GIVE FOOD, WATER, OR PILLS: Sudden neurological symptoms can affect swallowing, so do not give anything by mouth until a doctor checks them.",
-        "CALL AN EMERGENCY HOTLINE IMMEDIATELY: Use the NCR hotline selector below to call 911, 143, UP-PGH, MakatiMed, or St. Luke's ER."
-      ],
-      analogy: "Think of your brain and nerves like telephone wires carrying messages to your hands and feet. If a wire gets pinched or blocked, the signal gets fuzzy—and calling the emergency crew right away helps restore the connection fast!",
-      jargon: [
-        { term: "Paresthesia (Numbness / Tingling)", explanation: "A 'pins-and-needles' or numb feeling caused by pressure on a nerve or reduced blood flow." },
-        { term: "F.A.S.T. Stroke Check", explanation: "Face drooping, Arm weakness, Speech difficulty, Time to call 911 immediately." }
       ]
     },
     {
@@ -2014,22 +2409,20 @@ Respond ONLY with a valid JSON object matching this exact schema:
       topic: "Fever, Viral/Respiratory Symptoms, or Infection Consult",
       severity: "CAUTION",
       safetyReason: "A fever or respiratory illness means your immune system is actively fighting an infection. Monitoring hydration, temperature limits, and dengue/respiratory warning signs with a healthcare professional is important.",
-      meaning: "A fever (body temperature of 37.8°C / 100°F or higher) is not an illness by itself—it is your body's natural defense signal showing that your immune system is fighting off a virus or bacteria.",
+      meaning: "A fever (body temperature of 37.8°C / 100°F or higher) is your body's natural defense signal showing that your immune system is fighting off a virus or bacteria.",
       feelAndLimits:
-        "• What You Might Feel Right Now:\n" +
-        "  - Warm skin, chills or shivering, sweating, headache, muscle/joint aches, fatigue, sore throat, cough, or reduced appetite.\n\n" +
-        "• Clinical Limits & Red Flags to Watch For:\n" +
-        "  - Our Limit: Without a physical exam or blood/swab test, a consultation cannot confirm whether a fever is a common viral flu, bacterial infection, or dengue.\n" +
-        "  - RED FLAGS (Seek Immediate Medical Care): Fever lasting more than 2–3 days, temperature above 39°C (102.2°F), severe abdominal pain, persistent vomiting, bleeding gums/nosebleeds or tiny red skin spots (dengue warning signs), stiff neck, confusion, or difficulty breathing.",
-      recommend: "Consult a licensed physician—especially if the fever lasts more than 48 hours or if you live in an area with dengue—so they can check your vital signs and order a CBC if needed.",
+        "What You Might Feel Right Now: Warm skin, chills or shivering, sweating, headache, muscle/joint aches, fatigue, sore throat, cough, or reduced appetite.\n" +
+        "Our Clinical Limit: Without a physical exam or blood test (CBC), a consultation cannot confirm whether a fever is a common viral flu, bacterial infection, or dengue.\n" +
+        "RED FLAGS (Seek Immediate Medical Care): Fever lasting more than 2–3 days, temperature above 39°C (102.2°F), severe abdominal pain, persistent vomiting, bleeding gums/nosebleeds, or difficulty breathing.",
+      recommend: "Consult a licensed physician—especially if the fever lasts more than 48 hours—so they can check your vital signs and order a CBC if needed.",
       actions: [
         "STAY HYDRATED: Sip plenty of water, clear broths, or oral rehydration fluids throughout the day to replace fluids lost from sweating and fever.",
-        "USE LUKEWARM SPONGE BATHS: Gently wipe the forehead, neck, armpits, and groin with a lukewarm (not ice-cold) washcloth to help cool the skin comfortably.",
-        "SOOTHE COUGH & SORE THROAT NATURALLY: Gargle with warm salt water (1/2 teaspoon salt in a glass of warm water), sip warm water or clear soup, and prop your head up with an extra pillow when resting.",
+        "USE LUKEWARM SPONGE BATHS: Gently wipe the forehead, neck, and armpits with a lukewarm (not ice-cold) washcloth to cool the skin comfortably.",
+        "WEAR LIGHT CLOTHING & REST: Dress in a single breathable layer and rest in a well-ventilated room.",
         "TRACK YOUR TEMPERATURE & SYMPTOMS: Write down your thermometer readings every 4–6 hours and note how many times you urinate.",
-        "CONSULT A DOCTOR BEFORE TAKING MEDICINE: TranslaNurse never prescribes or suggests medications (especially since certain pain relievers must be avoided if dengue is possible)."
+        "CONSULT A DOCTOR BEFORE TAKING MEDICINE: TranslaNurse never prescribes or suggests medications."
       ],
-      analogy: "A fever is like your body turning up the thermostat so immune-system superheroes can chase away germs faster—your job is to rest and drink plenty of water so your superheroes stay hydrated!",
+      analogy: "A fever is like your body turning up the thermostat so immune-system superheroes can chase away germs faster—your job is to rest and drink plenty of water!",
       jargon: [
         { term: "Pyrexia (Fever)", explanation: "An elevated body temperature above 37.8°C (100°F), usually triggered by the immune system fighting an infection." },
         { term: "Tepid Sponge Bath", explanation: "Gently sponging the skin with lukewarm water to help bring down body warmth safely without causing shivering." }
@@ -2042,22 +2435,20 @@ Respond ONLY with a valid JSON object matching this exact schema:
       safetyReason: "Headaches and dizziness can range from tension, dehydration, or inner-ear imbalance to blood pressure changes or concussion after a head bump, so knowing red-flag limits is essential.",
       meaning: "A headache or dizziness means pain-sensitive nerves, blood vessels, or balance sensors around your head, neck, or inner ear are irritated, strained, or experiencing changes in blood flow or hydration.",
       feelAndLimits:
-        "• What You Might Feel Right Now:\n" +
-        "  - Dull band-like tightness across the forehead/neck (tension), throbbing on one side with sensitivity to light/sound (migraine), or a spinning/lightheaded feeling when standing up.\n\n" +
-        "• Clinical Limits & Red Flags (When to Go to the ER Immediately):\n" +
-        "  - Our Limit: You should have your Blood Pressure checked and see a doctor in person to evaluate your neurological reflexes.\n" +
-        "  - EMERGENCY RED FLAGS: Seek emergency care immediately for a sudden 'worst headache of your life' (thunderclap headache), headache after hitting your head, vomiting, blurry/double vision, slurred speech, weakness/numbness on one side of the face or body, high fever with a stiff neck, or fainting.",
+        "What You Might Feel Right Now: Dull band-like tightness across the forehead/neck, throbbing on one side with sensitivity to light/sound, or a spinning/lightheaded feeling when standing up.\n" +
+        "Our Clinical Limit: You should have your Blood Pressure checked and see a doctor in person to evaluate your neurological reflexes.\n" +
+        "EMERGENCY RED FLAGS: Seek emergency care immediately for a sudden 'worst headache of your life', headache after hitting your head, vomiting, blurry/double vision, slurred speech, weakness on one side, or fainting.",
       recommend: "Consult a healthcare professional for a blood pressure check and physical exam—or go to the Emergency Room immediately if you hit your head or notice any red-flag symptoms.",
       actions: [
         "REST IN A QUIET, DIM ROOM: Sit or lie down slowly with your head slightly elevated and close your eyes away from bright screens.",
         "MOVE SLOWLY WHEN STANDING: If you feel dizzy, sit on the edge of the bed for 1–2 minutes before standing up so you do not fall.",
         "APPLY A COOL OR WARM COMPRESS: Place a cool damp cloth on your forehead or a warm cloth on the back of your neck to relax tight muscles.",
-        "HYDRATE & CHECK BLOOD PRESSURE: Sip water slowly and, if you have a home blood pressure cuff, record your reading to share with your doctor.",
+        "HYDRATE & CHECK BLOOD PRESSURE: Sip water slowly and record your blood pressure reading if you have a home monitor.",
         "DO NOT SELF-MEDICATE: Avoid taking unprescribed painkillers; let a licensed doctor evaluate the cause first."
       ],
-      analogy: "Think of your head's nerves like guitar strings—when you're tired, dehydrated, or stressed, the strings get pulled too tight and hum loudly until you rest in a quiet room and let them relax!",
+      analogy: "Think of your head's nerves like guitar strings—when you're tired, dehydrated, or stressed, the strings get pulled too tight until you rest in a quiet room and let them relax!",
       jargon: [
-        { term: "Vertigo vs. Lightheadedness", explanation: "Vertigo feels like the room is spinning around you (often from the inner ear), while lightheadedness feels like you might faint." },
+        { term: "Vertigo vs. Lightheadedness", explanation: "Vertigo feels like the room is spinning around you, while lightheadedness feels like you might faint." },
         { term: "Concussion", explanation: "A mild brain injury caused by a bump or blow to the head that requires medical observation." }
       ]
     },
@@ -2068,49 +2459,21 @@ Respond ONLY with a valid JSON object matching this exact schema:
       safetyReason: "Digestive symptoms can lead to dehydration or signal stomach irritation, foodborne illness, or surgical conditions like appendicitis if pain becomes severe.",
       meaning: "Stomach pain, nausea, or diarrhea means the lining of your stomach or intestines is irritated, inflamed, or working overtime to clear out something that disagreed with your digestive tract.",
       feelAndLimits:
-        "• What You Might Feel Right Now:\n" +
-        "  - Cramping, burning in the upper belly (epigastric area), bloating, queasiness, loose watery stools, or sour acid taste.\n\n" +
-        "• Clinical Limits & Urgent Red Flags:\n" +
-        "  - Our Limit: A doctor needs to gently press (palpate) your abdomen in person to check where the tenderness is located.\n" +
-        "  - EMERGENCY RED FLAGS: Go to the ER immediately if pain becomes sharp and moves to the lower-right belly (appendicitis sign), if your belly feels hard/rigid, if you cannot keep any fluids down for 24 hours, if you see blood or black 'coffee-ground' material in vomit or stool, or if you feel dizzy and stop urinating (severe dehydration).",
+        "What You Might Feel Right Now: Cramping, burning in the upper belly, bloating, queasiness, loose watery stools, or sour acid taste.\n" +
+        "Our Clinical Limit: A doctor needs to gently press (palpate) your abdomen in person to check where the tenderness is located.\n" +
+        "EMERGENCY RED FLAGS: Go to the ER immediately if pain becomes sharp and moves to the lower-right belly (appendicitis sign), if your belly feels hard/rigid, if you cannot keep fluids down for 24 hours, or if you see blood/black material in vomit or stool.",
       recommend: "Consult a licensed physician to examine your abdomen and guide safe hydration and dietary recovery.",
       actions: [
-        "SIP SMALL AMOUNTS OF FLUIDS FREQUENTLY: Take small sips of water, clear broth, or oral rehydration solution every 10–15 minutes rather than gulping a full glass at once.",
-        "EAT BLAND, EASY-TO-DIGEST FOODS: When ready to eat, stick to gentle foods like plain lugaw (rice porridge), crackers, banana, or toast, and avoid spicy, oily, sour, coffee, or dairy-heavy foods.",
+        "SIP SMALL AMOUNTS OF FLUIDS FREQUENTLY: Take small sips of water, clear broth, or oral rehydration solution every 10–15 minutes.",
+        "EAT BLAND, EASY-TO-DIGEST FOODS: Stick to gentle foods like plain lugaw (rice porridge), crackers, banana, or toast, and avoid spicy, oily, sour, or dairy-heavy foods.",
         "STAY UPRIGHT AFTER EATING: If you feel acid reflux or upper stomach burning, remain sitting upright for at least 2 hours after meals.",
-        "NOTE PAIN LOCATION & TIMING: Write down where the pain is (upper, lower-right, or all over) and whether eating makes it better or worse to tell your doctor.",
-        "AVOID SELF-MEDICATING: Never take pain relievers on an empty or upset stomach, as many pain pills can irritate the stomach lining further."
+        "NOTE PAIN LOCATION & TIMING: Write down where the pain is and whether eating makes it better or worse.",
+        "AVOID SELF-MEDICATING: Never take pain relievers on an empty or upset stomach, as many pain pills irritate the stomach lining."
       ],
       analogy: "Your stomach is like a kitchen blender—when it gets irritated, giving it gentle, soft foods and small sips of water lets the blender rest and clean itself out smoothly!",
       jargon: [
         { term: "Epigastric Pain", explanation: "Discomfort felt in the upper-middle part of the belly just below the ribs, often linked to stomach acid or gastritis." },
         { term: "Dehydration", explanation: "When the body loses more water and electrolytes than it takes in, causing dry mouth, dark urine, and dizziness." }
-      ]
-    },
-    {
-      keys: [/\buti\b|urinat|painful pee|burning pee|ihi|balisawsaw|dysuria|kidney stone|flank pain|blood in urine/i],
-      topic: "Urinary Tract or Kidney Discomfort Consultation",
-      severity: "CAUTION",
-      safetyReason: "Burning urination, frequent urges to pee, or flank/lower-back pain can indicate a Urinary Tract Infection (UTI) or kidney stone that requires a doctor's urinalysis and targeted care.",
-      meaning: "When the bladder or urinary tract lining becomes irritated by bacteria or mineral crystals, your body signals it through a stinging/burning feeling when urinating and a frequent urge to go even when the bladder is nearly empty.",
-      feelAndLimits:
-        "• What You Might Feel Right Now:\n" +
-        "  - Burning or stinging when peeing (dysuria), needing to urinate every few minutes in small amounts, cloudy or strong-smelling urine, or mild pressure above the pubic bone.\n\n" +
-        "• Clinical Limits & Red Flags:\n" +
-        "  - Our Limit: Confirming a UTI requires a laboratory Urinalysis and a doctor's prescription—home remedies alone cannot clear a bacterial kidney infection.\n" +
-        "  - RED FLAGS (Seek Immediate Care): High fever, chills, nausea/vomiting, sharp pain in your back/side just under the ribs (flank pain), visible pink/red blood in the urine, or inability to pass urine.",
-      recommend: "Visit a clinic or physician for a simple Urinalysis test so they can evaluate and treat the cause safely.",
-      actions: [
-        "DRINK PLENTY OF WATER: Sip plain water steadily throughout the day (unless a doctor has restricted your fluids) to help flush your bladder naturally.",
-        "DO NOT HOLD YOUR URINE: Go to the bathroom as soon as you feel the urge, and empty your bladder completely each time.",
-        "AVOID BLADDER IRRITANTS: Skip coffee, soda, alcohol, very salty snacks, and spicy foods while your urinary tract feels irritated.",
-        "APPLY A WARM COMPRESS: A warm cloth or heating pad over your lower abdomen can help ease bladder muscle spasms.",
-        "NEVER TAKE LEFTOVER ANTIBIOTICS: Taking unprescribed or incomplete antibiotics can cause resistant infections—always let a doctor check your urinalysis first."
-      ],
-      analogy: "Think of your urinary tract like a clean garden hose—drinking plenty of fresh water helps rinse the hose clean, while your doctor checks a sample to make sure no germs are hiding inside!",
-      jargon: [
-        { term: "Dysuria", explanation: "Medical term for pain, stinging, or burning when urinating." },
-        { term: "Flank Pain", explanation: "Pain felt on either side of the lower back between the ribs and hips, where the kidneys are located." }
       ]
     },
     {
@@ -2120,153 +2483,21 @@ Respond ONLY with a valid JSON object matching this exact schema:
       safetyReason: "Open wounds, burns, and animal bites carry risks of infection, tetanus, or rabies (for dog/cat bites/scratches) and require proper cleansing and timely medical evaluation.",
       meaning: "Your skin is your body's protective shield. When skin is broken by a cut, burn, or animal bite/scratch, bacteria or viruses can enter the tissue unless cleaned properly right away and evaluated by a health professional.",
       feelAndLimits:
-        "• What You Might Feel Right Now:\n" +
-        "  - Stinging, burning heat, throbbing pain, redness, oozing, or bleeding at the injured skin site.\n\n" +
-        "• Clinical Limits & Red Flags:\n" +
-        "  - Our Limit: A doctor or Animal Bite Treatment Center (ABTC) must inspect the depth of the wound to determine if stitches, tetanus protection, or anti-rabies shots are needed.\n" +
-        "  - EMERGENCY RED FLAGS: Seek immediate emergency care if bleeding does not slow down after 10 minutes of firm direct pressure, if a burn is large/blistered or on the face/hands/joints, if the wound was caused by any dog/cat/animal bite or scratch, or if you see spreading redness, pus, red streaks, or fever.",
+        "What You Might Feel Right Now: Stinging, burning heat, throbbing pain, redness, oozing, or bleeding at the injured skin site.\n" +
+        "Our Clinical Limit: A doctor or Animal Bite Treatment Center (ABTC) must inspect the wound to determine if stitches, tetanus protection, or anti-rabies shots are needed.\n" +
+        "EMERGENCY RED FLAGS: Seek immediate emergency care if bleeding does not slow down after 10 minutes of firm direct pressure, if a burn is large/blistered, or if the wound was caused by any dog/cat/animal bite or scratch.",
       recommend: "Visit a clinic, hospital ER, or DOH Animal Bite Treatment Center (for any animal bite/scratch) promptly for professional wound care.",
       actions: [
         "FOR ANIMAL BITES OR SCRATCHES: Wash the wound immediately under running tap water and mild soap for a full 10 to 15 minutes, then go straight to an Animal Bite Treatment Center or hospital.",
-        "FOR BLEEDING CUTS OR NOSEBLEEDS: For cuts, press a clean sterile cloth firmly over the wound for 5–10 minutes. For nosebleeds, sit upright, lean slightly forward (never tilt your head back), and pinch the soft part of your nose for 10 minutes.",
-        "FOR MINOR BURNS: Hold the burned skin under cool (not ice-cold) running tap water for 15–20 minutes. Never put toothpaste, butter, oil, or soy sauce on a burn, and do not pop blisters.",
-        "COVER CLEANLY: Loosely cover the cleaned area with a sterile gauze dressing to keep dirt out while traveling to the doctor.",
+        "FOR BLEEDING CUTS: Press a clean sterile cloth firmly over the wound for 5–10 minutes and elevate the injured part.",
+        "FOR MINOR BURNS: Hold the burned skin under cool (not ice-cold) running tap water for 15–20 minutes. Never put toothpaste, butter, oil, or soy sauce on a burn.",
+        "COVER CLEANLY: Loosely cover the cleaned area with a sterile gauze dressing while traveling to the doctor.",
         "DO NOT APPLY UNPRESCRIBED OINTMENTS OR ANTIBIOTICS: Let a physician examine the wound first."
       ],
-      analogy: "Your skin is like a castle wall. If a gate gets scratched or chipped, washing it with clean running water right away sweeps away outside intruders before the castle builders (your doctor) seal the gate!",
+      analogy: "Your skin is like a castle wall. If a gate gets scratched, washing it with clean running water right away sweeps away outside intruders before the doctor seals the gate!",
       jargon: [
         { term: "Wound Irrigation", explanation: "Flushing a cut or bite with steady running water to wash out germs and dirt." },
         { term: "Rabies Post-Exposure Prophylaxis (PEP)", explanation: "Medical protection given at an Animal Bite Center after a dog or cat bite/scratch to prevent rabies." }
-      ]
-    },
-    {
-      keys: [/rash|allergy|allergic|itch|kati|hives|pantal|eczema|insect|mosquito|chickenpox|measles|boil|pigsa/i],
-      topic: "Skin Rash, Allergy, or Itching Consultation",
-      severity: "CAUTION",
-      safetyReason: "Skin rashes and allergic reactions range from mild contact irritation to systemic allergies (anaphylaxis) or contagious viral rashes that should be examined by a doctor.",
-      meaning: "A rash, hives, or itching happens when your skin's immune cells release histamine or react to an allergen, food, insect bite, heat, or infection.",
-      feelAndLimits:
-        "• What You Might Feel Right Now:\n" +
-        "  - Raised red welts (hives), itchy or dry patches, warmth on the skin, or small bumps/blisters.\n\n" +
-        "• Clinical Limits & Urgent Red Flags:\n" +
-        "  - Our Limit: Rashes often look similar on the surface, so a doctor or dermatologist needs to inspect the pattern and ask about your recent exposures.\n" +
-        "  - EMERGENCY RED FLAGS (Anaphylaxis — Call 911 Immediately): Swelling of the lips, tongue, face, or throat; difficulty breathing or swallowing; wheezing; dizziness; or a rapidly spreading purple/non-blanching rash with a high fever.",
-      recommend: "Consult a physician to identify the trigger safely, or go to the nearest Emergency Room immediately if you notice any facial swelling or breathing difficulty.",
-      actions: [
-        "APPLY A COOL COMPRESS: Place a clean, cool damp washcloth over the itchy skin for 10–15 minutes to calm inflammation without scratching.",
-        "DO NOT SCRATCH OR POP BLISTERS: Keep fingernails short and avoid scratching so bacteria do not enter the skin.",
-        "WEAR LOOSE, BREATHABLE COTTON CLOTHES: Avoid tight clothing, harsh scented soaps, or hot showers, which make itching and redness worse.",
-        "IDENTIFY & AVOID NEW TRIGGERS: Write down any new foods, soaps, detergents, plants, or insect bites from the past 24–48 hours to tell your doctor.",
-        "AVOID UNPRESCRIBED CREAMS OR PILLS: Do not apply leftover steroid or antibiotic creams before a doctor identifies the rash."
-      ],
-      analogy: "Think of itchy skin like an overly sensitive doorbell that keeps ringing when a leaf brushes against it—putting a cool cloth on it helps calm the doorbell down until your doctor checks it!",
-      jargon: [
-        { term: "Urticaria (Hives)", explanation: "Raised, itchy red or skin-colored welts that pop up when the body releases histamine during an allergic reaction." },
-        { term: "Anaphylaxis", explanation: "A severe, life-threatening allergic reaction that causes airway narrowing or swelling of the lips/tongue and requires immediate emergency care." }
-      ]
-    },
-    {
-      keys: [/back pain|lower back|likod|neck pain|leeg|muscle|cramp|pulikat|joint|arthritis|rayuma|gout|sciatica/i],
-      topic: "Back, Neck, Muscle, or Joint Pain Consultation",
-      severity: "CAUTION",
-      safetyReason: "Muscle and joint pain are often caused by posture strain, lifting, or inflammation, but should be evaluated by a health professional—especially if accompanied by numbness or weakness.",
-      meaning: "Pain or stiffness in your back, neck, muscles, or joints means the muscle fibers, tendons, or joint cushions (cartilage/discs) are strained, overworked, or inflamed.",
-      feelAndLimits:
-        "• What You Might Feel Right Now:\n" +
-        "  - Aching stiffness, muscle tightness or spasms, soreness when bending or turning, or a warm/swollen joint.\n\n" +
-        "• Clinical Limits & Red Flags:\n" +
-        "  - Our Limit: Physical examination (and imaging or uric acid/blood tests if needed) by a doctor is required to check your spine and joints.\n" +
-        "  - RED FLAGS (Seek Immediate Care): Back/neck pain after a fall or accident, pain shooting down your leg with numbness/weakness in your foot, loss of bladder or bowel control, or a hot, red, swollen joint accompanied by a fever.",
-      recommend: "Consult a licensed physician or physical rehabilitation specialist for an accurate assessment and safe recovery plan.",
-      actions: [
-        "AVOID HEAVY LIFTING & TWISTING: Rest the strained muscle or joint in a neutral, supported position and avoid sudden bending.",
-        "USE COLD FOR FRESH SWELLING OR GENTLE WARMTH FOR TIGHT MUSCLES: Use a cloth-wrapped cold pack for the first 24–48 hours of an acute injury/swollen joint, or a warm towel for chronic muscle tightness.",
-        "SUPPORT YOUR POSTURE: When sitting or sleeping, use a small pillow to support the natural curve of your neck or lower back (or between your knees when lying on your side).",
-        "HYDRATE FOR MUSCLE CRAMPS: If you have leg cramps ('pulikat'), gently stretch the calf muscle by flexing your foot upward and sip water.",
-        "DO NOT SELF-MEDICATE: Avoid taking unprescribed painkillers or anti-inflammatory pills, which can irritate the stomach or kidneys."
-      ],
-      analogy: "Muscles are like stretchy rubber bands that help you move—when they get stretched too far or held tight for too long, they need gentle rest and support to bounce back comfortably!",
-      jargon: [
-        { term: "Musculoskeletal Strain", explanation: "Overstretching or micro-tearing of muscle fibers or tendons, often from lifting or posture fatigue." },
-        { term: "Radiculopathy (Sciatica)", explanation: "When a pinched nerve in the lower back sends tingling or shooting pain down the leg." }
-      ]
-    },
-    {
-      keys: [/eye|mata|sore eyes|blurry|ear|tenga|earache|ringing|tinnitus|tooth|teeth|ngipin|dental|gum|gilagid|mouth sore|singaw/i],
-      topic: "Eye, Ear, Dental, or Oral Care Consultation",
-      severity: "CAUTION",
-      safetyReason: "Eyes, ears, and teeth are delicate structures close to important nerves; targeted examination by an eye doctor, ENT specialist, or dentist prevents complications.",
-      meaning: "Discomfort in the eyes, ears, or teeth happens when delicate surface membranes, the middle ear canal, or a tooth nerve/gum tissue becomes irritated, dry, or inflamed.",
-      feelAndLimits:
-        "• What You Might Feel Right Now:\n" +
-        "  - Eye redness/watering or sensitivity to light; ear fullness, aching, or muffled hearing; or throbbing tooth/gum sensitivity to hot, cold, or chewing.\n\n" +
-        "• Clinical Limits & Red Flags:\n" +
-        "  - Our Limit: Specialized instruments (ophthalmoscope, otoscope, or dental X-ray) are required to look inside the eye, ear canal, or tooth root.\n" +
-        "  - RED FLAGS (Seek Immediate Care): Sudden blurry vision or vision loss, chemical splash or foreign object in the eye, severe eye pain, high fever with swelling behind the ear, or facial/jaw swelling from a tooth infection that makes swallowing or breathing difficult.",
-      recommend: "Please schedule an in-person visit with a licensed Ophthalmologist (eye), ENT physician (ear), or Dentist (tooth/gums).",
-      actions: [
-        "FOR EYE IRRITATION: Never rub your eyes. If dust or a chemical entered the eye, flush it gently with clean running water or sterile saline, and rest your eyes away from screens.",
-        "FOR EAR DISCOMFORT: Keep the ear dry and NEVER insert cotton buds, hairpins, or unprescribed drops/oils into the ear canal.",
-        "FOR TOOTHACHE OR MOUTH SORES: Gently rinse your mouth with warm salt water (1/2 teaspoon salt in a glass of warm water) after meals and apply a cold cloth to the outside of your cheek if swollen.",
-        "WASH HANDS FREQUENTLY: Avoid touching your eyes, nose, or mouth to prevent spreading irritation.",
-        "DO NOT SELF-MEDICATE: Never put unprescribed drops in your eyes/ears or place crushed pills directly on your gums."
-      ],
-      analogy: "Your eyes and ears are like high-definition cameras and microphones—you never poke inside the lens, you keep them clean and let a specialist technician check them gently!",
-      jargon: [
-        { term: "Conjunctivitis (Sore Eyes)", explanation: "Redness and inflammation of the clear layer covering the white part of the eye." },
-        { term: "Otitis", explanation: "Inflammation or infection of the outer or middle ear." }
-      ]
-    },
-    {
-      keys: [/period|menstrua|dysmenorrhea|regla|pregnant|pregnancy|buntis|morning sickness|prenatal|spotting|pcos/i],
-      topic: "Women's Health, Menstrual, or Maternal Care Consultation",
-      severity: "CAUTION",
-      safetyReason: "Menstrual changes, pelvic pain, and pregnancy symptoms benefit from personalized OB-GYN guidance to support reproductive and maternal health safely.",
-      meaning: "Hormonal cycles and pregnancy bring natural shifts in blood flow, uterine muscle contractions, and energy levels, which your body communicates through cramping, cycle changes, or nausea.",
-      feelAndLimits:
-        "• What You Might Feel Right Now:\n" +
-        "  - Lower abdominal cramping, lower back ache, breast tenderness, missed or irregular period, fatigue, or morning queasiness.\n\n" +
-        "• Clinical Limits & Urgent Red Flags:\n" +
-        "  - Our Limit: Only an OB-GYN consultation, pregnancy test, or pelvic ultrasound can confirm pregnancy or diagnose the cause of abnormal bleeding.\n" +
-        "  - RED FLAGS (Seek Immediate Emergency Care): Soaking through 1–2 pads per hour for 2+ hours, severe sudden one-sided lower belly pain (especially if pregnant or after a missed period), dizziness/fainting, high fever, or severe headache/vision changes/swelling during pregnancy.",
-      recommend: "Consult a licensed OB-GYN or maternal health clinic for personalized prenatal or gynecological care.",
-      actions: [
-        "APPLY GENTLE WARMTH FOR CRAMPS: Place a warm towel or heating pad over your lower belly or lower back while resting comfortably.",
-        "TRACK YOUR CYCLE & SYMPTOMS: Record the first day of your last menstrual period (LMP), how many days it lasted, and how many pads you use per day.",
-        "EAT SMALL, FREQUENT MEALS FOR NAUSEA: Keep plain crackers or toast by your bedside and sip water or ginger tea slowly.",
-        "PRIORITIZE REST & IRON-RICH FOODS: Include leafy greens, beans, fish, or lean meats in your meals to support healthy blood levels.",
-        "NEVER TAKE UNPRESCRIBED MEDICATION (ESPECIALLY IF PREGNANCY IS POSSIBLE): Always consult an OB-GYN before taking any medicine or supplement."
-      ],
-      analogy: "Your body's monthly cycle is like the tides of the ocean—tracking the rhythm and giving yourself warmth and rest helps you ride the waves smoothly with your doctor's guidance!",
-      jargon: [
-        { term: "Dysmenorrhea", explanation: "Medical term for menstrual cramps caused by natural contractions of the uterus." },
-        { term: "LMP (Last Menstrual Period)", explanation: "The first day of your most recent period, which doctors use to track cycles and estimate pregnancy dates." }
-      ]
-    },
-    {
-      keys: [/sleep|insomnia|can't sleep|puyat|stress|anxiet|panic|nervous|depress|sad|overwhelm|tired|fatigue|pagod|weak|nanghihina/i],
-      topic: "Sleep, Fatigue, Stress, or Emotional Well-Being Consultation",
-      severity: "CAUTION",
-      safetyReason: "Persistent exhaustion, sleeplessness, or overwhelming stress/anxiety affects both physical and mental health and deserves compassionate support from a healthcare professional.",
-      meaning: "When you feel exhausted, unable to sleep, or anxious, your nervous system may be stuck in 'high-alert' mode (fight-or-flight) or your body may be low on restorative rest, hydration, or nutrients.",
-      feelAndLimits:
-        "• What You Might Feel Right Now:\n" +
-        "  - Racing thoughts at night, heavy tiredness during the day, tense shoulders, shallow breathing, fluttering chest, or feeling emotionally drained.\n\n" +
-        "• Clinical Limits & Crisis Red Flags:\n" +
-        "  - Our Limit: Ongoing fatigue or anxiety should be evaluated by a doctor (to check thyroid, blood count, and sleep) or a mental health professional.\n" +
-        "  - RED FLAGS: If you ever feel overwhelmed to the point of wanting to harm yourself, or experience chest pain/shortness of breath, please reach out immediately to the National Center for Mental Health (NCMH) 24/7 Crisis Hotline at 1553 or dial 911.",
-      recommend: "Speak with a licensed physician or mental health counselor, or call the NCMH 24/7 Hotline (Dial 1553) in the NCR directory below.",
-      actions: [
-        "PRACTICE 4-7-8 CALMING BREATHS: Inhale quietly through your nose for 4 seconds, hold gently for 7 seconds, and exhale slowly through your mouth for 8 seconds to calm your nervous system.",
-        "CREATE A SCREEN-FREE WIND-DOWN ROUTINE: Dim lights and put away phones/screens at least 45 minutes before bedtime.",
-        "LIMIT CAFFEINE & LATE HEAVY MEALS: Avoid coffee, energy drinks, tea, or cola after 2:00 PM so your brain can enter deep sleep naturally.",
-        "USE GROUNDING (5-4-3-2-1 METHOD): When feeling anxious, name 5 things you can see, 4 you can touch, 3 you can hear, 2 you can smell, and 1 you appreciate.",
-        "CONNECT WITH SUPPORT: Share how you are feeling with a trusted family member, doctor, or the NCMH 1553 hotline—never take unprescribed sleeping pills."
-      ],
-      analogy: "Your mind and body are like a smartphone battery—when too many apps run in the background all day and night, the battery heats up and drains fast until you close the extra tabs and plug into a quiet, restful recharge!",
-      jargon: [
-        { term: "Sleep Hygiene", explanation: "Healthy daily and bedtime habits (like dim lights and regular wake times) that help your brain fall asleep naturally." },
-        { term: "Sympathetic Nervous System (Fight-or-Flight)", explanation: "The body's stress-response system that speeds up your heart rate and alertness when you feel worried or overworked." }
       ]
     }
   ];
@@ -2279,7 +2510,7 @@ Respond ONLY with a valid JSON object matching this exact schema:
     for (const lab of CLINICAL_LAB_DB) {
       if (lab.keys.some(rx => rx.test(rawText))) return true;
     }
-    if (/\blab\b|\bresult\b|\breference range\b|\bmg\/dl\b|\bmmol\/l\b|\bg\/dl\b|\bu\/l\b/i.test(rawText)) {
+    if (/\blab\b|\bresult\b|\breference range\b|\bmg\/dl\b|\bmmol\/l\b|\bg\/dl\b|\bu\/l\b|\buiu\/ml\b/i.test(rawText)) {
       return true;
     }
     return false;
@@ -2291,10 +2522,6 @@ Respond ONLY with a valid JSON object matching this exact schema:
     const isLab = detectIfLabInput(rawText);
     const displayInput = rawText || (hasAttachment ? `Scanned Lab Report (${currentAttachment.name})` : "Clinical Consultation");
 
-    // =========================================================
-    // BRANCH A: SYMPTOM / INJURY / QUESTION CONSULTATION MODE
-    // (No Lab Ranges Shown — Focuses on Answering the Patient's Question, What They Feel, Limits & What They Can Do!)
-    // =========================================================
     if (!isLab) {
       let matchedConsult = null;
       for (const item of CONSULT_KNOWLEDGE_DB) {
@@ -2313,17 +2540,12 @@ Respond ONLY with a valid JSON object matching this exact schema:
       let analogyText = "";
       let jargonList = [];
 
-      // Check if the patient also asked a specific question (e.g., "can I...", "should I...", "how...", "why...")
       const directQA = generateSmartOfflineFollowUpAnswer(rawText, rawText);
 
       if (matchedConsult) {
         severity = matchedConsult.severity;
         safetyReason = matchedConsult.safetyReason;
-        meaningText =
-          `• Consultation Topic (${matchedConsult.topic}):\n` +
-          `  Your Inquiry ("${displayInput}"): ${matchedConsult.meaning}\n\n` +
-          `• Direct Nurse Answer to Your Inquiry:\n` +
-          `  ${directQA}`;
+        meaningText = `Consultation Topic (${matchedConsult.topic}): ${matchedConsult.meaning}\nDirect Nurse Answer: ${directQA}`;
         feelAndLimitsText = matchedConsult.feelAndLimits;
         recommendText = `${matchedConsult.recommend} (Remember: TranslaNurse is for patient education and consultation guidance only, and never replaces a licensed physician.)`;
         actionsList = matchedConsult.actions;
@@ -2342,27 +2564,23 @@ Respond ONLY with a valid JSON object matching this exact schema:
         }
 
         meaningText =
-          `• Direct Answer to Your Question / Input ("${displayInput}"):\n` +
-          `  ${directQA}\n\n` +
-          `• What This Means for Your Body:\n` +
-          `  Your body uses physical sensations—such as pain, discomfort, swelling, tiredness, or changes in daily function—as early communication signals that a specific tissue, organ, or body system needs rest and medical evaluation.`;
+          `Direct Answer to Your Inquiry ("${displayInput}"): ${directQA}\n` +
+          `What This Means for Your Body: Your body uses physical sensations—such as pain, discomfort, swelling, tiredness, or changes in daily function—as early communication signals that a specific tissue, organ, or body system needs rest and medical evaluation.`;
 
         feelAndLimitsText =
-          `• What You Might Feel:\n` +
-          `  - Depending on how long this has been happening, you might notice localized discomfort, tenderness, changes in energy or sleep, or stiffness when moving or doing daily activities.\n\n` +
-          `• Our Clinical Limits & Red Flags to Know:\n` +
-          `  - Scope Limit: While TranslaNurse helps answer your health questions and explains safe home care, an app cannot listen to your heart/lungs, examine your body physically, or run X-rays/lab tests. Only a licensed doctor can diagnose the root cause.\n` +
-          `  - Red Flags (Seek Immediate Care): If your symptoms suddenly worsen, if pain becomes severe (7/10 or higher), or if you develop a high fever, dizziness/fainting, shortness of breath, or inability to move/bear weight, seek medical care right away.`;
+          `What You Might Feel: Depending on how long this has been happening, you might notice localized discomfort, tenderness, changes in energy or sleep, or stiffness when moving.\n` +
+          `Scope Limit: While TranslaNurse helps answer your health questions and explains safe home care, an app cannot examine your body physically or run X-rays/lab tests. Only a licensed doctor can diagnose the root cause.\n` +
+          `Red Flags (Seek Immediate Care): If your symptoms suddenly worsen, if pain becomes severe (7/10 or higher), or if you develop a high fever, dizziness/fainting, or shortness of breath, seek medical care right away.`;
 
         recommendText =
-          `We strongly recommend scheduling a consultation with a licensed doctor or healthcare professional so they can examine you in person and answer all your specific health questions safely. TranslaNurse is an educational guide and does not replace your doctor.`;
+          `We strongly recommend scheduling a consultation with a licensed doctor or healthcare professional so they can examine you in person and answer all your specific health questions safely.`;
 
         actionsList = [
           "REST & PROTECT THE AFFECTED AREA: Avoid strenuous activity or movements that trigger sharp pain or discomfort while your body is signaling strain.",
           "TRACK YOUR SYMPTOM TIMELINE: Write down when the problem started, what makes it feel better or worse, and rate discomfort from 1 to 10 to share with your doctor.",
           "SUPPORT BASIC HYDRATION & COMFORT: Sip water regularly, maintain a comfortable posture, and keep a family member informed of how you are feeling.",
           "KNOW THE LIMIT ON MEDICATIONS: Never self-medicate or take unprescribed drugs—TranslaNurse never recommends medications.",
-          "REACH OUT TO A PROFESSIONAL: Use the Follow-Up Q&A button in the top-right corner if you have more questions, or call an NCR health hotline below."
+          "REACH OUT TO A PROFESSIONAL: Use the Follow-Up Q&A button in the top-right corner if you have more questions, or call an NCR health hotline."
         ];
 
         analogyText =
@@ -2383,47 +2601,21 @@ Respond ONLY with a valid JSON object matching this exact schema:
         labSafetyStatus: statusLabel,
         safetyReasoning: safetyReason,
         inputMeaning: meaningText,
-        normalRangeComparison: "", // Empty so no lab ranges are shown for a symptom consult!
+        normalRangeComparison: "",
         outOfRangeSymptoms: feelAndLimitsText,
         seekProfessionalRecommendation: recommendText,
         actionPlan: actionsList,
         translations: {
-          "Tagalog": `🇵🇭 Paliwanag sa Tagalog (Konsultasyon):\n` +
-            `• Tungkol sa Iyong Tanong / Nararamdaman ("${displayInput}"): Ang iyong nararamdaman ay senyales ng katawan na nangangailangan ng pag-iingat, pahinga, at pagsusuri.\n` +
-            `• Ano ang Maaaring Maramdaman at Limitasyon: Maaaring makaramdam ng pananakit, pamamaga, o panghihina. Tandaan ang limitasyon: hindi kayang palitan ng online consult ang pisikal na eksaminasyon o X-ray ng doktor.\n` +
-            `• Ano ang Maaaring Gawin Ngayon: Ipahinga at huwag pilitin ang masakit na bahagi ng katawan, bantayan kung lumalala ang sintomas, at huwag uminom ng anumang gamot nang walang reseta.\n` +
-            `• Rekomendasyon: Lubos naming ipinapayo na magpakonsulta sa lisensyadong doktor o tumawag sa NCR hotline.`,
-          "Cebuano": `🇵🇭 Patin-aw sa Cebuano / Bisaya (Konsultasyon):\n` +
-            `• Bahin sa Imong Gipamati ("${displayInput}"): Ang imong gibati timailhan nga ang imong lawas nagkinahanglan og pag-amping ug pagsusi sa doktor.\n` +
-            `• Limitasyon ug Angay Bantayan: Ang online nga giya dili makapuli sa pisikal nga eksaminasyon o X-ray sa doktor. Kung grabe ang sakit o paghubag, adto dayon sa ospital.\n` +
-            `• Unsay Mahimo Karon: Ipahulay ang apektadong bahin sa lawas ug ayaw pag-inom og tambal nga walay reseta sa doktor.`,
-          "Ilocano": `🇵🇭 Palawag iti Ilocano (Konsultasion):\n` +
-            `• Maipapan iti Marikriknam ("${displayInput}"): Daytoy a mariknam ket pagilasinan a masapul ti panagannad ken panagkita ti doktor.\n` +
-            `• Limitasion ken Masapul nga Aramiden: Iinana ti nasakit a paset ti bagi, kitaen no kumaro ti sintomas, ken agpakonsulta iti lisensiado a doktor. Saan nga uminum iti agas no awan bilin ti doktor.`,
-          "Japanese": `🇯🇵 日本語での相談ガイド:\n` +
-            `• ご相談内容（「${displayInput}」）について: 痛みや不調は、身体の組織や骨・臓器を保護し休ませるための大切なサインです。\n` +
-            `• 症状と限界（注意点）: 強い痛み・腫れ・変形・しびれがある場合は、レントゲンや医師の直接の診察が不可欠です。\n` +
-            `• 今できる安全な対処: 患部を無理に動かさず安静にし、自己判断で薬を服用せず、速やかに医療機関を受診してください。`,
-          "Korean": `🇰🇷 한국어 상담 안내:\n` +
-            `• 문의하신 증상("${displayInput}")의 의미: 통증이나 불편감은 신체 부위를 보호하고 휴식을 취하라는 신호입니다.\n` +
-            `• 증상 및 한계점: 정확한 상태 확인(엑스레이 및 신체 진찰)은 의사만 할 수 있으므로, 심한 통증이나 부종이 있다면 즉시 병원을 방문하세요.\n` +
-            `• 지금 할 수 있는 안전한 조치: 아픈 부위를 무리하게 움직이지 말고 안정하며, 의사의 처방 없이 약물을 복용하지 마세요.`,
-          "Mandarin Chinese": `🇨🇳 中文健康咨询说明:\n` +
-            `• 关于您的症状/咨询（“${displayInput}”）: 疼痛或不适是身体发出的保护信号，提示该部位可能受损或发炎。\n` +
-            `• 可能出现的感觉与局限性: 在线指导无法替代医生的体格检查或X光检查。若出现剧烈疼痛、明显肿胀、变形或麻木，请立即就医。\n` +
-            `• 您现在可以做的安全措施: 保持患处安静休息，不要强行活动或自行服药，尽快咨询专业医生。`,
-          "Vietnamese": `🇻🇳 Hướng dẫn tư vấn bằng Tiếng Việt:\n` +
-            `• Về triệu chứng của bạn ("${displayInput}"): Đau hoặc khó chịu là tín hiệu cảnh báo cơ thể cần được bảo vệ và kiểm tra y tế.\n` +
-            `• Giới hạn và dấu hiệu cần lưu ý: Tư vấn trực tuyến không thể thay thế khám trực tiếp hoặc chụp X-quang. Hãy giữ yên vùng bị đau, không tự ý dùng thuốc và đến gặp bác sĩ sớm.`,
-          "Thai": `🇹🇭 คำแนะนำการปรึกษาเบื้องต้น (ภาษาไทย):\n` +
-            `• เกี่ยวกับอาการของคุณ ("${displayInput}"): อาการปวดหรือผิดปกติเป็นสัญญาณเตือนของร่างกายที่ต้องได้รับการพักและตรวจเช็ก\n` +
-            `• ข้อจำกัดและสิ่งที่ทำได้ตอนนี้: พักส่วนที่บาดเจ็บหรือปวด ห้ามฝืนขยับ ห้ามซื้อยามารับประทานเอง และควรไปพบแพทย์เพื่อตรวจร่างกายหรือเอกซเรย์`,
-          "Bahasa Indonesia": `🇮🇩 Panduan Konsultasi Bahasa Indonesia:\n` +
-            `• Tentang Keluhan Anda ("${displayInput}"): Rasa nyeri atau keluhan fisik adalah sinyal tubuh bahwa area tersebut membutuhkan perlindungan dan pemeriksaan medis.\n` +
-            `• Batasan & Langkah Aman: Istirahatkan area yang sakit, jangan memaksakan gerakan, jangan minum obat tanpa resep, dan segera periksakan diri ke dokter/RS.`,
-          "Hindi": `🇮🇳 हिंदी परामर्श मार्गदर्शन:\n` +
-            `• आपकी समस्या ("${displayInput}") का अर्थ: दर्द या तकलीफ शरीर का संकेत है कि उस हिस्से को आराम और डॉक्टर की जांच की आवश्यकता है।\n` +
-            `• सीमाएं और सुरक्षित उपाय: प्रभावित हिस्से को आराम दें, बिना डॉक्टर की सलाह के कोई दवा न लें, और सही जांच/एक्स-रे के लिए तुरंत डॉक्टर से मिलें।`
+          "Tagalog": `🇵🇭 Paliwanag sa Tagalog (Konsultasyon):\n• Tungkol sa Iyong Tanong / Nararamdaman ("${displayInput}"): Ang iyong nararamdaman ay senyales ng katawan na nangangailangan ng pag-iingat, pahinga, at pagsusuri.\n• Limitasyon: Hindi kayang palitan ng online consult ang pisikal na eksaminasyon o X-ray ng doktor.\n• Ano ang Maaaring Gawin Ngayon: Ipahinga ang masakit na bahagi ng katawan, bantayan kung lumalala ang sintomas, at huwag uminom ng anumang gamot nang walang reseta.`,
+          "Cebuano": `🇵🇭 Patin-aw sa Cebuano / Bisaya:\n• Bahin sa Imong Gipamati ("${displayInput}"): Ang imong gibati timailhan nga ang imong lawas nagkinahanglan og pag-amping ug pagsusi sa doktor.\n• Unsay Mahimo Karon: Ipahulay ang apektadong bahin sa lawas ug ayaw pag-inom og tambal nga walay reseta sa doktor.`,
+          "Ilocano": `🇵🇭 Palawag iti Ilocano:\n• Maipapan iti Marikriknam ("${displayInput}"): Daytoy a mariknam ket pagilasinan a masapul ti panagannad ken panagkita ti doktor. Iinana ti nasakit a paset ti bagi ken saan nga uminum iti agas no awan bilin ti doktor.`,
+          "Japanese": `🇯🇵 日本語での相談ガイド:\n• ご相談内容（「${displayInput}」）について: 痛みや不調は身体を休ませるための大切なサインです。患部を無理に動かさず安静にし、自己判断で薬を服用せず医師の診察を受けてください。`,
+          "Korean": `🇰🇷 한국어 상담 안내:\n• 문의하신 증상("${displayInput}")의 의미: 통증이나 불편감은 신체를 보호하고 휴식을 취하라는 신호입니다. 의사의 처방 없이 약물을 복용하지 마시고 병원을 방문하세요.`,
+          "Mandarin Chinese": `🇨🇳 中文健康咨询说明:\n• 关于您的症状/咨询（“${displayInput}”）: 疼痛或不适是身体发出的保护信号。请保持患处安静休息，不要自行服药，尽快咨询专业医生。`,
+          "Vietnamese": `🇻🇳 Hướng dẫn tư vấn bằng Tiếng Việt:\n• Về triệu chứng của bạn ("${displayInput}"): Đau hoặc khó chịu là tín hiệu cơ thể cần được nghỉ ngơi và kiểm tra y tế. Không tự ý dùng thuốc.`,
+          "Thai": `🇹🇭 คำแนะนำการปรึกษาเบื้องต้น (ภาษาไทย):\n• เกี่ยวกับอาการของคุณ ("${displayInput}"): พักส่วนที่บาดเจ็บหรือปวด ห้ามซื้อยามารับประทานเอง และควรไปพบแพทย์`,
+          "Bahasa Indonesia": `🇮🇩 Panduan Konsultasi Bahasa Indonesia:\n• Tentang Keluhan Anda ("${displayInput}"): Istirahatkan area yang sakit, jangan minum obat tanpa resep, dan segera periksakan diri ke dokter.`,
+          "Hindi": `🇮🇳 हिंदी परामर्श मार्गदर्शन:\n• आपकी समस्या ("${displayInput}") का अर्थ: प्रभावित हिस्से को आराम दें, बिना डॉक्टर की सलाह के कोई दवा न लें, और जांच के लिए डॉक्टर से मिलें।`
         },
         kidAnalogy: analogyText,
         jargonBreakdown: jargonList,
@@ -2438,14 +2630,11 @@ Respond ONLY with a valid JSON object matching this exact schema:
       return;
     }
 
-    // =========================================================
     // BRANCH B: LAB RESULT & VITAL SIGNS MODE
-    // (Shows Normal Reference Ranges vs. Patient Result!)
-    // =========================================================
     let matchedTests = [];
     let highestSeverity = "SAFE";
     let meaningParts = [];
-    let rangeParts = [];
+    let rangeLines = [];
     let symptomParts = [];
     let jargonList = [];
 
@@ -2454,22 +2643,22 @@ Respond ONLY with a valid JSON object matching this exact schema:
       const sys = parseInt(bpMatch[1], 10);
       const dia = parseInt(bpMatch[2], 10);
       if (sys >= 60 && sys <= 260 && dia >= 40 && dia <= 160) {
-        let bpState = "Within Normal Range ✅";
+        let bpState = "Within Normal Range";
         if (sys >= 140 || dia >= 90) {
-          bpState = "HIGH / Out of Range (Above Normal BP)";
+          bpState = "High";
           highestSeverity = (sys >= 160 || dia >= 100) ? "ALERT" : "CAUTION";
         } else if (sys >= 120 || dia >= 80) {
-          bpState = "SLIGHTLY ELEVATED (Above Optimal BP)";
+          bpState = "High";
           if (highestSeverity === "SAFE") highestSeverity = "CAUTION";
         } else if (sys < 90 || dia < 60) {
-          bpState = "LOW / Out of Range (Hypotension)";
+          bpState = "Low";
           if (highestSeverity === "SAFE") highestSeverity = "CAUTION";
         }
         matchedTests.push("Blood Pressure");
-        meaningParts.push(`• Blood Pressure (${sys}/${dia} mmHg): Measures the force of blood pushing against your artery walls as your heart pumps (${sys} systolic) and relaxes (${dia} diastolic).`);
-        rangeParts.push(`• Blood Pressure:\n  → Standard Normal Range: Below 120/80 mmHg (Optimal: 90/60 to 120/80 mmHg)\n  → Your Input: ${sys}/${dia} mmHg (${bpState})`);
-        symptomParts.push(`• If Blood Pressure is Out of Range & Limits: High blood pressure may cause a throbbing headache at the back of the head, dizziness, blurred vision, or chest tightness. If BP reaches 180/120 mmHg or comes with chest pain, vision loss, or numbness, seek emergency care immediately.`);
-        jargonList.push({ term: "Blood Pressure (Systolic / Diastolic)", explanation: "Top number = pressure when the heart beats; Bottom number = pressure when the heart rests. Normal is 90/60 to 120/80 mmHg." });
+        meaningParts.push(`Blood Pressure (${sys}/${dia} mmHg): Measures the force of blood pushing against your artery walls as your heart pumps (${sys} systolic) and relaxes (${dia} diastolic).`);
+        rangeLines.push(`Blood Pressure: Result ${sys}/${dia} mmHg (Normal Range: 90/60 - 120/80 mmHg) - ${bpState}`);
+        symptomParts.push(`Blood Pressure Limits: High blood pressure may cause a throbbing headache at the back of the head, dizziness, blurred vision, or chest tightness. If BP reaches 180/120 mmHg, seek emergency care immediately.`);
+        jargonList.push({ term: "Blood Pressure (Systolic / Diastolic)", explanation: "Top number = pressure when the heart beats; Bottom number = pressure when the heart rests." });
       }
     }
 
@@ -2486,46 +2675,44 @@ Respond ONLY with a valid JSON object matching this exact schema:
           }
         }
 
-        meaningParts.push(`• ${lab.name}: ${lab.meaning}`);
+        meaningParts.push(`${lab.name}: ${lab.meaning}`);
         jargonList.push({ term: lab.name, explanation: `${lab.meaning} (Normal Range: ${lab.normalText})` });
 
         if (extractedVal !== null && !isNaN(extractedVal)) {
-          let evalStatus = "Within Normal Range ✅";
+          let evalStatus = "Within Normal Range";
           if (extractedVal > lab.max) {
-            if (extractedVal >= lab.alertHigh) {
-              evalStatus = `HIGH / Out of Range 🚨 (${extractedVal} ${lab.unit} is above the ${lab.min}–${lab.max} ${lab.unit} normal range)`;
-              highestSeverity = "ALERT";
-            } else {
-              evalStatus = `SLIGHTLY HIGH / Out of Range ⚠️ (${extractedVal} ${lab.unit} is above the ${lab.min}–${lab.max} ${lab.unit} normal range)`;
-              if (highestSeverity === "SAFE") highestSeverity = "CAUTION";
-            }
-            symptomParts.push(`• ${lab.name} (${extractedVal} ${lab.unit} — High): ${lab.feelHigh}`);
+            evalStatus = "High";
+            highestSeverity = (extractedVal >= lab.alertHigh) ? "ALERT" : (highestSeverity === "ALERT" ? "ALERT" : "CAUTION");
+            symptomParts.push(`${lab.name} (${extractedVal} ${lab.unit} — High): ${lab.feelHigh}`);
           } else if (extractedVal < lab.min) {
-            if (extractedVal <= lab.alertLow) {
-              evalStatus = `LOW / Out of Range 🚨 (${extractedVal} ${lab.unit} is below the ${lab.min}–${lab.max} ${lab.unit} normal range)`;
-              highestSeverity = "ALERT";
-            } else {
-              evalStatus = `SLIGHTLY LOW / Out of Range ⚠️ (${extractedVal} ${lab.unit} is below the ${lab.min}–${lab.max} ${lab.unit} normal range)`;
-              if (highestSeverity === "SAFE") highestSeverity = "CAUTION";
-            }
-            symptomParts.push(`• ${lab.name} (${extractedVal} ${lab.unit} — Low): ${lab.feelLow}`);
+            evalStatus = "Low";
+            highestSeverity = (extractedVal <= lab.alertLow) ? "ALERT" : (highestSeverity === "ALERT" ? "ALERT" : "CAUTION");
+            symptomParts.push(`${lab.name} (${extractedVal} ${lab.unit} — Low): ${lab.feelLow}`);
           } else {
-            symptomParts.push(`• ${lab.name} (${extractedVal} ${lab.unit} — Normal): Your value is within the normal range! (${lab.feelHigh})`);
+            symptomParts.push(`${lab.name} (${extractedVal} ${lab.unit} — Normal): Within healthy reference range.`);
           }
-          rangeParts.push(`• ${lab.name}:\n  → Standard Normal Range: ${lab.normalText}\n  → Your Result: ${extractedVal} ${lab.unit} (${evalStatus})`);
+          rangeLines.push(`${lab.name}: Result ${extractedVal} ${lab.unit} (Normal Range: ${lab.normalText}) - ${evalStatus}`);
         } else {
           if (highestSeverity === "SAFE") highestSeverity = "CAUTION";
-          rangeParts.push(`• ${lab.name}:\n  → Standard Normal Range: ${lab.normalText}\n  → Compare the number on your lab sheet against this reference interval.`);
-          symptomParts.push(`• ${lab.name} (If Out of Range):\n  - ${lab.feelHigh}\n  - ${lab.feelLow}`);
+          rangeLines.push(`${lab.name}: Check your lab value against Normal Range (${lab.normalText}) - Reference`);
+          symptomParts.push(`${lab.name}: ${lab.feelHigh} ${lab.feelLow}`);
         }
       }
     });
 
     if (matchedTests.length === 0 && hasAttachment) {
       highestSeverity = "CAUTION";
-      meaningParts.push(`• Scanned Lab File (${currentAttachment.name}): Your uploaded lab report contains diagnostic test measurements that show how your organs and blood cells are functioning.`);
-      rangeParts.push(`• How to Check Your Lab Sheet's Reference Range:\n  - Look at the "Reference Interval" column next to your result.\n  - Common Reference Ranges: FBS (70–99 mg/dL), HbA1c (<5.7%), Creatinine (0.6–1.2 mg/dL), Hemoglobin (12–17 g/dL), WBC (4.5–11.0 x10³/µL), Platelets (150–450 x10³/µL).`);
-      symptomParts.push(`• What You Might Feel If Lab Values Are Out of Range & Limits:\n  - Out-of-range lab values can cause tiredness, dizziness, increased thirst, swelling, or feverishness. Always have a doctor correlate your lab sheet with a physical exam.`);
+      meaningParts.push(`Scanned Lab File (${currentAttachment.name}): Your uploaded lab report contains diagnostic test measurements that show how your organs, blood cells, and hormones are functioning.`);
+      rangeLines.push(
+        `Fasting Blood Sugar (FBS): Standard Normal Range 70 - 99 mg/dL - Reference`,
+        `HbA1c (3-Month Sugar): Standard Normal Range 4.0 - 5.6 % - Reference`,
+        `Serum Creatinine: Standard Normal Range 0.6 - 1.2 mg/dL - Reference`,
+        `Hemoglobin (Hgb): Standard Normal Range 12.0 - 17.0 g/dL - Reference`,
+        `White Blood Cells (WBC): Standard Normal Range 4.5 - 11.0 x10³/µL - Reference`,
+        `Platelets: Standard Normal Range 150 - 450 x10³/µL - Reference`,
+        `TSH (Thyroid): Standard Normal Range 0.4 - 4.5 uIU/mL - Reference`
+      );
+      symptomParts.push(`Out-of-Range Symptoms & Limits: Out-of-range lab values can cause tiredness, dizziness, increased thirst, swelling, or feverishness. Always have a doctor correlate your lab sheet with a physical exam.`);
     }
 
     let statusLabel = "Safe - Great Job in being healthy";
@@ -2542,9 +2729,9 @@ Respond ONLY with a valid JSON object matching this exact schema:
       isLabResult: true,
       labSafetyStatus: statusLabel,
       safetyReasoning: safetyReason,
-      inputMeaning: meaningParts.join("\n\n"),
-      normalRangeComparison: rangeParts.join("\n\n"),
-      outOfRangeSymptoms: symptomParts.join("\n\n"),
+      inputMeaning: meaningParts.join("\n"),
+      normalRangeComparison: rangeLines.join("\n"),
+      outOfRangeSymptoms: symptomParts.join("\n"),
       seekProfessionalRecommendation: "We strongly recommend seeking a licensed doctor or healthcare professional to interpret your lab results alongside a physical exam. TranslaNurse is for patient education and does not replace your doctor.",
       actionPlan: [
         "Schedule a consultation with a licensed doctor or call one of the NCR health hotlines below to review these lab values.",
@@ -2577,71 +2764,161 @@ Respond ONLY with a valid JSON object matching this exact schema:
   }
 
   /* =========================================
-     UI RENDERING & 10 ASIAN LANGUAGES SWITCHER
+     SPACIOUS UI RENDERING, LAB FLAG CARDS & FILTERING
      ========================================= */
+  function formatSpaciousBlocks(rawText, extraClass = "") {
+    if (!rawText) return `<div class="spacious-item-card ${extraClass}">No details available.</div>`;
+    const lines = rawText
+      .split(/\n+/)
+      .map(l => l.replace(/^[•\-\*]\s*/, '').trim())
+      .filter(l => l.length > 0);
+
+    if (lines.length === 0) {
+      return `<div class="spacious-item-card ${extraClass}">${escapeHtml(rawText)}</div>`;
+    }
+    return lines.map(line => `<div class="spacious-item-card ${extraClass}">${escapeHtml(line)}</div>`).join('');
+  }
+
+  function renderSpaciousLabFlagCards(rawRangeText) {
+    const container = document.getElementById('explain-range-output');
+    if (!rawRangeText || !rawRangeText.trim()) {
+      container.innerHTML = `<div class="spacious-item-card">No lab reference range items for this consultation.</div>`;
+      return 0;
+    }
+
+    // Split by newline or numbered items (e.g., "1. Cholesterol... 2. Triglycerides...")
+    let lines = rawRangeText
+      .replace(/(\s)(\d+\.\s+[A-Za-z])/g, '\n$2')
+      .split(/\n+/)
+      .map(l => l.replace(/^[•\-\*]\s*/, '').trim())
+      .filter(l => l.length > 0);
+
+    let flaggedCount = 0;
+    const cardsHtml = lines.map(line => {
+      const lower = line.toLowerCase();
+      let flagType = "normal";
+      let badgeText = "✅ NORMAL";
+      let pillClass = "pill-normal";
+
+      if (/\bhigh\b|\belevated\b|\babove normal\b|🚨/i.test(lower) && !/within normal/i.test(lower)) {
+        flagType = "high";
+        badgeText = "🚩 HIGH";
+        pillClass = "pill-high";
+        flaggedCount++;
+      } else if (/\blow\b|\bbelow normal\b|\bdecreased\b/i.test(lower) && !/within normal/i.test(lower)) {
+        flagType = "low";
+        badgeText = "⚠️ LOW";
+        pillClass = "pill-low";
+        flaggedCount++;
+      } else if (/out of range|abnormal|borderline/i.test(lower)) {
+        flagType = "high";
+        badgeText = "⚠️ OUT OF RANGE";
+        pillClass = "pill-low";
+        flaggedCount++;
+      }
+
+      return `
+        <div class="lab-flag-card flag-${flagType}" data-flag="${flagType === 'normal' ? 'normal' : 'flagged'}">
+          <div class="lab-flag-text">${escapeHtml(line)}</div>
+          <span class="lab-flag-pill ${pillClass}">${badgeText}</span>
+        </div>
+      `;
+    }).join('');
+
+    container.innerHTML = cardsHtml;
+    return flaggedCount;
+  }
+
+  function filterLabFlags(mode) {
+    document.querySelectorAll('.flag-filter-btn').forEach(b => b.classList.remove('active'));
+    const activeBtn = document.getElementById(`filter-${mode}`);
+    if (activeBtn) activeBtn.classList.add('active');
+
+    const cards = document.querySelectorAll('#explain-range-output .lab-flag-card');
+    cards.forEach(card => {
+      if (mode === 'all') {
+        card.style.display = 'flex';
+      } else if (mode === 'flagged') {
+        card.style.display = (card.dataset.flag === 'flagged') ? 'flex' : 'none';
+      } else if (mode === 'normal') {
+        card.style.display = (card.dataset.flag === 'normal') ? 'flex' : 'none';
+      }
+    });
+  }
+
   function displayResults(data) {
     // 1. Render 3-Tier Safety Status Banner
     const rawStatus = (data.labSafetyStatus || "").toUpperCase();
     let normalizedStatus = "Safe - Great Job in being healthy";
     let statusClass = "lab-safe";
     let statusIcon = "✅";
+    let shortBadge = "Safe";
 
     if (rawStatus.includes("ALERT") || rawStatus.includes("UNSAFE") || rawStatus.includes("SEEK")) {
       normalizedStatus = "ALERT - Seek a Health Professional";
       statusClass = "lab-unsafe";
       statusIcon = "🚨";
+      shortBadge = "ALERT";
     } else if (rawStatus.includes("CAUTION") || rawStatus.includes("CONSULT")) {
       normalizedStatus = "Caution - Consult to a health professional";
       statusClass = "lab-warn";
       statusIcon = "⚠️";
+      shortBadge = "Caution";
     }
 
     document.getElementById('lab-safety-container').innerHTML = `
       <div class="status-banner ${statusClass}">
         <span>${statusIcon} ${escapeHtml(normalizedStatus)}</span>
+        <span style="font-size:0.8rem; font-weight:600; opacity:0.9;">Click any square on the left sidebar to open details</span>
       </div>
     `;
+    document.getElementById('sq-safety-badge').textContent = shortBadge;
 
     // 2. Render Why is this safe/unsafe
     document.getElementById('safety-reasoning-output').innerText =
       data.safetyReasoning || "Evaluated based on clinical triage standards.";
 
-    // 3. Adapt "What This Means" between Consult Mode (No Lab Ranges) and Lab Mode (With Normal Ranges)
+    // 3. Adapt between Consult Mode (No Lab Ranges) and Lab Mode (With Spacious Lab Flag Cards)
     const hasLabRange = Boolean(data.isLabResult && data.normalRangeComparison && data.normalRangeComparison.trim() !== "");
-    const rangeCard = document.getElementById('explain-range-card');
+    const sqRanges = document.getElementById('sq-ranges');
     const meaningTitle = document.getElementById('explain-meaning-title');
     const symptomsTitle = document.getElementById('explain-symptoms-title');
 
     if (hasLabRange) {
-      rangeCard.style.display = 'block';
-      document.getElementById('explain-range-output').innerText = data.normalRangeComparison;
-      meaningTitle.textContent = "🩺 1. What Your Lab Test / Input Means";
-      symptomsTitle.textContent = "⚡ 3. If Out of Range: What the Patient Might Feel & Limits";
+      sqRanges.style.display = 'flex';
+      const flaggedCount = renderSpaciousLabFlagCards(data.normalRangeComparison);
+      document.getElementById('sq-ranges-badge').textContent = flaggedCount > 0 ? `🚩 ${flaggedCount} Flagged` : "✅ All Normal";
+      meaningTitle.textContent = "🩺 What Your Lab Test / Input Means";
+      symptomsTitle.textContent = "⚡ If Out of Range: What the Patient Might Feel & Limits";
     } else {
-      // HIDE Lab Reference Range Card completely when it's a symptom/injury/question consult!
-      rangeCard.style.display = 'none';
-      meaningTitle.textContent = "🩺 1. What Your Symptom / Consultation Means";
-      symptomsTitle.textContent = "⚡ 2. What You Might Feel & Safe Clinical Limits (Red Flags)";
+      sqRanges.style.display = 'none';
+      meaningTitle.textContent = "🩺 What Your Symptom / Consultation Means";
+      symptomsTitle.textContent = "⚡ What You Might Feel & Safe Clinical Limits (Red Flags)";
     }
 
-    document.getElementById('explain-meaning-output').innerText =
-      data.inputMeaning || data.detailedExplanation || "Your input describes a clinical inquiry.";
-    document.getElementById('explain-symptoms-output').innerText =
-      data.outOfRangeSymptoms || "Monitor how you feel and watch for any worsening symptoms.";
+    // 4. Render Spacious Blocks for Meaning & Symptoms
+    document.getElementById('explain-meaning-output').innerHTML =
+      formatSpaciousBlocks(data.inputMeaning || data.detailedExplanation || "Your input describes a clinical inquiry.");
+    document.getElementById('explain-symptoms-output').innerHTML =
+      formatSpaciousBlocks(data.outOfRangeSymptoms || "Monitor how you feel and watch for any worsening symptoms.", "symptoms-border");
     document.getElementById('explain-recommend-output').innerText =
       data.seekProfessionalRecommendation || "We strongly recommend consulting a licensed doctor or healthcare professional for an in-person evaluation.";
 
-    // 4. Render What Can I Do (Strictly no medication + NCR Hotline Dropdown on Caution / ALERT)
+    // 5. Render Spacious Action Plan Cards + NCR Hotline Dropdown
     const safeActions = stripMedicationSuggestions(data.actionPlan || []);
-    let actionsHtml = `<ul style="margin:0; padding-left:20px;">`;
+    let actionsHtml = '';
     if (safeActions.length > 0) {
-      safeActions.forEach(action => {
-        actionsHtml += `<li style="margin-bottom:6px;">${escapeHtml(action)}</li>`;
+      safeActions.forEach((action, idx) => {
+        actionsHtml += `
+          <div class="action-step-card">
+            <span class="action-step-num">${idx + 1}</span>
+            <div>${escapeHtml(action)}</div>
+          </div>
+        `;
       });
     } else {
-      actionsHtml += `<li>Please consult a qualified healthcare professional to evaluate your condition safely.</li>`;
+      actionsHtml = `<div class="spacious-item-card">Please consult a qualified healthcare professional to evaluate your condition safely.</div>`;
     }
-    actionsHtml += `</ul>`;
     document.getElementById('action-plan-output').innerHTML = actionsHtml;
 
     const hotlineBox = document.getElementById('ncr-hotline-box');
@@ -2652,32 +2929,41 @@ Respond ONLY with a valid JSON object matching this exact schema:
       hotlineBox.style.display = 'none';
     }
 
-    // 5. Reset Asian Language Dropdown to Tagalog (Initial Translation) & Render
+    // 6. Reset Asian Language Dropdown to Tagalog & Render
     const langSelect = document.getElementById('asian-lang-select');
     langSelect.value = "Tagalog";
     switchAsianLanguage();
 
-    // 6. Render Kid-Friendly Analogy
+    // 7. Render Kid-Friendly Analogy
     document.getElementById('kid-analogy-output').innerText =
       data.kidAnalogy || "No analogy provided.";
 
-    // 7. Render Detailed Jargon Breakdown
+    // 8. Render Detailed Jargon Breakdown & Quality Audit
     let jargonHtml = '';
     if (data.jargonBreakdown && Array.isArray(data.jargonBreakdown) && data.jargonBreakdown.length > 0) {
+      document.getElementById('sq-jargon-badge').textContent = `${data.jargonBreakdown.length} Terms`;
       jargonHtml = `<ul class="jargon-list">`;
       data.jargonBreakdown.forEach(item => {
         jargonHtml += `<li><span class="jargon-term">${escapeHtml(item.term)}</span> ${escapeHtml(item.explanation)}</li>`;
       });
       jargonHtml += `</ul>`;
     } else {
+      document.getElementById('sq-jargon-badge').textContent = "Dictionary";
       jargonHtml = `<em>No complex medical jargon detected requiring breakdown.</em>`;
     }
     document.getElementById('jargon-details').innerHTML = jargonHtml;
 
-    // 8. Render Quality Audit Dashboard
     document.getElementById('score-literacy').textContent = data.readingLevelScore || "Passed";
     document.getElementById('score-cultural').textContent = data.culturalFitScore || "Aligned";
     document.getElementById('score-safety').textContent = data.safetyScore || "No Meds • Safe";
+
+    // Default to opening "What It Means" square cleanly
+    if (!showAllMode) {
+      selectInfoSquare('meaning');
+    } else {
+      toggleShowAllPanels();
+      toggleShowAllPanels();
+    }
   }
 
   function switchAsianLanguage() {
@@ -2700,7 +2986,7 @@ Respond ONLY with a valid JSON object matching this exact schema:
   }
 
   /* =========================================
-     INTELLIGENT FOLLOW-UP Q&A ENGINE (ANSWERS ALL PATIENT QUESTIONS)
+     INTELLIGENT FOLLOW-UP Q&A ENGINE
      ========================================= */
   function generateSmartOfflineFollowUpAnswer(question, contextText) {
     const q = question.toLowerCase();
@@ -2723,10 +3009,7 @@ Respond ONLY with a valid JSON object matching this exact schema:
     if (/how long|heal|recover|days|weeks|gagaling/i.test(q)) {
       return "Recovery time depends on the exact diagnosis: minor sprains or viral illnesses often improve over several days to 2 weeks with rest and hydration, while bone fractures typically take 6 to 8+ weeks in a splint or cast to heal fully. A licensed doctor can give you an exact timeline after examining you in person.";
     }
-    if (/bath|shower|wash|ligo|hugasan/i.test(q)) {
-      return "For open wounds, animal bites, or burns, washing gently with clean running tap water is essential first aid. If you have a fever, a lukewarm sponge bath helps cool the body safely (avoid ice-cold water, which causes shivering). If you have a splint or dressing on an injured limb, keep it clean and dry.";
-    }
-    return `For your inquiry ("${question}"): Listen closely to what your body feels and respect its safe limits—rest the affected area, stay hydrated, avoid self-medicating, and watch for any red-flag warning signs (such as severe pain, swelling, numbness, high fever, dizziness, or breathing difficulty). Because an online guide cannot replace a physical exam, please share this exact concern with a licensed doctor or call one of the NCR hotlines in your action plan!`;
+    return `For your inquiry ("${question}"): Listen closely to what your body feels and respect its safe limits—rest the affected area, stay hydrated, avoid self-medicating, and watch for any red-flag warning signs (such as severe pain, swelling, numbness, high fever, dizziness, or breathing difficulty). Please share this exact concern with a licensed doctor or call one of the NCR hotlines in your action plan!`;
   }
 
   async function sendFollowUpQuestion() {
@@ -2760,9 +3043,7 @@ Respond ONLY with a valid JSON object matching this exact schema:
         const reply = data.candidates[0].content.parts[0].text;
         msgContainer.innerHTML += `<div class="msg-bubble msg-nurse">${escapeHtml(reply)}</div>`;
         answered = true;
-      } catch (e) {
-        // Try next model or offline fallback
-      }
+      } catch (e) {}
     }
 
     if (!answered) {
@@ -2778,7 +3059,7 @@ Respond ONLY with a valid JSON object matching this exact schema:
   function exportToText() {
     const status = document.getElementById('lab-safety-container').innerText.trim();
     const meaning = document.getElementById('explain-meaning-output').innerText;
-    const rangeCardVisible = document.getElementById('explain-range-card').style.display !== 'none';
+    const rangeCardVisible = document.getElementById('sq-ranges').style.display !== 'none';
     const range = rangeCardVisible ? `\nNORMAL REFERENCE RANGE VS. YOUR RESULT:\n${document.getElementById('explain-range-output').innerText}\n` : "";
     const symptoms = document.getElementById('explain-symptoms-output').innerText;
     const recommend = document.getElementById('explain-recommend-output').innerText;
