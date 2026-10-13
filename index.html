@@ -1,12 +1,12 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>TranslaNurse - Patient Friendly Clinical AI Translator & Lab Scanner</title>
-  <style>
+&lt;!DOCTYPE html&gt;
+&lt;html lang=&quot;en&quot;&gt;
+&lt;head&gt;
+  &lt;meta charset=&quot;UTF-8&quot;&gt;
+  &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0&quot;&gt;
+  &lt;title&gt;TranslaNurse - Patient Friendly Clinical AI Translator &amp; Lab Scanner&lt;/title&gt;
+  &lt;style&gt;
     /* =========================================
-       CSS VARIABLES & BRAND THEME (FROM LOGO)
+       CSS VARIABLES &amp; BRAND THEME (FROM LOGO)
        ========================================= */
     :root {
       --primary: #007a87;
@@ -130,7 +130,6 @@
       font-weight: 500;
     }
 
-    /* Top Right Controls: Follow-Up Button, Theme Button, and Upper-Right Logo */
     .nav-right {
       display: flex;
       align-items: center;
@@ -178,7 +177,6 @@
       font-weight: 700;
     }
 
-    /* Upper Right Logo Container */
     .upper-right-logo {
       display: flex;
       align-items: center;
@@ -404,7 +402,6 @@
       min-height: 125px;
     }
 
-    /* Lab Scanner Box (Camera + PNG/PDF Upload) */
     .scanner-panel {
       background: var(--bg);
       border: 2px dashed var(--accent-teal);
@@ -494,7 +491,6 @@
       color: var(--text-muted);
     }
 
-    /* Live Camera Stream Box */
     #camera-modal {
       display: none;
       margin-top: 12px;
@@ -520,7 +516,6 @@
       margin-top: 10px;
     }
 
-    /* Primary Analyze Button */
     .btn-primary {
       margin-top: 22px;
       background: linear-gradient(135deg, var(--primary), var(--accent-teal));
@@ -659,7 +654,6 @@
       font-size: 0.97rem;
     }
 
-    /* Medical Disclaimer Note inside What This Means */
     .medical-disclaimer-note {
       background: var(--warn-bg);
       color: var(--warn);
@@ -671,15 +665,49 @@
       margin-bottom: 14px;
     }
 
-    .lab-summary-box {
+    /* 4-Part Structured Breakdown Cards inside What This Means */
+    .explain-grid {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+
+    .explain-section-card {
       background: var(--card-bg);
-      border: 1px solid var(--accent-teal);
-      border-left: 4px solid var(--accent-teal);
-      padding: 12px 14px;
+      border: 1px solid var(--border);
+      border-left: 4px solid var(--primary);
       border-radius: 8px;
-      margin-bottom: 14px;
-      font-size: 0.94rem;
+      padding: 13px 15px;
+    }
+
+    .explain-section-card.range-card {
+      border-left-color: var(--accent-teal);
+    }
+
+    .explain-section-card.symptoms-card {
+      border-left-color: #f97316;
+    }
+
+    .explain-section-card.doctor-card {
+      border-left-color: var(--pass);
+    }
+
+    .explain-section-title {
+      font-weight: 800;
+      font-size: 0.88rem;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+      color: var(--primary);
+      margin-bottom: 6px;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .explain-section-body {
+      font-size: 0.95rem;
       white-space: pre-wrap;
+      color: var(--text);
     }
 
     /* NCR Hotline Box inside What Can I Do (Caution / ALERT) */
@@ -738,7 +766,6 @@
       opacity: 0.92;
     }
 
-    /* Asian Translation Box */
     .translation-box {
       background-color: var(--translation-bg);
       border-left: 4px solid var(--translation-border);
@@ -784,7 +811,6 @@
       font-size: 0.98rem;
     }
 
-    /* Quality Audit Dashboard Metrics */
     .metric-grid {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
@@ -964,97 +990,92 @@
       .card { border: none; box-shadow: none; padding: 0; }
       details.result-dropdown { border: 1px solid #ccc; margin-bottom: 10px; }
     }
-  </style>
-</head>
-<body>
+  &lt;/style&gt;
+&lt;/head&gt;
+&lt;body&gt;
 
-<!-- =========================================================
+&lt;!-- =========================================================
      REUSABLE SVG TEMPLATE OF TRANSLANURSE LOGO (AUTO-FALLBACK)
-     ========================================================= -->
-<template id="translanurse-logo-svg">
-  <svg viewBox="0 0 500 500" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="TranslaNurse Logo">
-    <!-- Outer Circular Arcs -->
-    <path d="M 320 95 A 175 175 0 0 0 140 190" fill="none" stroke="#9ad5db" stroke-width="6" stroke-linecap="round"/>
-    <path d="M 320 95 A 175 175 0 0 0 215 80" fill="none" stroke="#f79d9c" stroke-width="6" stroke-linecap="round"/>
-    <circle cx="323" cy="97" r="8" fill="#f79d9c"/>
-    <path d="M 140 190 A 175 175 0 0 0 265 340" fill="none" stroke="#62b289" stroke-width="6" stroke-linecap="round"/>
-    <path d="M 265 340 A 175 175 0 0 0 345 305" fill="none" stroke="#9ad5db" stroke-width="6" stroke-linecap="round"/>
-    <circle cx="347" cy="303" r="8" fill="#9ad5db"/>
-    <!-- Coral Speech Bubble -->
-    <ellipse cx="255" cy="195" rx="52" ry="40" fill="#f79d9c"/>
-    <polygon points="275,228 292,242 288,220" fill="#f79d9c"/>
-    <circle cx="235" cy="195" r="6" fill="#ffffff"/>
-    <circle cx="255" cy="195" r="6" fill="#ffffff"/>
-    <circle cx="275" cy="195" r="6" fill="#ffffff"/>
-    <!-- Light Blue Speech Bubble -->
-    <ellipse cx="202" cy="238" rx="52" ry="40" fill="#8fd3de"/>
-    <polygon points="222,272 238,288 236,265" fill="#8fd3de"/>
-    <circle cx="182" cy="238" r="6" fill="#ffffff"/>
-    <circle cx="202" cy="238" r="6" fill="#ffffff"/>
-    <circle cx="222" cy="238" r="6" fill="#ffffff"/>
-    <!-- Medical Crosses -->
-    <path d="M320 120 H342 V145 H367 V167 H342 V192 H320 V167 H295 V145 H320 Z" fill="#005f6b"/>
-    <path d="M262 252 H278 V268 H294 V284 H278 V300 H262 V284 H246 V268 H262 Z" fill="none" stroke="#00b4b8" stroke-width="3"/>
-    <path d="M348 188 H364 V204 H380 V220 H364 V236 H348 V220 H332 V204 H348 Z" fill="none" stroke="#f2bdbd" stroke-width="3"/>
-    <path d="M174 162 H184 V172 H194 V182 H184 V192 H174 V182 H164 V172 H174 Z" fill="none" stroke="#00b4b8" stroke-width="2.5"/>
-    <!-- Wordmark -->
-    <text x="250" y="395" text-anchor="middle" font-family="Arial, sans-serif" font-weight="800" font-size="60">
-      <tspan fill="#76b89a">transla</tspan><tspan fill="#3cb6c3">nurse</tspan>
-    </text>
-    <line x1="65" y1="418" x2="155" y2="418" stroke="#005f6b" stroke-width="2"/>
-    <text x="250" y="423" text-anchor="middle" font-family="Arial, sans-serif" font-size="16" fill="#64748b">patient friendly information</text>
-    <line x1="345" y1="418" x2="435" y2="418" stroke="#005f6b" stroke-width="2"/>
-  </svg>
-</template>
+     ========================================================= --&gt;
+&lt;template id=&quot;translanurse-logo-svg&quot;&gt;
+  &lt;svg viewBox=&quot;0 0 500 500&quot; xmlns=&quot;http://www.w3.org/2000/svg&quot; role=&quot;img&quot; aria-label=&quot;TranslaNurse Logo&quot;&gt;
+    &lt;path d=&quot;M 320 95 A 175 175 0 0 0 140 190&quot; fill=&quot;none&quot; stroke=&quot;#9ad5db&quot; stroke-width=&quot;6&quot; stroke-linecap=&quot;round&quot;/&gt;
+    &lt;path d=&quot;M 320 95 A 175 175 0 0 0 215 80&quot; fill=&quot;none&quot; stroke=&quot;#f79d9c&quot; stroke-width=&quot;6&quot; stroke-linecap=&quot;round&quot;/&gt;
+    &lt;circle cx=&quot;323&quot; cy=&quot;97&quot; r=&quot;8&quot; fill=&quot;#f79d9c&quot;/&gt;
+    &lt;path d=&quot;M 140 190 A 175 175 0 0 0 265 340&quot; fill=&quot;none&quot; stroke=&quot;#62b289&quot; stroke-width=&quot;6&quot; stroke-linecap=&quot;round&quot;/&gt;
+    &lt;path d=&quot;M 265 340 A 175 175 0 0 0 345 305&quot; fill=&quot;none&quot; stroke=&quot;#9ad5db&quot; stroke-width=&quot;6&quot; stroke-linecap=&quot;round&quot;/&gt;
+    &lt;circle cx=&quot;347&quot; cy=&quot;303&quot; r=&quot;8&quot; fill=&quot;#9ad5db&quot;/&gt;
+    &lt;ellipse cx=&quot;255&quot; cy=&quot;195&quot; rx=&quot;52&quot; ry=&quot;40&quot; fill=&quot;#f79d9c&quot;/&gt;
+    &lt;polygon points=&quot;275,228 292,242 288,220&quot; fill=&quot;#f79d9c&quot;/&gt;
+    &lt;circle cx=&quot;235&quot; cy=&quot;195&quot; r=&quot;6&quot; fill=&quot;#ffffff&quot;/&gt;
+    &lt;circle cx=&quot;255&quot; cy=&quot;195&quot; r=&quot;6&quot; fill=&quot;#ffffff&quot;/&gt;
+    &lt;circle cx=&quot;275&quot; cy=&quot;195&quot; r=&quot;6&quot; fill=&quot;#ffffff&quot;/&gt;
+    &lt;ellipse cx=&quot;202&quot; cy=&quot;238&quot; rx=&quot;52&quot; ry=&quot;40&quot; fill=&quot;#8fd3de&quot;/&gt;
+    &lt;polygon points=&quot;222,272 238,288 236,265&quot; fill=&quot;#8fd3de&quot;/&gt;
+    &lt;circle cx=&quot;182&quot; cy=&quot;238&quot; r=&quot;6&quot; fill=&quot;#ffffff&quot;/&gt;
+    &lt;circle cx=&quot;202&quot; cy=&quot;238&quot; r=&quot;6&quot; fill=&quot;#ffffff&quot;/&gt;
+    &lt;circle cx=&quot;222&quot; cy=&quot;238&quot; r=&quot;6&quot; fill=&quot;#ffffff&quot;/&gt;
+    &lt;path d=&quot;M320 120 H342 V145 H367 V167 H342 V192 H320 V167 H295 V145 H320 Z&quot; fill=&quot;#005f6b&quot;/&gt;
+    &lt;path d=&quot;M262 252 H278 V268 H294 V284 H278 V300 H262 V284 H246 V268 H262 Z&quot; fill=&quot;none&quot; stroke=&quot;#00b4b8&quot; stroke-width=&quot;3&quot;/&gt;
+    &lt;path d=&quot;M348 188 H364 V204 H380 V220 H364 V236 H348 V220 H332 V204 H348 Z&quot; fill=&quot;none&quot; stroke=&quot;#f2bdbd&quot; stroke-width=&quot;3&quot;/&gt;
+    &lt;path d=&quot;M174 162 H184 V172 H194 V182 H184 V192 H174 V182 H164 V172 H174 Z&quot; fill=&quot;none&quot; stroke=&quot;#00b4b8&quot; stroke-width=&quot;2.5&quot;/&gt;
+    &lt;text x=&quot;250&quot; y=&quot;395&quot; text-anchor=&quot;middle&quot; font-family=&quot;Arial, sans-serif&quot; font-weight=&quot;800&quot; font-size=&quot;60&quot;&gt;
+      &lt;tspan fill=&quot;#76b89a&quot;&gt;transla&lt;/tspan&gt;&lt;tspan fill=&quot;#3cb6c3&quot;&gt;nurse&lt;/tspan&gt;
+    &lt;/text&gt;
+    &lt;line x1=&quot;65&quot; y1=&quot;418&quot; x2=&quot;155&quot; y2=&quot;418&quot; stroke=&quot;#005f6b&quot; stroke-width=&quot;2&quot;/&gt;
+    &lt;text x=&quot;250&quot; y=&quot;423&quot; text-anchor=&quot;middle&quot; font-family=&quot;Arial, sans-serif&quot; font-size=&quot;16&quot; fill=&quot;#64748b&quot;&gt;patient friendly information&lt;/text&gt;
+    &lt;line x1=&quot;345&quot; y1=&quot;418&quot; x2=&quot;435&quot; y2=&quot;418&quot; stroke=&quot;#005f6b&quot; stroke-width=&quot;2&quot;/&gt;
+  &lt;/svg&gt;
+&lt;/template&gt;
 
-<!-- =========================================================
+&lt;!-- =========================================================
      TOP NAVIGATION BAR (UPPER-RIGHT LOGO + FOLLOW-UP IN TOP RIGHT)
-     ========================================================= -->
-<header class="top-navbar">
-  <div class="nav-left">
-    <div class="brand-title-group" onclick="showHomePage()" title="Return to Home Page">
-      <h1><span class="mint">transla</span>nurse</h1>
-      <p>patient friendly information &amp; lab scanner</p>
-    </div>
-  </div>
+     ========================================================= --&gt;
+&lt;header class=&quot;top-navbar&quot;&gt;
+  &lt;div class=&quot;nav-left&quot;&gt;
+    &lt;div class=&quot;brand-title-group&quot; onclick=&quot;showHomePage()&quot; title=&quot;Return to Home Page&quot;&gt;
+      &lt;h1&gt;&lt;span class=&quot;mint&quot;&gt;transla&lt;/span&gt;nurse&lt;/h1&gt;
+      &lt;p&gt;patient friendly information &amp;amp; lab scanner&lt;/p&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
 
-  <div class="nav-right">
-    <button class="btn-nav" onclick="showHomePage()" id="nav-home-btn">
+  &lt;div class=&quot;nav-right&quot;&gt;
+    &lt;button class=&quot;btn-nav&quot; onclick=&quot;showHomePage()&quot; id=&quot;nav-home-btn&quot;&gt;
       🏠 Home
-    </button>
-    <button class="btn-nav btn-followup-top" onclick="toggleFollowUpDrawer(true)" id="nav-followup-btn" title="Ask a follow-up question or review past scans">
-      💬 Follow-Up &amp; History <span class="followup-badge-count" id="history-count-badge">0</span>
-    </button>
-    <button class="btn-nav" onclick="toggleTheme()" id="theme-toggle">
+    &lt;/button&gt;
+    &lt;button class=&quot;btn-nav btn-followup-top&quot; onclick=&quot;toggleFollowUpDrawer(true)&quot; id=&quot;nav-followup-btn&quot; title=&quot;Ask a follow-up question or review past scans&quot;&gt;
+      💬 Follow-Up &amp;amp; History &lt;span class=&quot;followup-badge-count&quot; id=&quot;history-count-badge&quot;&gt;0&lt;/span&gt;
+    &lt;/button&gt;
+    &lt;button class=&quot;btn-nav&quot; onclick=&quot;toggleTheme()&quot; id=&quot;theme-toggle&quot;&gt;
       🌙 Dark Mode
-    </button>
-    <!-- Upper-Right Corner TranslaNurse Logo -->
-    <div class="upper-right-logo" onclick="showHomePage()" title="TranslaNurse Home">
-      <img src="logo.png" alt="TranslaNurse Logo" onerror="replaceWithSvgLogo(this)">
-    </div>
-  </div>
-</header>
+    &lt;/button&gt;
+    &lt;!-- Upper-Right Corner TranslaNurse Logo --&gt;
+    &lt;div class=&quot;upper-right-logo&quot; onclick=&quot;showHomePage()&quot; title=&quot;TranslaNurse Home&quot;&gt;
+      &lt;img src=&quot;logo.jpg&quot; alt=&quot;TranslaNurse Logo&quot; onerror=&quot;replaceWithSvgLogo(this)&quot;&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/header&gt;
 
-<div class="container">
+&lt;div class=&quot;container&quot;&gt;
 
-  <!-- =========================================================
+  &lt;!-- =========================================================
        VIEW 1: HOME PAGE (LOGO + CLINICAL INPUT CTA BUTTON)
-       ========================================================= -->
-  <section id="home-view">
-    <div class="hero-card">
-      <div class="hero-logo-box">
-        <img src="logo.png" alt="TranslaNurse Logo" onerror="replaceWithSvgLogo(this)">
-      </div>
+       ========================================================= --&gt;
+  &lt;section id=&quot;home-view&quot;&gt;
+    &lt;div class=&quot;hero-card&quot;&gt;
+      &lt;div class=&quot;hero-logo-box&quot;&gt;
+        &lt;img src=&quot;logo.jpg&quot; alt=&quot;TranslaNurse Logo&quot; onerror=&quot;replaceWithSvgLogo(this)&quot;&gt;
+      &lt;/div&gt;
 
       <h2 class="hero-title">Welcome to TranslaNurse</h2>
       <p class="hero-subtitle">
-        Your compassionate clinical AI translator. Type your medical inquiry, snap a camera photo, or upload a PNG/PDF lab result to get a clear, safe, patient-friendly summary.
+        Your compassionate clinical AI translator. Type your medical inquiry, snap a camera photo, or upload a PNG/PDF lab result to learn what your test means, what the normal range is, what you might feel if it is out of range, and when to see a doctor.
       </p>
 
       <div class="hero-features">
         <div class="hero-feature-item">
           <strong>📷 Camera &amp; Lab Scanner</strong>
-          Scan PNG, JPG, or PDF lab results for an instant plain-language summary of every value.
+          Scan PNG, JPG, or PDF lab results for an instant breakdown of normal ranges and out-of-range symptoms.
         </div>
         <div class="hero-feature-item">
           <strong>🌏 10 Asian Languages</strong>
@@ -1070,13 +1091,13 @@
         🩺 Start Clinical Input &amp; Lab Scan →
       </button>
     </div>
-  </section>
+  &lt;/section&gt;
 
-  <!-- =========================================================
-       VIEW 2: MAIN TRANSLANURSE CLINICAL INPUT & RESULTS
-       ========================================================= -->
-  <section id="app-view">
-    <div class="grid-main">
+  &lt;!-- =========================================================
+       VIEW 2: MAIN TRANSLANURSE CLINICAL INPUT &amp; RESULTS
+       ========================================================= --&gt;
+  &lt;section id=&quot;app-view&quot;&gt;
+    &lt;div class=&quot;grid-main&quot;&gt;
 
       <!-- LEFT COLUMN: CLINICAL INPUT + CAMERA/FILE SCANNER -->
       <div class="card">
@@ -1087,8 +1108,8 @@
           </button>
         </h2>
 
-        <label class="field-label" for="clinical-input">What is the problem, symptom, or doctor's note?</label>
-        <textarea id="clinical-input" placeholder="Type your health inquiry, doctor's notes, or lab findings here...&#10;&#10;Examples:&#10;- 'Fasting Blood Sugar: 148 mg/dL, HbA1c: 7.4%, Creatinine: 1.1 mg/dL'&#10;- 'Left ventricular systolic dysfunction secondary to myocardial infarction'"></textarea>
+        <label class="field-label" for="clinical-input">What is the problem, symptom, or lab result?</label>
+        <textarea id="clinical-input" placeholder="Type your lab test numbers, doctor's notes, or health problem here...&#10;&#10;Examples:&#10;- 'Fasting Blood Sugar: 148 mg/dL, HbA1c: 7.4%, Creatinine: 1.5 mg/dL'&#10;- 'Hemoglobin: 10.2 g/dL, WBC: 13.5, Platelets: 110'&#10;- 'BP 150/95, Total Cholesterol 245 mg/dL'"></textarea>
 
         <!-- CAMERA & PNG/PDF LAB RESULT SCANNER -->
         <label class="field-label">Scan or Upload Lab Result (Camera, PNG, JPG, or PDF)</label>
@@ -1102,12 +1123,9 @@
             </button>
           </div>
 
-          <!-- Hidden File Input supporting PNG, JPG, and PDF -->
           <input type="file" id="lab-file-input" accept=".png,.jpg,.jpeg,.pdf,image/png,image/jpeg,application/pdf" style="display:none;" onchange="handleLabFileSelect(event)">
-          <!-- Mobile Camera Fallback Input -->
           <input type="file" id="mobile-camera-input" accept="image/*" capture="environment" style="display:none;" onchange="handleLabFileSelect(event)">
 
-          <!-- Live Camera Preview Modal -->
           <div id="camera-modal">
             <video id="camera-video" autoplay playsinline></video>
             <canvas id="camera-canvas" style="display:none;"></canvas>
@@ -1117,7 +1135,6 @@
             </div>
           </div>
 
-          <!-- Uploaded / Captured Lab File Preview -->
           <div id="attachment-preview" class="attachment-preview">
             <div class="attachment-info">
               <div id="attachment-thumb" class="attachment-thumb">LAB</div>
@@ -1176,16 +1193,42 @@
           </div>
         </details>
 
-        <!-- DROPDOWN 2: What this means (with Mandatory Note + Lab Summary) -->
+        <!-- DROPDOWN 2: What this means (4-Part Breakdown: Meaning, Normal Range, Out-of-Range Symptoms, Seek Professional) -->
         <details class="result-dropdown" open>
-          <summary>📋 What This Means (Lab Summary &amp; Plain Explanation)</summary>
+          <summary>📋 What This Means (Meaning, Normal Range &amp; What You Might Feel)</summary>
           <div class="dropdown-body">
             <div class="medical-disclaimer-note">
               ⚕️ <strong>Important Medical Note:</strong> Seeking a qualified health professional is strongly recommended. TranslaNurse is for patient education only and is <strong>not</strong> intended to replace doctors or licensed health professionals.
             </div>
-            <div id="scanned-lab-summary-box" class="lab-summary-box" style="display:none;"></div>
-            <div id="translated-output" style="white-space: pre-wrap;">
-              <em>Your plain-language clinical explanation and complete summary of scanned lab results will appear here...</em>
+
+            <div class="explain-grid">
+              <div class="explain-section-card">
+                <div class="explain-section-title">🩺 1. What Your Patient Input / Lab Test Means</div>
+                <div class="explain-section-body" id="explain-meaning-output">
+                  <em>Enter your lab test, doctor's note, or symptom to learn what it measures and what it means for your body...</em>
+                </div>
+              </div>
+
+              <div class="explain-section-card range-card">
+                <div class="explain-section-title">📏 2. Normal Reference Range vs. Your Result</div>
+                <div class="explain-section-body" id="explain-range-output">
+                  <em>The standard healthy normal range and whether your result is Within Normal Range, Low, or High will appear here...</em>
+                </div>
+              </div>
+
+              <div class="explain-section-card symptoms-card">
+                <div class="explain-section-title">⚡ 3. If Out of Range: What the Patient Might Feel</div>
+                <div class="explain-section-body" id="explain-symptoms-output">
+                  <em>If a lab value or vital sign is out of range (too high or too low), the common physical symptoms a patient might feel will be explained here...</em>
+                </div>
+              </div>
+
+              <div class="explain-section-card doctor-card">
+                <div class="explain-section-title">👩‍⚕️ 4. Professional Recommendation</div>
+                <div class="explain-section-body" id="explain-recommend-output">
+                  <em>Seeking a licensed doctor or health professional is strongly recommended for an accurate diagnosis and safe care plan.</em>
+                </div>
+              </div>
             </div>
           </div>
         </details>
@@ -1299,35 +1342,33 @@
       </div>
 
     </div>
-  </section>
+  &lt;/section&gt;
 
-</div>
+&lt;/div&gt;
 
-<!-- =========================================================
-     TOP-RIGHT FOLLOW-UP & AUDIT HISTORY DRAWER
-     ========================================================= -->
-<div class="modal-backdrop" id="followup-modal" onclick="if(event.target === this) toggleFollowUpDrawer(false)">
-  <div class="followup-drawer">
-    <div class="drawer-header">
-      <h3>💬 Follow-Up Inquiry &amp; History</h3>
-      <button class="btn-small-action btn-small-danger" onclick="toggleFollowUpDrawer(false)" style="margin:0;">✖ Close</button>
-    </div>
+&lt;!-- =========================================================
+     TOP-RIGHT FOLLOW-UP &amp; AUDIT HISTORY DRAWER
+     ========================================================= --&gt;
+&lt;div class=&quot;modal-backdrop&quot; id=&quot;followup-modal&quot; onclick=&quot;if(event.target === this) toggleFollowUpDrawer(false)&quot;&gt;
+  &lt;div class=&quot;followup-drawer&quot;&gt;
+    &lt;div class=&quot;drawer-header&quot;&gt;
+      &lt;h3&gt;💬 Follow-Up Inquiry &amp;amp; History&lt;/h3&gt;
+      &lt;button class=&quot;btn-small-action btn-small-danger&quot; onclick=&quot;toggleFollowUpDrawer(false)&quot; style=&quot;margin:0;&quot;&gt;✖ Close&lt;/button&gt;
+    &lt;/div&gt;
 
-    <!-- Quick Follow-Up Question on Current Case -->
     <div class="followup-chat-box">
       <label class="field-label" style="margin-top:0;">Ask a Follow-Up Question About Your Result</label>
       <div class="followup-messages" id="followup-messages">
         <div class="msg-bubble msg-nurse">
-          Hi! Have a follow-up question about your lab results or symptoms? Ask here and I'll explain further in plain language (without prescribing medications).
+          Hi! Have a follow-up question about your lab results, normal ranges, or symptoms? Ask here and I'll explain further in plain language (without prescribing medications).
         </div>
       </div>
       <div style="display:flex; gap:8px;">
-        <input type="text" id="followup-input" placeholder="e.g., What foods should I ask my doctor about?" onkeydown="if(event.key==='Enter') sendFollowUpQuestion()">
+        <input type="text" id="followup-input" placeholder="e.g., What does it mean if my result is slightly high?" onkeydown="if(event.key==='Enter') sendFollowUpQuestion()">
         <button class="btn-small-action" style="padding:0 16px; margin:0; font-size:0.88rem;" onclick="sendFollowUpQuestion()" id="followup-send-btn">Ask</button>
       </div>
     </div>
 
-    <!-- Past Consultations History -->
     <div style="display:flex; justify-content:space-between; align-items:center;">
       <label class="field-label" style="margin:0;">Previous Scans &amp; Inquiries</label>
       <button class="btn-small-action btn-small-danger" onclick="clearAllHistory()" style="margin:0;">Clear All</button>
@@ -1350,26 +1391,33 @@
         </tbody>
       </table>
     </div>
-  </div>
-</div>
+  &lt;/div&gt;
+&lt;/div&gt;
 
-<script>
+&lt;script&gt;
   /* =========================================
-     CONFIGURATION, LOGO FALLBACK & NAVIGATION
+     CONFIGURATION, LOGO FALLBACK &amp; NAVIGATION
      ========================================= */
-  const keyPart1 = "AQ.Ab8RN6J5Che7o0cBye";
-  const keyPart2 = "6ipkzGkZtCB3dCPS1MhJaHRGd1FvgOdw";
+  const keyPart1 = &quot;AQ.Ab8RN6J5Che7o0cBye&quot;;
+  const keyPart2 = &quot;6ipkzGkZtCB3dCPS1MhJaHRGd1FvgOdw&quot;;
   const GEMINI_API_KEY = keyPart1 + keyPart2;
 
-  let currentAttachment = null; // { name, mimeType, base64Data }
+  let currentAttachment = null;
   let cameraStream = null;
   let latestAnalysisData = null;
-  let lastRawInput = "";
+  let lastRawInput = &quot;&quot;;
 
-  // Replaces broken <img> with the embedded SVG TranslaNurse logo automatically
+  // Embedded copy of your uploaded TranslaNurse (2).jpg logo so it works immediately upon copy-paste!
+  const EMBEDDED_LOGO_DATA_URI = &quot;data:image/jpeg;base64,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&quot;;
+
   function replaceWithSvgLogo(imgElement) {
-    const template = document.getElementById('translanurse-logo-svg');
-    if (template && imgElement && imgElement.parentNode) {
+    if (imgElement &amp;&amp; !imgElement.dataset.triedEmbedded) {
+      imgElement.dataset.triedEmbedded = &quot;true&quot;;
+      imgElement.src = EMBEDDED_LOGO_DATA_URI;
+      return;
+    }
+    const template = document.getElementById(&#39;translanurse-logo-svg&#39;);
+    if (template &amp;&amp; imgElement &amp;&amp; imgElement.parentNode) {
       const clone = template.content.cloneNode(true);
       imgElement.parentNode.replaceChild(clone, imgElement);
     }
@@ -1377,105 +1425,105 @@
 
   function showHomePage() {
     stopLiveCamera();
-    document.getElementById('home-view').style.display = 'flex';
-    document.getElementById('app-view').style.display = 'none';
-    window.scrollTo({ top: 0, behavior: 'smooth' });
+    document.getElementById(&#39;home-view&#39;).style.display = &#39;flex&#39;;
+    document.getElementById(&#39;app-view&#39;).style.display = &#39;none&#39;;
+    window.scrollTo({ top: 0, behavior: &#39;smooth&#39; });
   }
 
   function openClinicalInput() {
-    document.getElementById('home-view').style.display = 'none';
-    document.getElementById('app-view').style.display = 'block';
-    window.scrollTo({ top: 0, behavior: 'smooth' });
-    setTimeout(() => {
-      document.getElementById('clinical-input').focus();
+    document.getElementById(&#39;home-view&#39;).style.display = &#39;none&#39;;
+    document.getElementById(&#39;app-view&#39;).style.display = &#39;block&#39;;
+    window.scrollTo({ top: 0, behavior: &#39;smooth&#39; });
+    setTimeout(() =&gt; {
+      document.getElementById(&#39;clinical-input&#39;).focus();
     }, 150);
   }
 
   function toggleFollowUpDrawer(open) {
-    const modal = document.getElementById('followup-modal');
-    modal.style.display = open ? 'flex' : 'none';
+    const modal = document.getElementById(&#39;followup-modal&#39;);
+    modal.style.display = open ? &#39;flex&#39; : &#39;none&#39;;
   }
 
   function toggleTheme() {
     const body = document.body;
-    const btn = document.getElementById('theme-toggle');
-    if (body.getAttribute('data-theme') === 'dark') {
-      body.removeAttribute('data-theme');
-      btn.innerHTML = '🌙 Dark Mode';
-      localStorage.setItem('translanurse_theme', 'light');
+    const btn = document.getElementById(&#39;theme-toggle&#39;);
+    if (body.getAttribute(&#39;data-theme&#39;) === &#39;dark&#39;) {
+      body.removeAttribute(&#39;data-theme&#39;);
+      btn.innerHTML = &#39;🌙 Dark Mode&#39;;
+      localStorage.setItem(&#39;translanurse_theme&#39;, &#39;light&#39;);
     } else {
-      body.setAttribute('data-theme', 'dark');
-      btn.innerHTML = '☀️ Light Mode';
-      localStorage.setItem('translanurse_theme', 'dark');
+      body.setAttribute(&#39;data-theme&#39;, &#39;dark&#39;);
+      btn.innerHTML = &#39;☀️ Light Mode&#39;;
+      localStorage.setItem(&#39;translanurse_theme&#39;, &#39;dark&#39;);
     }
   }
 
-  if (localStorage.getItem('translanurse_theme') === 'dark') {
-    document.body.setAttribute('data-theme', 'dark');
-    document.getElementById('theme-toggle').innerHTML = '☀️ Light Mode';
+  if (localStorage.getItem(&#39;translanurse_theme&#39;) === &#39;dark&#39;) {
+    document.body.setAttribute(&#39;data-theme&#39;, &#39;dark&#39;);
+    document.getElementById(&#39;theme-toggle&#39;).innerHTML = &#39;☀️ Light Mode&#39;;
   }
 
-  document.addEventListener('DOMContentLoaded', () => {
+  document.addEventListener(&#39;DOMContentLoaded&#39;, () =&gt; {
     renderHistory();
     updateSelectedHotline();
   });
 
   function toggleAllDropdowns() {
-    const dropdowns = document.querySelectorAll('details.result-dropdown');
-    const anyClosed = Array.from(dropdowns).some(d => !d.open);
-    dropdowns.forEach(d => { d.open = anyClosed; });
+    const dropdowns = document.querySelectorAll(&#39;details.result-dropdown&#39;);
+    const anyClosed = Array.from(dropdowns).some(d =&gt; !d.open);
+    dropdowns.forEach(d =&gt; { d.open = anyClosed; });
   }
 
   /* =========================================
-     CAMERA CAPTURE & PNG / PDF LAB UPLOAD
+     CAMERA CAPTURE &amp; PNG / PDF LAB UPLOAD
      ========================================= */
   async function startLiveCamera() {
-    const modal = document.getElementById('camera-modal');
-    const video = document.getElementById('camera-video');
+    const modal = document.getElementById(&#39;camera-modal&#39;);
+    const video = document.getElementById(&#39;camera-video&#39;);
 
     if (!navigator.mediaDevices || !navigator.mediaDevices.getUserMedia) {
-      document.getElementById('mobile-camera-input').click();
+      document.getElementById(&#39;mobile-camera-input&#39;).click();
       return;
     }
 
     try {
       cameraStream = await navigator.mediaDevices.getUserMedia({
-        video: { facingMode: { ideal: "environment" } },
+        video: { facingMode: { ideal: &quot;environment&quot; } },
         audio: false
       });
       video.srcObject = cameraStream;
-      modal.style.display = 'block';
+      modal.style.display = &#39;block&#39;;
     } catch (err) {
-      console.warn("Live webcam unavailable, falling back to file camera capture:", err);
-      document.getElementById('mobile-camera-input').click();
+      console.warn(&quot;Live webcam unavailable, falling back to file camera capture:&quot;, err);
+      document.getElementById(&#39;mobile-camera-input&#39;).click();
     }
   }
 
   function stopLiveCamera() {
     if (cameraStream) {
-      cameraStream.getTracks().forEach(track => track.stop());
+      cameraStream.getTracks().forEach(track =&gt; track.stop());
       cameraStream = null;
     }
-    const modal = document.getElementById('camera-modal');
-    if (modal) modal.style.display = 'none';
+    const modal = document.getElementById(&#39;camera-modal&#39;);
+    if (modal) modal.style.display = &#39;none&#39;;
   }
 
   function captureCameraFrame() {
-    const video = document.getElementById('camera-video');
-    const canvas = document.getElementById('camera-canvas');
+    const video = document.getElementById(&#39;camera-video&#39;);
+    const canvas = document.getElementById(&#39;camera-canvas&#39;);
     if (!video.videoWidth) return;
 
     canvas.width = video.videoWidth;
     canvas.height = video.videoHeight;
-    const ctx = canvas.getContext('2d');
+    const ctx = canvas.getContext(&#39;2d&#39;);
     ctx.drawImage(video, 0, 0, canvas.width, canvas.height);
 
-    const dataUrl = canvas.toDataURL('image/png');
-    const base64Data = dataUrl.split(',')[1];
+    const dataUrl = canvas.toDataURL(&#39;image/png&#39;);
+    const base64Data = dataUrl.split(&#39;,&#39;)[1];
 
     currentAttachment = {
-      name: `Camera_Lab_Scan_${new Date().toLocaleTimeString([], {hour: '2-digit', minute:'2-digit'})}.png`,
-      mimeType: 'image/png',
+      name: `Camera_Lab_Scan_${new Date().toLocaleTimeString([], {hour: &#39;2-digit&#39;, minute:&#39;2-digit&#39;})}.png`,
+      mimeType: &#39;image/png&#39;,
       base64Data: base64Data,
       previewUrl: dataUrl
     };
@@ -1488,23 +1536,23 @@
     const file = event.target.files[0];
     if (!file) return;
 
-    const validTypes = ['image/png', 'image/jpeg', 'image/jpg', 'application/pdf'];
-    if (!validTypes.includes(file.type) && !file.name.match(/\.(png|jpe?g|pdf)$/i)) {
-      alert("Please upload a PNG, JPG, or PDF lab result file.");
+    const validTypes = [&#39;image/png&#39;, &#39;image/jpeg&#39;, &#39;image/jpg&#39;, &#39;application/pdf&#39;];
+    if (!validTypes.includes(file.type) &amp;&amp; !file.name.match(/\.(png|jpe?g|pdf)$/i)) {
+      alert(&quot;Please upload a PNG, JPG, or PDF lab result file.&quot;);
       return;
     }
 
     const reader = new FileReader();
     reader.onload = function(e) {
       const dataUrl = e.target.result;
-      const base64Data = dataUrl.split(',')[1];
-      const mimeType = file.type || (file.name.toLowerCase().endsWith('.pdf') ? 'application/pdf' : 'image/png');
+      const base64Data = dataUrl.split(&#39;,&#39;)[1];
+      const mimeType = file.type || (file.name.toLowerCase().endsWith(&#39;.pdf&#39;) ? &#39;application/pdf&#39; : &#39;image/png&#39;);
 
       currentAttachment = {
         name: file.name,
         mimeType: mimeType,
         base64Data: base64Data,
-        previewUrl: mimeType.startsWith('image/') ? dataUrl : null
+        previewUrl: mimeType.startsWith(&#39;image/&#39;) ? dataUrl : null
       };
       renderAttachmentPreview();
     };
@@ -1512,24 +1560,24 @@
   }
 
   function renderAttachmentPreview() {
-    const previewBox = document.getElementById('attachment-preview');
-    const thumb = document.getElementById('attachment-thumb');
-    const nameEl = document.getElementById('attachment-name');
-    const subEl = document.getElementById('attachment-sub');
+    const previewBox = document.getElementById(&#39;attachment-preview&#39;);
+    const thumb = document.getElementById(&#39;attachment-thumb&#39;);
+    const nameEl = document.getElementById(&#39;attachment-name&#39;);
+    const subEl = document.getElementById(&#39;attachment-sub&#39;);
 
     if (!currentAttachment) {
-      previewBox.style.display = 'none';
+      previewBox.style.display = &#39;none&#39;;
       return;
     }
 
-    previewBox.style.display = 'flex';
+    previewBox.style.display = &#39;flex&#39;;
     nameEl.textContent = currentAttachment.name;
-    subEl.textContent = currentAttachment.mimeType === 'application/pdf'
-      ? 'PDF Lab Report Ready for Full Summary Scan'
-      : 'Image Lab Report Ready for Full Summary Scan';
+    subEl.textContent = currentAttachment.mimeType === &#39;application/pdf&#39;
+      ? &#39;PDF Lab Report Ready for Full Summary Scan&#39;
+      : &#39;Image Lab Report Ready for Full Summary Scan&#39;;
 
     if (currentAttachment.previewUrl) {
-      thumb.innerHTML = `<img src="${currentAttachment.previewUrl}" alt="Lab Preview" style="width:100%;height:100%;object-fit:cover;border-radius:5px;">`;
+      thumb.innerHTML = `&lt;img src=&quot;${currentAttachment.previewUrl}&quot; alt=&quot;Lab Preview&quot; style=&quot;width:100%;height:100%;object-fit:cover;border-radius:5px;&quot;&gt;`;
     } else {
       thumb.innerHTML = `PDF`;
     }
@@ -1537,8 +1585,8 @@
 
   function clearLabAttachment() {
     currentAttachment = null;
-    document.getElementById('lab-file-input').value = "";
-    document.getElementById('mobile-camera-input').value = "";
+    document.getElementById(&#39;lab-file-input&#39;).value = &quot;&quot;;
+    document.getElementById(&#39;mobile-camera-input&#39;).value = &quot;&quot;;
     renderAttachmentPreview();
   }
 
@@ -1546,16 +1594,16 @@
      NCR HOTLINE DIRECTORY HANDLER
      ========================================= */
   function updateSelectedHotline() {
-    const select = document.getElementById('ncr-hotline-select');
+    const select = document.getElementById(&#39;ncr-hotline-select&#39;);
     if (!select) return;
-    const parts = select.value.split('|');
+    const parts = select.value.split(&#39;|&#39;);
     const phone = parts[0];
     const name = parts[1];
     const url = parts[2];
 
-    document.getElementById('hotline-name-display').textContent = name;
-    document.getElementById('hotline-num-display').innerHTML = `Number: <strong>${phone}</strong> • <a href="${url}" target="_blank" rel="noopener" style="color:var(--primary);">Official Info</a>`;
-    const callBtn = document.getElementById('hotline-call-btn');
+    document.getElementById(&#39;hotline-name-display&#39;).textContent = name;
+    document.getElementById(&#39;hotline-num-display&#39;).innerHTML = `Number: &lt;strong&gt;${phone}&lt;/strong&gt; • &lt;a href=&quot;${url}&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot; style=&quot;color:var(--primary);&quot;&gt;Official Info&lt;/a&gt;`;
+    const callBtn = document.getElementById(&#39;hotline-call-btn&#39;);
     callBtn.href = `tel:${phone}`;
     callBtn.textContent = `📞 Call ${phone}`;
   }
@@ -1566,113 +1614,108 @@
   function stripMedicationSuggestions(actionArray) {
     if (!Array.isArray(actionArray)) return [];
     const forbiddenMedRegex = /\b(take|prescribe|buy|dose|mg|tablet|capsule|pill|antibiotic|ibuprofen|paracetamol|acetaminophen|aspirin|metformin|amlodipine|losartan|atorvastatin|omeprazole|insulin|medication|drug|medicine)\b/i;
-    return actionArray.map(item => {
-      if (forbiddenMedRegex.test(item) && !/never|do not|avoid stopping|ask your doctor/i.test(item)) {
-        return "Discuss your symptoms and any health management options directly with a licensed physician (TranslaNurse never recommends specific medications).";
+    return actionArray.map(item =&gt; {
+      if (forbiddenMedRegex.test(item) &amp;&amp; !/never|do not|avoid stopping|ask your doctor/i.test(item)) {
+        return &quot;Discuss your symptoms and any health management options directly with a licensed physician (TranslaNurse never recommends specific medications).&quot;;
       }
       return item;
     });
   }
 
   /* =========================================
-     CORE TRANSLATION & MULTIMODAL LAB ENGINE
+     CORE TRANSLATION &amp; MULTIMODAL LAB ENGINE
      ========================================= */
   async function runTranslationEngine() {
-    const rawInput = document.getElementById('clinical-input').value.trim();
-    const gradeLevel = document.getElementById('reading-grade').value;
-    const persona = document.getElementById('patient-persona').value;
-    const btn = document.getElementById('translate-btn');
-    const loader = document.getElementById('btn-loader');
-    const btnText = document.getElementById('btn-text');
+    const rawInput = document.getElementById(&#39;clinical-input&#39;).value.trim();
+    const gradeLevel = document.getElementById(&#39;reading-grade&#39;).value;
+    const persona = document.getElementById(&#39;patient-persona&#39;).value;
+    const btn = document.getElementById(&#39;translate-btn&#39;);
+    const loader = document.getElementById(&#39;btn-loader&#39;);
+    const btnText = document.getElementById(&#39;btn-text&#39;);
 
-    if (!rawInput && !currentAttachment) {
-      alert("Please type your clinical inquiry or scan/upload a PNG, JPG, or PDF lab result.");
+    if (!rawInput &amp;&amp; !currentAttachment) {
+      alert(&quot;Please type your clinical inquiry or scan/upload a PNG, JPG, or PDF lab result.&quot;);
       return;
     }
 
-    lastRawInput = rawInput || (currentAttachment ? `[Scanned Lab File: ${currentAttachment.name}]` : "Clinical Inquiry");
+    lastRawInput = rawInput || (currentAttachment ? `[Scanned Lab File: ${currentAttachment.name}]` : &quot;Clinical Inquiry&quot;);
 
     btn.disabled = true;
-    loader.style.display = 'inline-block';
-    btnText.textContent = currentAttachment ? "Scanning Lab File & Translating..." : "Analyzing & Translating...";
-    document.getElementById('translated-output').innerText = "Analyzing clinical context and summarizing lab findings...";
-    document.getElementById('asian-translation-output').innerText = "Isinasalin sa Tagalog (Translating to Tagalog)...";
-    document.getElementById('action-plan-output').innerText = "Preparing safe, non-medication next steps...";
+    loader.style.display = &#39;inline-block&#39;;
+    btnText.textContent = currentAttachment ? &quot;Scanning Lab File &amp; Translating...&quot; : &quot;Analyzing &amp; Translating...&quot;;
+    document.getElementById(&#39;explain-meaning-output&#39;).innerText = &quot;Analyzing what your clinical input / lab test means...&quot;;
+    document.getElementById(&#39;explain-range-output&#39;).innerText = &quot;Checking standard normal reference ranges...&quot;;
+    document.getElementById(&#39;explain-symptoms-output&#39;).innerText = &quot;Evaluating what symptoms a patient might feel if out of range...&quot;;
+    document.getElementById(&#39;asian-translation-output&#39;).innerText = &quot;Isinasalin sa Tagalog (Translating to Tagalog)...&quot;;
+    document.getElementById(&#39;action-plan-output&#39;).innerText = &quot;Preparing safe, non-medication next steps...&quot;;
 
     const systemPrompt = `
 You are TranslaNurse, an expert, compassionate clinical nurse educator in the Philippines.
-Analyze the user's clinical text inquiry AND/OR any attached lab result image/PDF.
+Analyze the user&#39;s clinical text inquiry AND/OR any attached lab result image/PDF.
 
 Target Specifications:
 - Health Literacy Level: ${gradeLevel}
-- Cultural & Demographic Target: ${persona}
+- Cultural &amp; Demographic Target: ${persona}
 
-STRICT CLINICAL & SAFETY RULES:
-1. THREE EXACT SAFETY STATUS LABELS:
-   You MUST set "labSafetyStatus" to EXACTLY ONE of these three exact strings:
-   - "Safe - Great Job in being healthy" (Use if lab values are within normal reference ranges or routine healthy findings)
-   - "Caution - Consult to a health professional" (Use if lab values or symptoms show mild-to-moderate abnormalities requiring non-urgent medical consultation)
-   - "ALERT - Seek a Health Professional" (Use if lab values or symptoms show critical, urgent, or high-risk abnormalities requiring prompt medical evaluation)
+STRICT CLINICAL &amp; SAFETY RULES:
+1. THREE EXACT SAFETY STATUS LABELS (&quot;labSafetyStatus&quot;):
+   Output EXACTLY ONE of these three strings:
+   - &quot;Safe - Great Job in being healthy&quot;
+   - &quot;Caution - Consult to a health professional&quot;
+   - &quot;ALERT - Seek a Health Professional&quot;
 
-2. LAB RESULT SCANNING SUMMARY:
-   If a lab result image, PDF, or lab numbers are provided, populate "labScanSummary" with a clear, itemized plain-language summary of ALL detected lab tests, their values, reference ranges, and whether each is Normal, High, or Low.
+2. FOUR-PART STRUCTURED EXPLANATION (REQUIRED):
+   - &quot;inputMeaning&quot;: Clearly explain in plain language what the patient&#39;s input, lab test(s), or medical terms actually mean and what they do in the body.
+   - &quot;normalRangeComparison&quot;: State the exact standard Normal Reference Range for each test/vital sign mentioned and compare the patient&#39;s value (is it Within Normal Range, Low / Below Normal, or High / Above Normal?).
+   - &quot;outOfRangeSymptoms&quot;: Explain clearly what the patient might feel if this test or condition is out of range (e.g., &quot;If this value is out of range, you might feel tired, dizzy, thirsty, short of breath...&quot;).
+   - &quot;seekProfessionalRecommendation&quot;: Warmly and firmly recommend seeking a licensed doctor or health professional for an in-person evaluation, noting that TranslaNurse is for patient education and does not replace doctors.
 
-3. MANDATORY MEDICAL DISCLAIMER:
-   In "detailedExplanation", explain clearly what the findings mean in plain English and explicitly remind the patient that seeking a health professional is strongly recommended and this tool does not replace doctors/health professionals.
-
-4. STRICT NO-MEDICATION RULE IN "actionPlan":
+3. STRICT NO-MEDICATION RULE IN &quot;actionPlan&quot;:
    NEVER suggest, name, or recommend any medication, drug, supplement, or dosage.
-   If the status is "Caution - Consult to a health professional" or "ALERT - Seek a Health Professional", explicitly tell the person to call a family member, doctor, or an NCR emergency/hospital hotline right away.
+   If the status is Caution or ALERT, tell the person to call a family member, doctor, or an NCR hotline.
 
-5. 10 ASIAN LANGUAGES TRANSLATION OBJECT ("translations"):
-   Provide accurate, natural, low-literacy patient translations for ALL 10 Asian languages below. The initial displayed translation is Tagalog:
-   - "Tagalog"
-   - "Cebuano"
-   - "Ilocano"
-   - "Japanese"
-   - "Korean"
-   - "Mandarin Chinese"
-   - "Vietnamese"
-   - "Thai"
-   - "Bahasa Indonesia"
-   - "Hindi"
+4. 10 ASIAN LANGUAGES TRANSLATION OBJECT (&quot;translations&quot;):
+   Translate the full summary (what the input means, normal range, what the patient might feel if out of range, and the recommendation to seek a health professional) into all 10 Asian languages:
+   &quot;Tagalog&quot;, &quot;Cebuano&quot;, &quot;Ilocano&quot;, &quot;Japanese&quot;, &quot;Korean&quot;, &quot;Mandarin Chinese&quot;, &quot;Vietnamese&quot;, &quot;Thai&quot;, &quot;Bahasa Indonesia&quot;, &quot;Hindi&quot;.
 
 Respond ONLY with a valid JSON object matching this exact schema:
 {
-  "labSafetyStatus": "Safe - Great Job in being healthy | Caution - Consult to a health professional | ALERT - Seek a Health Professional",
-  "safetyReasoning": "Clear explanation of why this result is Safe, Caution, or ALERT.",
-  "labScanSummary": "Complete summary of all scanned lab values (or empty string if no lab values were provided).",
-  "detailedExplanation": "Detailed plain-language explanation in English (use \\n\\n). Include reminder that seeking a health professional is recommended and this does not replace doctors.",
-  "actionPlan": [
-    "Non-medication action step 1",
-    "Non-medication action step 2"
+  &quot;labSafetyStatus&quot;: &quot;Safe - Great Job in being healthy | Caution - Consult to a health professional | ALERT - Seek a Health Professional&quot;,
+  &quot;safetyReasoning&quot;: &quot;Clear explanation of why this result is Safe, Caution, or ALERT based on normal vs. out-of-range values.&quot;,
+  &quot;inputMeaning&quot;: &quot;Plain-language explanation of what the patient&#39;s input / lab test means.&quot;,
+  &quot;normalRangeComparison&quot;: &quot;Itemized normal reference range(s) compared against the patient&#39;s input values.&quot;,
+  &quot;outOfRangeSymptoms&quot;: &quot;Explanation of what the patient might feel (possible symptoms) when this value or condition is out of range.&quot;,
+  &quot;seekProfessionalRecommendation&quot;: &quot;Recommendation to seek a health professional, reminding them this does not replace a doctor.&quot;,
+  &quot;actionPlan&quot;: [
+    &quot;Non-medication action step 1&quot;,
+    &quot;Non-medication action step 2&quot;
   ],
-  "translations": {
-    "Tagalog": "Paliwanag sa simpleng Tagalog...",
-    "Cebuano": "Patin-aw sa simpleng Binisaya/Cebuano...",
-    "Ilocano": "Palawag iti simple nga Ilokano...",
-    "Japanese": "患者向けのわかりやすい日本語での説明...",
-    "Korean": "환자를 위한 쉬운 한국어 설명...",
-    "Mandarin Chinese": "通俗易懂的中文患者说明...",
-    "Vietnamese": "Giải thích dễ hiểu bằng tiếng Việt...",
-    "Thai": "คำอธิบายภาษาไทยที่เข้าใจง่ายสำหรับผู้ป่วย...",
-    "Bahasa Indonesia": "Penjelasan sederhana dalam Bahasa Indonesia...",
-    "Hindi": "रोगी के लिए सरल हिंदी में विवरण..."
+  &quot;translations&quot;: {
+    &quot;Tagalog&quot;: &quot;...&quot;,
+    &quot;Cebuano&quot;: &quot;...&quot;,
+    &quot;Ilocano&quot;: &quot;...&quot;,
+    &quot;Japanese&quot;: &quot;...&quot;,
+    &quot;Korean&quot;: &quot;...&quot;,
+    &quot;Mandarin Chinese&quot;: &quot;...&quot;,
+    &quot;Vietnamese&quot;: &quot;...&quot;,
+    &quot;Thai&quot;: &quot;...&quot;,
+    &quot;Bahasa Indonesia&quot;: &quot;...&quot;,
+    &quot;Hindi&quot;: &quot;...&quot;
   },
-  "kidAnalogy": "A gentle, kid-friendly analogy explaining what is happening inside the body.",
-  "jargonBreakdown": [
-    { "term": "Medical/Lab Term", "explanation": "Plain-language definition." }
+  &quot;kidAnalogy&quot;: &quot;A gentle, kid-friendly analogy explaining what is happening inside the body.&quot;,
+  &quot;jargonBreakdown&quot;: [
+    { &quot;term&quot;: &quot;Medical/Lab Term&quot;, &quot;explanation&quot;: &quot;Plain-language definition and normal range.&quot; }
   ],
-  "readingLevelScore": "Passed - Target Level",
-  "culturalFitScore": "Aligned to Persona",
-  "safetyScore": "Verified (No Meds Suggested)"
+  &quot;readingLevelScore&quot;: &quot;Passed - Target Level&quot;,
+  &quot;culturalFitScore&quot;: &quot;Aligned to Persona&quot;,
+  &quot;safetyScore&quot;: &quot;Verified (No Meds Suggested)&quot;
 }`;
 
     const userParts = [
-      { text: `${systemPrompt}\n\nPatient Clinical Input / Inquiry: "${rawInput || 'Please scan and summarize all findings in the attached lab result.'}"` }
+      { text: `${systemPrompt}\n\nPatient Clinical Input / Inquiry: &quot;${rawInput || &#39;Please scan and summarize all findings in the attached lab result.&#39;}&quot;` }
     ];
 
-    if (currentAttachment && currentAttachment.base64Data) {
+    if (currentAttachment &amp;&amp; currentAttachment.base64Data) {
       userParts.push({
         inlineData: {
           mimeType: currentAttachment.mimeType,
@@ -1688,17 +1731,17 @@ Respond ONLY with a valid JSON object matching this exact schema:
     let success = false;
     let resultData = null;
 
-    while (attempt < maxRetries && !success) {
+    while (attempt &lt; maxRetries &amp;&amp; !success) {
       try {
         attempt++;
         const response = await fetch(apiEndpoint, {
-          method: "POST",
-          headers: { "Content-Type": "application/json" },
+          method: &quot;POST&quot;,
+          headers: { &quot;Content-Type&quot;: &quot;application/json&quot; },
           body: JSON.stringify({
-            contents: [{ role: "user", parts: userParts }],
+            contents: [{ role: &quot;user&quot;, parts: userParts }],
             generationConfig: {
               temperature: 0.2,
-              responseMimeType: "application/json"
+              responseMimeType: &quot;application/json&quot;
             }
           })
         });
@@ -1710,198 +1753,502 @@ Respond ONLY with a valid JSON object matching this exact schema:
 
         const data = await response.json();
         const rawText = data.candidates[0].content.parts[0].text;
-        let cleanJson = rawText.replace(/```json/gi, '').replace(/```/g, '').trim();
+        let cleanJson = rawText.replace(/```json/gi, &#39;&#39;).replace(/```/g, &#39;&#39;).trim();
         resultData = JSON.parse(cleanJson);
         success = true;
       } catch (error) {
         console.warn(`Attempt ${attempt} failed: ${error.message}`);
-        if (attempt >= maxRetries) {
+        if (attempt &gt;= maxRetries) {
           runOfflineFallback(rawInput, gradeLevel);
           break;
         }
-        await new Promise(resolve => setTimeout(resolve, 1200));
+        await new Promise(resolve =&gt; setTimeout(resolve, 800));
       }
     }
 
-    if (success && resultData) {
+    if (success &amp;&amp; resultData) {
       latestAnalysisData = resultData;
       displayResults(resultData);
-      saveToHistory(lastRawInput, resultData.labSafetyStatus, resultData.detailedExplanation);
+      const fullSummary = `${resultData.inputMeaning || &#39;&#39;}\n${resultData.normalRangeComparison || &#39;&#39;}`;
+      saveToHistory(lastRawInput, resultData.labSafetyStatus, fullSummary);
     }
 
     btn.disabled = false;
-    loader.style.display = 'none';
-    btnText.textContent = "Analyze & Explain Results";
+    loader.style.display = &#39;none&#39;;
+    btnText.textContent = &quot;Analyze &amp; Explain Results&quot;;
   }
 
   /* =========================================
-     SMART OFFLINE FALLBACK ENGINE (WITH 10 ASIAN LANGUAGES)
+     BUILT-IN CLINICAL &amp; LAB REFERENCE ANALYZER
+     (Explains Meaning, Normal Range, Out-of-Range Symptoms &amp; Doctor Advice)
      ========================================= */
+  const CLINICAL_LAB_DB = [
+    {
+      keys: [/fasting blood sugar|\bfbs\b|fasting glucose|\bglucose\b/i],
+      name: &quot;Fasting Blood Sugar (FBS / Blood Glucose)&quot;,
+      unit: &quot;mg/dL&quot;,
+      min: 70, max: 99, alertHigh: 126, alertLow: 60,
+      meaning: &quot;Fasting Blood Sugar (FBS) measures the amount of sugar (glucose) circulating in your blood after not eating for at least 8 hours. Glucose is your body&#39;s main source of energy, and your pancreas releases insulin to keep it balanced.&quot;,
+      normalText: &quot;70 to 99 mg/dL (Normal Fasting) • 100 to 125 mg/dL (Prediabetes / Borderline High) • 126 mg/dL or higher (Elevated / Diabetes range)&quot;,
+      feelHigh: &quot;If your blood sugar is ABOVE the normal range (hyperglycemia), you might feel extra thirsty (polydipsia), need to urinate more often, feel unusually tired or sluggish, notice blurry vision, or have slow-healing cuts.&quot;,
+      feelLow: &quot;If your blood sugar is BELOW the normal range (hypoglycemia), you might feel shaky, dizzy, sweaty, hungry, irritable, or have a fast heartbeat.&quot;
+    },
+    {
+      keys: [/hba1c|a1c|glycosylated hemoglobin/i],
+      name: &quot;HbA1c (3-Month Average Blood Sugar)&quot;,
+      unit: &quot;%&quot;,
+      min: 4.0, max: 5.6, alertHigh: 6.5, alertLow: 3.8,
+      meaning: &quot;HbA1c measures how much sugar has been attached to your red blood cells over the past 2 to 3 months. It gives doctors a big-picture view of your long-term blood sugar control.&quot;,
+      normalText: &quot;Below 5.7% (Normal) • 5.7% to 6.4% (Prediabetes / Caution range) • 6.5% or higher (Diabetes / Alert range)&quot;,
+      feelHigh: &quot;If your HbA1c is ABOVE normal, your blood sugar has been running high over recent months. You might feel ongoing fatigue, increased thirst, frequent urination (especially at night), tingling in your hands or feet, or blurry vision.&quot;,
+      feelLow: &quot;If your HbA1c is unusually low, you might experience episodes of low blood sugar such as shakiness, lightheadedness, cold sweats, or sudden weakness.&quot;
+    },
+    {
+      keys: [/creatinine|\bcrea\b/i],
+      name: &quot;Serum Creatinine (Kidney Function Marker)&quot;,
+      unit: &quot;mg/dL&quot;,
+      min: 0.6, max: 1.2, alertHigh: 1.5, alertLow: 0.4,
+      meaning: &quot;Creatinine is a natural waste product made by your muscles from everyday activity. Healthy kidneys filter creatinine out of your blood and remove it in your urine, so this test shows how well your kidneys are filtering wastes.&quot;,
+      normalText: &quot;0.6 to 1.2 mg/dL for adults (Normal range may vary slightly by muscle mass and lab)&quot;,
+      feelHigh: &quot;If Creatinine is ABOVE normal, it means your kidneys may be working harder or filtering more slowly. A patient might feel swelling in the feet, ankles, or puffiness around the eyes (edema), changes in how often they urinate, foamy urine, fatigue, nausea, or lower back/flank discomfort.&quot;,
+      feelLow: &quot;If Creatinine is slightly BELOW normal, it is often linked to lower muscle mass or mild nutritional changes, and a person might feel mild muscle weakness.&quot;
+    },
+    {
+      keys: [/\bbun\b|blood urea nitrogen|\burea\b/i],
+      name: &quot;Blood Urea Nitrogen (BUN)&quot;,
+      unit: &quot;mg/dL&quot;,
+      min: 7, max: 20, alertHigh: 30, alertLow: 5,
+      meaning: &quot;Blood Urea Nitrogen (BUN) measures how much urea nitrogen (a waste product from breaking down protein in food) is in your bloodstream. It helps evaluate kidney hydration and filtering.&quot;,
+      normalText: &quot;7 to 20 mg/dL (Normal Adult Range)&quot;,
+      feelHigh: &quot;If BUN is ABOVE normal (often from dehydration or reduced kidney filtering), you might feel dry mouth, dark-colored urine, tiredness, mild confusion, or decreased urination.&quot;,
+      feelLow: &quot;If BUN is BELOW normal, it is usually related to a low-protein diet or overhydration and rarely causes strong symptoms on its own.&quot;
+    },
+    {
+      keys: [/uric acid|\bbua\b/i],
+      name: &quot;Blood Uric Acid (BUA)&quot;,
+      unit: &quot;mg/dL&quot;,
+      min: 3.4, max: 7.0, alertHigh: 8.5, alertLow: 2.0,
+      meaning: &quot;Uric acid is a natural waste product created when your body breaks down purines (found in certain foods like organ meats, seafood, and legumes).&quot;,
+      normalText: &quot;3.4 to 7.0 mg/dL in men • 2.4 to 6.0 mg/dL in women&quot;,
+      feelHigh: &quot;If Uric Acid is ABOVE normal (hyperuricemia), sharp uric acid crystals can form in joints or kidneys. A patient might feel sudden warmth, redness, swelling, or sharp aching pain in the big toe, ankle, or knee (gout), or flank discomfort.&quot;,
+      feelLow: &quot;Low uric acid rarely causes noticeable physical symptoms.&quot;
+    },
+    {
+      keys: [/hemoglobin|\bhgb\b|\bhb\b/i],
+      name: &quot;Hemoglobin (Hgb - Oxygen-Carrying Protein)&quot;,
+      unit: &quot;g/dL&quot;,
+      min: 12.0, max: 17.0, alertHigh: 18.5, alertLow: 10.0,
+      meaning: &quot;Hemoglobin is the iron-rich protein inside your red blood cells that carries fresh oxygen from your lungs to your brain, heart, and muscles.&quot;,
+      normalText: &quot;12.0 to 15.5 g/dL (Adult Women) • 13.5 to 17.5 g/dL (Adult Men)&quot;,
+      feelHigh: &quot;If Hemoglobin is ABOVE normal, the blood is thicker with red cells (often from dehydration, smoking, or low oxygen levels), and a patient might feel headaches, dizziness, flushed skin, or heaviness.&quot;,
+      feelLow: &quot;If Hemoglobin is BELOW normal (anemia), your body tissues get less oxygen. A patient might feel pale skin, easily tired or weak, dizzy when standing up, cold hands and feet, headaches, or shortness of breath when walking.&quot;
+    },
+    {
+      keys: [/\bwbc\b|white blood cell|leukocyte/i],
+      name: &quot;White Blood Cell Count (WBC)&quot;,
+      unit: &quot;x10³/µL&quot;,
+      min: 4.5, max: 11.0, alertHigh: 14.0, alertLow: 3.5,
+      meaning: &quot;White blood cells are your immune system&#39;s defender cells that fight off bacteria, viruses, and inflammation.&quot;,
+      normalText: &quot;4.5 to 11.0 x10³/µL (or 4,500 to 11,000 cells/mcL)&quot;,
+      feelHigh: &quot;If WBC is ABOVE normal (leukocytosis), your body is actively fighting an infection, inflammation, or stress. A patient might feel fever, chills, body aches, sore throat, cough, or localized pain/swelling.&quot;,
+      feelLow: &quot;If WBC is BELOW normal (leukopenia), your immune defenses are lower, and a patient might feel fatigued, feverish, or catch infections more easily.&quot;
+    },
+    {
+      keys: [/platelet|\bplt\b|thrombocyte/i],
+      name: &quot;Platelet Count (Blood Clotting Helpers)&quot;,
+      unit: &quot;x10³/µL&quot;,
+      min: 150, max: 450, alertHigh: 500, alertLow: 100,
+      meaning: &quot;Platelets are tiny cell fragments that stick together to help your blood clot and stop bleeding when you get a cut.&quot;,
+      normalText: &quot;150 to 450 x10³/µL (150,000 to 450,000 per mcL)&quot;,
+      feelHigh: &quot;If Platelets are ABOVE normal, it can be a reaction to inflammation or iron deficiency; a patient might feel headaches, dizziness, or tingling in the hands and feet.&quot;,
+      feelLow: &quot;If Platelets are BELOW normal (thrombocytopenia, seen in viral illnesses like dengue), a patient might notice easy bruising, tiny red spots on the skin (petechiae), bleeding gums when brushing teeth, or nosebleeds.&quot;
+    },
+    {
+      keys: [/cholesterol|lipid|\bldl\b|\bhdl\b|triglyceride/i],
+      name: &quot;Total Cholesterol / Lipid Profile&quot;,
+      unit: &quot;mg/dL&quot;,
+      min: 120, max: 199, alertHigh: 240, alertLow: 100,
+      meaning: &quot;Cholesterol and triglycerides are blood fats used to build cells, but excess cholesterol can slowly build up along blood vessel walls.&quot;,
+      normalText: &quot;Total Cholesterol: Below 200 mg/dL (Desirable) • LDL (&#39;Bad&#39; Cholesterol): Below 100 mg/dL • HDL (&#39;Good&#39; Cholesterol): 40–60+ mg/dL • Triglycerides: Below 150 mg/dL&quot;,
+      feelHigh: &quot;High cholesterol usually has no warning symptoms at first (&#39;silent&#39;), but over time or when very high, a patient might feel chest heaviness during exertion, fatigue, or neck/jaw tightness if blood flow is narrowed.&quot;,
+      feelLow: &quot;Low cholesterol rarely causes direct physical symptoms.&quot;
+    },
+    {
+      keys: [/sgpt|\balt\b|sgot|\bast\b|liver enzyme/i],
+      name: &quot;Liver Enzymes (SGPT / ALT &amp; SGOT / AST)&quot;,
+      unit: &quot;U/L&quot;,
+      min: 7, max: 45, alertHigh: 80, alertLow: 5,
+      meaning: &quot;SGPT (ALT) and SGOT (AST) are enzymes that live inside liver cells. When liver cells are stressed or irritated, they release extra enzymes into the bloodstream.&quot;,
+      normalText: &quot;SGPT (ALT): 7 to 45 U/L • SGOT (AST): 8 to 40 U/L&quot;,
+      feelHigh: &quot;If Liver Enzymes are ABOVE normal, the liver may be experiencing inflammation or fatty liver stress. A patient might feel unusual tiredness, mild fullness or ache in the upper-right belly, nausea, reduced appetite, or yellowing of the eyes/skin (jaundice) if significantly elevated.&quot;,
+      feelLow: &quot;Low or normal enzyme levels indicate minimal liver cell irritation.&quot;
+    },
+    {
+      keys: [/potassium|\bk\+\b/i],
+      name: &quot;Serum Potassium (K+ Electrolyte)&quot;,
+      unit: &quot;mmol/L&quot;,
+      min: 3.5, max: 5.0, alertHigh: 5.5, alertLow: 3.2,
+      meaning: &quot;Potassium is a vital mineral (electrolyte) that helps your nerves send signals and keeps your muscles—including your heart muscle—beating steadily.&quot;,
+      normalText: &quot;3.5 to 5.0 mmol/L (or mEq/L)&quot;,
+      feelHigh: &quot;If Potassium is ABOVE normal (hyperkalemia), a patient might feel muscle weakness, numbness or tingling, nausea, or irregular heartbeats/palpitations.&quot;,
+      feelLow: &quot;If Potassium is BELOW normal (hypokalemia), a patient might feel leg cramps, muscle twitches, weakness, constipation, or fluttering heartbeats.&quot;
+    },
+    {
+      keys: [/sodium|\bna\+\b/i],
+      name: &quot;Serum Sodium (Na+ Electrolyte)&quot;,
+      unit: &quot;mmol/L&quot;,
+      min: 135, max: 145, alertHigh: 148, alertLow: 132,
+      meaning: &quot;Sodium is an electrolyte that controls your body&#39;s water balance, blood pressure, and nerve/muscle function.&quot;,
+      normalText: &quot;135 to 145 mmol/L (or mEq/L)&quot;,
+      feelHigh: &quot;If Sodium is ABOVE normal (hypernatremia, often from dehydration), a patient might feel intense thirst, dry mouth, restlessness, or muscle twitching.&quot;,
+      feelLow: &quot;If Sodium is BELOW normal (hyponatremia), a patient might feel headache, nausea, tiredness, dizziness, muscle cramps, or confusion.&quot;
+    }
+  ];
+
   function runOfflineFallback(input, grade) {
-    const text = (input || "").toLowerCase();
+    const rawText = (input || &quot;&quot;).trim();
     const hasAttachment = Boolean(currentAttachment);
+    const displayInput = rawText || (hasAttachment ? `Scanned Lab Report (${currentAttachment.name})` : &quot;General Clinical Inquiry&quot;);
 
-    let status = "Caution - Consult to a health professional";
-    let reasoning = "Because clinical symptoms or lab values require professional verification, we recommend consulting a licensed physician for a complete assessment.";
+    let matchedTests = [];
+    let highestSeverity = &quot;SAFE&quot;; // SAFE, CAUTION, ALERT
+    let meaningParts = [];
+    let rangeParts = [];
+    let symptomParts = [];
+    let jargonList = [];
 
-    if (/critical|emergency|chest pain|infarction|stroke|severe|alert|high|148|7\.4|dysfunction/i.test(text)) {
-      status = "ALERT - Seek a Health Professional";
-      reasoning = "The clinical input contains terms or elevated values (such as cardiac dysfunction or elevated glucose/lab markers) that warrant prompt evaluation by a healthcare professional.";
-    } else if (/normal|healthy|within range|negative|clear|routine/i.test(text) && !hasAttachment) {
-      status = "Safe - Great Job in being healthy";
-      reasoning = "The provided values appear to describe routine or normal reference findings. Keep up your healthy habits and regular check-ups!";
+    // 1. Check for Blood Pressure pattern (e.g., BP 150/95 or 120/80)
+    const bpMatch = rawText.match(/(?:\bbp\b|blood pressure)?\s*(\d{2,3})\s*\/\s*(\d{2,3})/i);
+    if (bpMatch &amp;&amp; /bp|blood pressure|mmhg|hypertension|\d{2,3}\/\d{2,3}/i.test(rawText)) {
+      const sys = parseInt(bpMatch[1], 10);
+      const dia = parseInt(bpMatch[2], 10);
+      if (sys &gt;= 60 &amp;&amp; sys &lt;= 260 &amp;&amp; dia &gt;= 40 &amp;&amp; dia &lt;= 160) {
+        let bpState = &quot;Within Normal Range&quot;;
+        if (sys &gt;= 140 || dia &gt;= 90) {
+          bpState = &quot;HIGH (Above Normal — Stage 2 / Elevated BP)&quot;;
+          highestSeverity = (sys &gt;= 160 || dia &gt;= 100) ? &quot;ALERT&quot; : (highestSeverity === &quot;ALERT&quot; ? &quot;ALERT&quot; : &quot;CAUTION&quot;);
+        } else if (sys &gt;= 120 || dia &gt;= 80) {
+          bpState = &quot;SLIGHTLY ELEVATED (Above Optimal)&quot;;
+          if (highestSeverity === &quot;SAFE&quot;) highestSeverity = &quot;CAUTION&quot;;
+        } else if (sys &lt; 90 || dia &lt; 60) {
+          bpState = &quot;LOW (Below Normal — Hypotension)&quot;;
+          if (highestSeverity === &quot;SAFE&quot;) highestSeverity = &quot;CAUTION&quot;;
+        }
+        matchedTests.push(&quot;Blood Pressure&quot;);
+        meaningParts.push(`• Blood Pressure (${sys}/${dia} mmHg): Measures the force of blood pushing against your artery walls as your heart pumps (${sys} systolic) and rests between beats (${dia} diastolic).`);
+        rangeParts.push(`• Blood Pressure: Normal Range is below 120/80 mmHg (Optimal: 90/60 to 120/80 mmHg).\n  → Your Input (${sys}/${dia} mmHg): ${bpState}`);
+        symptomParts.push(`• If Blood Pressure is Out of Range: When blood pressure is too high, a patient might feel a throbbing headache (especially at the back of the head/neck), dizziness, blurred vision, facial flushing, or chest tightness. When too low, a patient might feel lightheaded when standing up, blurry vision, or faint.`);
+        jargonList.push({ term: &quot;Blood Pressure (Systolic / Diastolic)&quot;, explanation: &quot;Top number = pressure when the heart beats; Bottom number = pressure when the heart relaxes. Normal is around 90/60 to 120/80 mmHg.&quot; });
+      }
     }
 
-    const displayInput = input || (currentAttachment ? `Scanned file: ${currentAttachment.name}` : "Clinical inquiry");
+    // 2. Scan for all known Clinical Lab Markers &amp; extract numbers next to them
+    CLINICAL_LAB_DB.forEach(lab =&gt; {
+      const isMatched = lab.keys.some(regex =&gt; regex.test(rawText));
+      if (isMatched) {
+        matchedTests.push(lab.name);
+        // Look for a number shortly after the matched keyword
+        let extractedVal = null;
+        for (const rx of lab.keys) {
+          const valRegex = new RegExp(rx.source + &quot;[^0-9\\n]{0,25}(\\d+(?:\\.\\d+)?)&quot;, &quot;i&quot;);
+          const m = rawText.match(valRegex);
+          if (m &amp;&amp; m[1]) {
+            extractedVal = parseFloat(m[1]);
+            break;
+          }
+        }
+
+        meaningParts.push(`• ${lab.name}: ${lab.meaning}`);
+        jargonList.push({ term: lab.name, explanation: `${lab.meaning} (Normal Range: ${lab.normalText})` });
+
+        if (extractedVal !== null &amp;&amp; !isNaN(extractedVal)) {
+          let evalStatus = &quot;Within Normal Range ✅&quot;;
+          if (extractedVal &gt; lab.max) {
+            if (extractedVal &gt;= lab.alertHigh) {
+              evalStatus = `HIGH / Out of Range 🚨 (${extractedVal} ${lab.unit} is significantly above the ${lab.min}–${lab.max} ${lab.unit} normal range)`;
+              highestSeverity = &quot;ALERT&quot;;
+            } else {
+              evalStatus = `SLIGHTLY HIGH / Out of Range ⚠️ (${extractedVal} ${lab.unit} is above the ${lab.min}–${lab.max} ${lab.unit} normal range)`;
+              if (highestSeverity === &quot;SAFE&quot;) highestSeverity = &quot;CAUTION&quot;;
+            }
+            symptomParts.push(`• ${lab.name} (${extractedVal} ${lab.unit} — High): ${lab.feelHigh}`);
+          } else if (extractedVal &lt; lab.min) {
+            if (extractedVal &lt;= lab.alertLow) {
+              evalStatus = `LOW / Out of Range 🚨 (${extractedVal} ${lab.unit} is significantly below the ${lab.min}–${lab.max} ${lab.unit} normal range)`;
+              highestSeverity = &quot;ALERT&quot;;
+            } else {
+              evalStatus = `SLIGHTLY LOW / Out of Range ⚠️ (${extractedVal} ${lab.unit} is below the ${lab.min}–${lab.max} ${lab.unit} normal range)`;
+              if (highestSeverity === &quot;SAFE&quot;) highestSeverity = &quot;CAUTION&quot;;
+            }
+            symptomParts.push(`• ${lab.name} (${extractedVal} ${lab.unit} — Low): ${lab.feelLow}`);
+          } else {
+            symptomParts.push(`• ${lab.name} (${extractedVal} ${lab.unit} — Normal): Your value is within the normal range! (${lab.feelHigh} ${lab.feelLow})`);
+          }
+          rangeParts.push(`• ${lab.name}:\n  → Standard Normal Range: ${lab.normalText}\n  → Your Result: ${extractedVal} ${lab.unit} (${evalStatus})`);
+        } else {
+          if (highestSeverity === &quot;SAFE&quot;) highestSeverity = &quot;CAUTION&quot;;
+          rangeParts.push(`• ${lab.name}:\n  → Standard Normal Range: ${lab.normalText}\n  → Compare the number on your lab printout against this range to see if it is marked L (Low) or H (High).`);
+          symptomParts.push(`• ${lab.name} (If Out of Range):\n  - ${lab.feelHigh}\n  - ${lab.feelLow}`);
+        }
+      }
+    });
+
+    // 3. Check for Cardiac / Clinical Diagnosis Jargon (e.g., Myocardial Infarction, Systolic Dysfunction, Infection, Fever)
+    if (/ventricular|systolic dysfunction|myocardial infarction|heart failure|ischemia|angina|chest pain|stroke/i.test(rawText)) {
+      highestSeverity = &quot;ALERT&quot;;
+      matchedTests.push(&quot;Cardiac / Heart Function Note&quot;);
+      meaningParts.push(`• Cardiac Clinical Finding (&quot;${rawText}&quot;): This medical note describes how strongly the heart&#39;s main pumping chamber (left ventricle) squeezes blood out to the body, often after the heart muscle experienced reduced blood flow (myocardial infarction / heart attack).`);
+      rangeParts.push(`• Normal Heart Pumping Range (Left Ventricular Ejection Fraction / LVEF): A healthy heart normally pumps out 50% to 70% of blood with each heartbeat. When &quot;systolic dysfunction&quot; is noted, the pumping percentage is below the normal 50% range.`);
+      symptomParts.push(`• What the Patient Might Feel If Out of Range: Because the heart is pumping less efficiently than normal, a patient might feel shortness of breath (especially when walking or lying flat), unusual tiredness or weakness, swelling in the feet, ankles, or legs, or chest heaviness/palpitations.`);
+      jargonList.push(
+        { term: &quot;Left Ventricular Systolic Dysfunction&quot;, explanation: &quot;The main pumping chamber of the heart is squeezing more weakly than its normal 50%–70% pumping range.&quot; },
+        { term: &quot;Myocardial Infarction&quot;, explanation: &quot;Medical term for a heart attack, where blood flow to part of the heart muscle was blocked.&quot; }
+      );
+    }
+
+    // 4. Fallback if general symptom or attached lab file without specific typed numbers
+    if (matchedTests.length === 0) {
+      if (/normal|healthy|clear|unremarkable|within normal/i.test(rawText) &amp;&amp; !hasAttachment) {
+        highestSeverity = &quot;SAFE&quot;;
+      } else if (/severe|critical|emergency|bleeding|unconscious|difficulty breathing|high fever/i.test(rawText)) {
+        highestSeverity = &quot;ALERT&quot;;
+      } else {
+        highestSeverity = &quot;CAUTION&quot;;
+      }
+
+      meaningParts.push(
+        hasAttachment
+          ? `• Scanned Lab File (${currentAttachment.name}): Your uploaded lab report contains diagnostic test measurements that show how your organs, blood cells, and metabolism are currently functioning.${rawText ? `\n• Your Note (&quot;${rawText}&quot;): Describes the specific health concern or test you want explained.` : &quot;&quot;}`
+          : `• Your Clinical Input (&quot;${displayInput}&quot;): Describes a health symptom, medical note, or laboratory inquiry that helps evaluate how your body&#39;s systems are functioning.`
+      );
+
+      rangeParts.push(
+        `• How to Read Your Normal Reference Range:\n` +
+        `  - Common Normal Ranges for Reference:\n` +
+        `    • Fasting Blood Sugar (FBS): 70 – 99 mg/dL\n` +
+        `    • HbA1c (3-Month Sugar): Below 5.7%\n` +
+        `    • Creatinine (Kidney): 0.6 – 1.2 mg/dL\n` +
+        `    • Hemoglobin (Red Blood Cells): 12.0 – 17.0 g/dL\n` +
+        `    • White Blood Cells (WBC): 4.5 – 11.0 x10³/µL\n` +
+        `    • Platelets: 150 – 450 x10³/µL\n` +
+        `    • Blood Pressure: Below 120/80 mmHg\n` +
+        `  - On your lab sheet, values inside the &quot;Reference Interval&quot; column are Normal, while numbers flagged with &quot;L&quot; (Low), &quot;H&quot; (High), or an asterisk (*) are Out of Range.`
+      );
+
+      symptomParts.push(
+        `• What You Might Feel If Values Are Out of Range:\n` +
+        `  - If Blood Sugar is High: Increased thirst, frequent urination, tiredness, or blurry vision.\n` +
+        `  - If Hemoglobin / Blood Count is Low (Anemia): Fatigue, dizziness, pale skin, or shortness of breath.\n` +
+        `  - If White Blood Cells are High (Infection/Inflammation): Feverishness, body aches, chills, or localized discomfort.\n` +
+        `  - If Kidney or Electrolytes are Out of Range: Swelling in the ankles/feet, muscle cramps, nausea, or changes in urination.`
+      );
+
+      jargonList.push(
+        { term: &quot;Reference Range (Normal Range)&quot;, explanation: &quot;The set of numeric values found in 95% of healthy people, used by doctors to judge if a test is Normal, Low, or High.&quot; },
+        { term: &quot;Out-of-Range Flag (H / L)&quot;, explanation: &quot;Letters printed next to a lab result showing that the number is Higher (H) or Lower (L) than the normal reference range.&quot; }
+      );
+    }
+
+    let statusLabel = &quot;Safe - Great Job in being healthy&quot;;
+    let safetyReason = &quot;Your submitted values fall within standard healthy reference ranges. Keep maintaining your healthy lifestyle and routine check-ups!&quot;;
+
+    if (highestSeverity === &quot;ALERT&quot;) {
+      statusLabel = &quot;ALERT - Seek a Health Professional&quot;;
+      safetyReason = &quot;One or more values or clinical findings in your input are significantly outside the normal reference range and can cause noticeable physical symptoms. Prompt evaluation by a licensed physician is important.&quot;;
+    } else if (highestSeverity === &quot;CAUTION&quot;) {
+      statusLabel = &quot;Caution - Consult to a health professional&quot;;
+      safetyReason = &quot;Your input includes borderline/out-of-range values or clinical findings that should be reviewed by a healthcare professional to prevent symptoms from worsening.&quot;;
+    }
+
+    const meaningFinal = meaningParts.join(&quot;\n\n&quot;);
+    const rangeFinal = rangeParts.join(&quot;\n\n&quot;);
+    const symptomsFinal = symptomParts.join(&quot;\n\n&quot;);
+    const recommendFinal =
+      &quot;We strongly recommend seeking a licensed doctor or healthcare professional to review your exact results and examine how you are feeling in person. Even if you feel fine right now—or if you are already feeling some of the out-of-range symptoms listed above—only a qualified health professional can give you an official diagnosis and safe care plan. (TranslaNurse is for patient education only and never replaces your doctor.)&quot;;
 
     const mockResult = {
-      labSafetyStatus: status,
-      safetyReasoning: reasoning,
-      labScanSummary: hasAttachment
-        ? `📋 Scanned Lab File (${currentAttachment.name}):\n• Lab file attached and queued for clinical review.\n• Please bring this original lab printout/PDF to your attending physician so they can correlate every reference range with your physical exam.`
-        : (input ? `📋 Summary of Submitted Clinical Details:\n• Input reviewed: "${displayInput}"` : ""),
-      detailedExplanation: `Here is what your clinical inquiry means in plain language:\n\n${displayInput}\n\nWhen lab results or clinical notes include specialized medical terms, they describe how specific organs or blood markers are functioning at a single point in time. Seeking a health professional is strongly recommended so a doctor can examine you in person. This educational summary is not a replacement for doctors or licensed health professionals.`,
+      labSafetyStatus: statusLabel,
+      safetyReasoning: safetyReason,
+      inputMeaning: meaningFinal,
+      normalRangeComparison: rangeFinal,
+      outOfRangeSymptoms: symptomsFinal,
+      seekProfessionalRecommendation: recommendFinal,
       actionPlan: [
-        "Please call a trusted family member or contact a licensed healthcare professional to review these findings.",
-        "Write down any symptoms you are feeling (such as fatigue, dizziness, or discomfort) along with when they started.",
-        "Bring a copy of your original lab results or doctor's notes to your clinic or hospital appointment.",
-        "Do not start, stop, or change any health regimen without speaking directly to your physician (TranslaNurse never recommends medications)."
+        &quot;Schedule a consultation with a licensed doctor or call one of the NCR health hotlines below to discuss your results.&quot;,
+        &quot;Check if you are experiencing any of the out-of-range symptoms described above (such as fatigue, dizziness, thirst, fever, or swelling) and write down when they started.&quot;,
+        &quot;Bring your original lab result printout/PDF and a list of your daily food/fluid habits to your doctor&#39;s appointment.&quot;,
+        &quot;Never self-medicate or start/stop any treatment on your own—TranslaNurse never suggests medications.&quot;
       ],
       translations: {
-        "Tagalog": `Maikling Paliwanag (Tagalog): Sinuri namin ang iyong klinikal na impormasyon ("${displayInput}"). Lubos na ipinapayo ang pagkonsulta sa doktor o health professional upang masuri nang tama ang iyong kalagayan. Huwag uminom ng anumang gamot nang walang reseta ng doktor.`,
-        "Cebuano": `Mubong Patin-aw (Cebuano): Among gitan-aw ang imong klinikal nga impormasyon ("${displayInput}"). Girekomenda gayud ang pagpakonsulta sa doktor o health professional. Ayaw pag-inom og bisan unsang tambal nga walay reseta sa doktor.`,
-        "Ilocano": `Ababa a Palawag (Ilocano): Inadalmi ti klinikal nga impormasionmo ("${displayInput}"). Nasken nga agpakonsulta iti doktor wenno health professional tapno maammuan ti pudno a kasasaadmo. Saan nga uminum iti agas no awan bilin ti doktor.`,
-        "Japanese": `【日本語での要約】ご入力いただいた医療情報（「${displayInput}」）を確認しました。正確な診断のため、必ず医師や医療専門家にご相談ください。自己判断での服薬は避けてください。`,
-        "Korean": `[한국어 요약] 입력하신 임상/검사 정보("${displayInput}")를 확인했습니다. 정확한 진단을 위해 반드시 의사나 의료 전문가와 상담하시기 바랍니다. 의사의 처방 없이 약물을 복용하지 마세요.`,
-        "Mandarin Chinese": `【中文简要说明】我们已查看您的临床或化验信息（“${displayInput}”）。强烈建议您咨询医生或专业医疗人员进行全面评估。请勿在未经医生指导的情况下自行用药。`,
-        "Vietnamese": `[Tóm tắt Tiếng Việt] Chúng tôi đã xem xét thông tin lâm sàng của bạn ("${displayInput}"). Bạn nên tham khảo ý kiến bác sĩ hoặc chuyên gia y tế để được tư vấn chính xác. Không tự ý dùng thuốc khi chưa có chỉ định của bác sĩ.`,
-        "Thai": `[สรุปภาษาไทย] เราได้ตรวจสอบข้อมูลทางคลินิกหรือผลแล็บของคุณแล้ว ("${displayInput}") ขอแนะนำอย่างยิ่งให้ปรึกษาแพทย์หรือบุคลากรทางการแพทย์ และห้ามใช้ยาเองโดยไม่มีคำสั่งแพทย์`,
-        "Bahasa Indonesia": `[Ringkasan Bahasa Indonesia] Kami telah meninjau informasi klinis/lab Anda ("${displayInput}"). Sangat disarankan untuk berkonsultasi dengan dokter atau tenaga kesehatan profesional. Jangan mengonsumsi obat apa pun tanpa resep dokter.`,
-        "Hindi": `[हिंदी सारांश] हमने आपकी क्लिनिकल/लैब जानकारी ("${displayInput}") की समीक्षा की है। सही जांच के लिए किसी डॉक्टर या स्वास्थ्य विशेषज्ञ से परामर्श करना अत्यंत अनुशंसित है। बिना डॉक्टर की सलाह के कोई भी दवा न लें।`
+        &quot;Tagalog&quot;: `🇵🇭 Paliwanag sa Tagalog:\n` +
+          `1. Ano ang Ibig Sabihin ng Iyong Input (&quot;${displayInput}&quot;): Ipinapakita ng pagsusuring ito kung paano gumagana ang iyong katawan, dugo, o mga organo.\n` +
+          `2. Normal Range (Tamang Sukat): Kapag ang resulta ay nasa loob ng normal reference range, maayos ang sukat. Ngunit kapag labas sa normal range (masyadong mataas o mababa), kailangan itong mabantayan.\n` +
+          `3. Ano ang Maaaring Maramdaman Kapag Labas sa Normal Range: Maaaring makaramdam ang pasyente ng pagkapagod, pagkahilo, madalas na pagkauhaw o pag-ihi, panghihina, pamamanas, o lagnat depende sa kung aling sukat ang mataas o mababa.\n` +
+          `4. Rekomendasyon: Lubos naming ipinapayo na magpakonsulta agad sa isang lisensyadong doktor o health professional. Huwag uminom ng anumang gamot nang walang reseta ng doktor.`,
+        &quot;Cebuano&quot;: `🇵🇭 Patin-aw sa Cebuano / Bisaya:\n` +
+          `1. Unsa ang Pasabot sa Imong Input (&quot;${displayInput}&quot;): Kini nga resulta nagpakita sa kahimtang sa imong lawas ug dugo.\n` +
+          `2. Normal Range: Kung ang numero naa sa sulod sa normal range, maayo kini; apan kung gawas sa range (taas o ubos), nagkinahanglan kini og pagsusi.\n` +
+          `3. Unsay Mabati Kung Gawas sa Normal Range: Ang pasyente mahimong mobati og kakapoy, pagkalipong, kauhaw, kaluya, o paghubag.\n` +
+          `4. Rekomendasyon: Girekomenda gayud namo ang pagpakonsulta sa doktor o health professional. Ayaw pag-inom og tambal nga walay reseta.`,
+        &quot;Ilocano&quot;: `🇵🇭 Palawag iti Ilocano:\n` +
+          `1. Ania ti Kayat a Sawen ti Input-mo (&quot;${displayInput}&quot;): Ipakita daytoy a resulta ti kasasaad ti bagi ken daram.\n` +
+          `2. Normal Range: No adda iti uneg ti normal range, nasayaat; ngem no nangato wenno nababa unay, masapul a makita ti doktor.\n` +
+          `3. Ania ti Marikna No Ruwar ti Normal Range: Mabalin a marikna ti panagbannog, panagulaw, mawaw, panagkapsut, wenno panagbalbag.\n` +
+          `4. Rekomendasion: Nasken nga agpakonsulta iti lisensiado a doktor wenno health professional. Saan nga uminum iti agas no awan bilin ti doktor.`,
+        &quot;Japanese&quot;: `🇯🇵 日本語での詳しい説明:\n` +
+          `1. 検査・入力内容の意味（「${displayInput}」）: 体の臓器や血液の働きを示す重要な健康指標です。\n` +
+          `2. 基準値（正常範囲）との比較: 数値が基準値内であれば正常ですが、基準値を外れている（高い・低い）場合は注意が必要です。\n` +
+          `3. 基準値外の場合に出やすい症状: 数値が基準値から外れると、だるさ（疲労感）、めまい、強い喉の渇き、むくみ、息切れなどを感じることがあります。\n` +
+          `4. 医療専門家への相談推奨: 正確な診断のため、必ず医師や医療専門家を受診してください（自己判断での服薬はしないでください）。`,
+        &quot;Korean&quot;: `🇰🇷 한국어 상세 설명:\n` +
+          `1. 입력하신 내용/검사의 의미 (&quot;${displayInput}&quot;): 신체 장기 및 혈액의 건강 상태를 나타내는 지표입니다.\n` +
+          `2. 정상 범위(기준치): 결과가 정상 범위 안에 있으면 양호하지만, 범위를 벗어난 경우(높거나 낮음) 주의가 필요합니다.\n` +
+          `3. 정상 범위를 벗어났을 때 느낄 수 있는 증상: 피로감, 어지러움, 심한 갈증, 잦은 소변, 부종, 호흡 곤란 등의 증상을 느낄 수 있습니다.\n` +
+          `4. 권장 사항: 정확한 진단을 위해 반드시 의사나 보건 의료 전문가와 상담하시기 바랍니다.`,
+        &quot;Mandarin Chinese&quot;: `🇨🇳 中文详细说明:\n` +
+          `1. 您的输入/化验指标含义（“${displayInput}”）: 该指标反映了您体内器官、血液或代谢的工作状态。\n` +
+          `2. 正常参考范围对比: 若数值在正常参考范围内则表示良好；若超出范围（偏高或偏低）则需要关注。\n` +
+          `3. 超出正常范围可能出现的感觉/症状: 患者可能会感到疲倦乏力、头晕、口渴多尿、浮肿、气短或身体不适。\n` +
+          `4. 专业建议: 强烈建议您前往医院咨询专业医生或医疗人员，切勿自行服药。`,
+        &quot;Vietnamese&quot;: `🇻🇳 Giải thích chi tiết bằng Tiếng Việt:\n` +
+          `1. Ý nghĩa thông tin/xét nghiệm của bạn (&quot;${displayInput}&quot;): Chỉ số này cho biết cơ quan và máu trong cơ thể bạn đang hoạt động như thế nào.\n` +
+          `2. Khoảng tham chiếu bình thường: Nếu kết quả nằm trong mức bình thường là tốt; nếu vượt quá hoặc thấp hơn mức bình thường thì cần theo dõi.\n` +
+          `3. Triệu chứng có thể gặp khi ngoài mức bình thường: Người bệnh có thể cảm thấy mệt mỏi, chóng mặt, khát nước nhiều, sưng phù hoặc khó thở.\n` +
+          `4. Khuyến nghị: Bạn nên đến gặp bác sĩ hoặc chuyên gia y tế để được thăm khám chính xác. Không tự ý dùng thuốc.`,
+        &quot;Thai&quot;: `🇹🇭 คำอธิบายโดยละเอียด (ภาษาไทย):\n` +
+          `1. ความหมายของข้อมูล/ผลตรวจของคุณ (&quot;${displayInput}&quot;): ค่านี้ช่วยบอกการทำงานของอวัยวะและระบบเลือดในร่างกาย\n` +
+          `2. ค่าปกติ (Normal Range): หากอยู่ในเกณฑ์ปกติถือว่าดี แต่หากสูงหรือต่ำกว่าเกณฑ์ปกติควรเฝ้าระวัง\n` +
+          `3. อาการที่อาจรู้สึกได้หากค่าผิดปกติ: ผู้ป่วยอาจรู้สึกอ่อนเพลีย เวียนศีรษะ กระหายน้ำบ่อย ตัวบวม หรือเหนื่อยง่าย\n` +
+          `4. คำแนะนำ: ขอแนะนำอย่างยิ่งให้ปรึกษาแพทย์หรือบุคลากรทางการแพทย์ และห้ามซื้อยามารับประทานเอง`,
+        &quot;Bahasa Indonesia&quot;: `🇮🇩 Penjelasan Lengkap Bahasa Indonesia:\n` +
+          `1. Arti Input / Hasil Lab Anda (&quot;${displayInput}&quot;): Pemeriksaan ini menunjukkan bagaimana organ dan darah di tubuh Anda bekerja.\n` +
+          `2. Rentang Normal (Normal Range): Nilai di dalam batas normal menunjukkan kondisi baik, sedangkan nilai di luar batas (terlalu tinggi/rendah) memerlukan perhatian.\n` +
+          `3. Apa yang Mungkin Dirasakan Jika di Luar Batas Normal: Pasien mungkin merasakan mudah lelah, pusing, sering haus, bengkak pada kaki, atau sesak.\n` +
+          `4. Rekomendasi Medis: Sangat disarankan untuk berkonsultasi dengan dokter atau tenaga kesehatan profesional.`,
+        &quot;Hindi&quot;: `🇮🇳 हिंदी में विस्तृत विवरण:\n` +
+          `1. आपके इनपुट / जांच का अर्थ (&quot;${displayInput}&quot;): यह जांच बताती है कि आपके शरीर के अंग और रक्त किस प्रकार काम कर रहे हैं।\n` +
+          `2. सामान्य सीमा (Normal Range): यदि परिणाम सामान्य सीमा के भीतर है तो यह अच्छा संकेत है, लेकिन सीमा से बाहर (अधिक या कम) होने पर ध्यान देना ज़रूरी है।\n` +
+          `3. सामान्य सीमा से बाहर होने पर मरीज को क्या महसूस हो सकता है: मरीज को थकान, चक्कर आना, अधिक प्यास लगना, कमजोरी, सूजन या सांस फूलने जैसा महसूस हो सकता है।\n` +
+          `4. सलाह: सही जांच और सलाह के लिए किसी योग्य डॉक्टर या स्वास्थ्य विशेषज्ञ से अवश्य मिलें।`
       },
-      kidAnalogy: "Think of your body like a busy neighborhood where helpers deliver energy and messages. A lab test is like a friendly crossing guard checking how smoothly traffic is moving so your doctor knows how to help!",
-      jargonBreakdown: [
-        { term: "Clinical / Lab Reference Range", explanation: "The normal set of numbers that doctors expect to see in a healthy person's test result." },
-        { term: "Follow-Up Evaluation", explanation: "Checking in with a doctor so they can explain your results and check how you feel in person." }
-      ],
-      readingLevelScore: grade.split(' ')[0] + " Verified",
-      culturalFitScore: "Aligned to Target",
-      safetyScore: "No Meds • Safe"
+      kidAnalogy: &quot;Think of your body like a aquarium for a friendly fish: the water temperature and cleanliness have a &#39;just-right normal zone.&#39; If the water gets too warm or cloudy (out of range), the fish feels tired and sluggish until a helper (your doctor) checks the tank and helps bring everything back to balance!&quot;,
+      jargonBreakdown: jargonList,
+      readingLevelScore: grade.split(&#39; &#39;)[0] + &quot; Verified&quot;,
+      culturalFitScore: &quot;Aligned to Target&quot;,
+      safetyScore: &quot;No Meds • Safe&quot;
     };
 
     latestAnalysisData = mockResult;
     displayResults(mockResult);
-    saveToHistory(lastRawInput, mockResult.labSafetyStatus, mockResult.detailedExplanation);
+    saveToHistory(lastRawInput, mockResult.labSafetyStatus, `${mockResult.inputMeaning}\n${mockResult.normalRangeComparison}`);
   }
 
   /* =========================================
-     UI RENDERING & 10 ASIAN LANGUAGES SWITCHER
+     UI RENDERING &amp; 10 ASIAN LANGUAGES SWITCHER
      ========================================= */
   function displayResults(data) {
     // 1. Render 3-Tier Safety Status Banner
-    const rawStatus = (data.labSafetyStatus || "").toUpperCase();
-    let normalizedStatus = "Safe - Great Job in being healthy";
-    let statusClass = "lab-safe";
-    let statusIcon = "✅";
+    const rawStatus = (data.labSafetyStatus || &quot;&quot;).toUpperCase();
+    let normalizedStatus = &quot;Safe - Great Job in being healthy&quot;;
+    let statusClass = &quot;lab-safe&quot;;
+    let statusIcon = &quot;✅&quot;;
 
-    if (rawStatus.includes("ALERT") || rawStatus.includes("UNSAFE") || rawStatus.includes("SEEK")) {
-      normalizedStatus = "ALERT - Seek a Health Professional";
-      statusClass = "lab-unsafe";
-      statusIcon = "🚨";
-    } else if (rawStatus.includes("CAUTION") || rawStatus.includes("CONSULT")) {
-      normalizedStatus = "Caution - Consult to a health professional";
-      statusClass = "lab-warn";
-      statusIcon = "⚠️";
+    if (rawStatus.includes(&quot;ALERT&quot;) || rawStatus.includes(&quot;UNSAFE&quot;) || rawStatus.includes(&quot;SEEK&quot;)) {
+      normalizedStatus = &quot;ALERT - Seek a Health Professional&quot;;
+      statusClass = &quot;lab-unsafe&quot;;
+      statusIcon = &quot;🚨&quot;;
+    } else if (rawStatus.includes(&quot;CAUTION&quot;) || rawStatus.includes(&quot;CONSULT&quot;)) {
+      normalizedStatus = &quot;Caution - Consult to a health professional&quot;;
+      statusClass = &quot;lab-warn&quot;;
+      statusIcon = &quot;⚠️&quot;;
     }
 
-    document.getElementById('lab-safety-container').innerHTML = `
-      <div class="status-banner ${statusClass}">
-        <span>${statusIcon} ${escapeHtml(normalizedStatus)}</span>
-      </div>
+    document.getElementById(&#39;lab-safety-container&#39;).innerHTML = `
+      &lt;div class=&quot;status-banner ${statusClass}&quot;&gt;
+        &lt;span&gt;${statusIcon} ${escapeHtml(normalizedStatus)}&lt;/span&gt;
+      &lt;/div&gt;
     `;
 
     // 2. Render Why is this safe/unsafe
-    document.getElementById('safety-reasoning-output').innerText =
-      data.safetyReasoning || "Evaluated based on clinical reference standards.";
+    document.getElementById(&#39;safety-reasoning-output&#39;).innerText =
+      data.safetyReasoning || &quot;Evaluated based on clinical reference ranges.&quot;;
 
-    // 3. Render Scanned Lab Summary + What This Means
-    const labSummaryEl = document.getElementById('scanned-lab-summary-box');
-    if (data.labScanSummary && data.labScanSummary.trim() !== "") {
-      labSummaryEl.style.display = 'block';
-      labSummaryEl.innerText = data.labScanSummary;
-    } else {
-      labSummaryEl.style.display = 'none';
-    }
-
-    document.getElementById('translated-output').innerText =
-      data.detailedExplanation || "Translation completed.";
+    // 3. Render 4-Part Breakdown inside &quot;What This Means&quot;
+    document.getElementById(&#39;explain-meaning-output&#39;).innerText =
+      data.inputMeaning || data.detailedExplanation || &quot;Your input describes clinical or laboratory findings.&quot;;
+    document.getElementById(&#39;explain-range-output&#39;).innerText =
+      data.normalRangeComparison || data.labScanSummary || &quot;Please compare your result numbers against the lab&#39;s printed reference interval.&quot;;
+    document.getElementById(&#39;explain-symptoms-output&#39;).innerText =
+      data.outOfRangeSymptoms || &quot;If a lab value is out of range, a patient might feel fatigue, dizziness, changes in thirst/urination, or localized discomfort.&quot;;
+    document.getElementById(&#39;explain-recommend-output&#39;).innerText =
+      data.seekProfessionalRecommendation || &quot;We strongly recommend consulting a licensed doctor or healthcare professional for an accurate in-person evaluation. This tool is for education and does not replace your doctor.&quot;;
 
     // 4. Render What Can I Do (Strictly no medication + NCR Hotline Dropdown on Caution / ALERT)
     const safeActions = stripMedicationSuggestions(data.actionPlan || []);
-    let actionsHtml = `<ul style="margin:0; padding-left:20px;">`;
-    if (safeActions.length > 0) {
-      safeActions.forEach(action => {
-        actionsHtml += `<li style="margin-bottom:6px;">${escapeHtml(action)}</li>`;
+    let actionsHtml = `&lt;ul style=&quot;margin:0; padding-left:20px;&quot;&gt;`;
+    if (safeActions.length &gt; 0) {
+      safeActions.forEach(action =&gt; {
+        actionsHtml += `&lt;li style=&quot;margin-bottom:6px;&quot;&gt;${escapeHtml(action)}&lt;/li&gt;`;
       });
     } else {
-      actionsHtml += `<li>Please consult a qualified healthcare professional to review your results.</li>`;
+      actionsHtml += `&lt;li&gt;Please consult a qualified healthcare professional to review your results.&lt;/li&gt;`;
     }
-    actionsHtml += `</ul>`;
-    document.getElementById('action-plan-output').innerHTML = actionsHtml;
+    actionsHtml += `&lt;/ul&gt;`;
+    document.getElementById(&#39;action-plan-output&#39;).innerHTML = actionsHtml;
 
     // Show NCR Hotline Directory if Caution or ALERT
-    const hotlineBox = document.getElementById('ncr-hotline-box');
-    if (statusClass === "lab-warn" || statusClass === "lab-unsafe") {
-      hotlineBox.style.display = 'block';
+    const hotlineBox = document.getElementById(&#39;ncr-hotline-box&#39;);
+    if (statusClass === &quot;lab-warn&quot; || statusClass === &quot;lab-unsafe&quot;) {
+      hotlineBox.style.display = &#39;block&#39;;
       updateSelectedHotline();
     } else {
-      hotlineBox.style.display = 'none';
+      hotlineBox.style.display = &#39;none&#39;;
     }
 
-    // 5. Reset Asian Language Dropdown to Tagalog (Initial Translation) & Render
-    const langSelect = document.getElementById('asian-lang-select');
-    langSelect.value = "Tagalog";
+    // 5. Reset Asian Language Dropdown to Tagalog (Initial Translation) &amp; Render
+    const langSelect = document.getElementById(&#39;asian-lang-select&#39;);
+    langSelect.value = &quot;Tagalog&quot;;
     switchAsianLanguage();
 
     // 6. Render Kid-Friendly Analogy
-    document.getElementById('kid-analogy-output').innerText =
-      data.kidAnalogy || "No analogy provided.";
+    document.getElementById(&#39;kid-analogy-output&#39;).innerText =
+      data.kidAnalogy || &quot;No analogy provided.&quot;;
 
     // 7. Render Detailed Jargon Breakdown
-    let jargonHtml = '';
-    if (data.jargonBreakdown && Array.isArray(data.jargonBreakdown) && data.jargonBreakdown.length > 0) {
-      jargonHtml = `<ul class="jargon-list">`;
-      data.jargonBreakdown.forEach(item => {
-        jargonHtml += `<li><span class="jargon-term">${escapeHtml(item.term)}</span> ${escapeHtml(item.explanation)}</li>`;
+    let jargonHtml = &#39;&#39;;
+    if (data.jargonBreakdown &amp;&amp; Array.isArray(data.jargonBreakdown) &amp;&amp; data.jargonBreakdown.length &gt; 0) {
+      jargonHtml = `&lt;ul class=&quot;jargon-list&quot;&gt;`;
+      data.jargonBreakdown.forEach(item =&gt; {
+        jargonHtml += `&lt;li&gt;&lt;span class=&quot;jargon-term&quot;&gt;${escapeHtml(item.term)}&lt;/span&gt; ${escapeHtml(item.explanation)}&lt;/li&gt;`;
       });
-      jargonHtml += `</ul>`;
+      jargonHtml += `&lt;/ul&gt;`;
     } else {
-      jargonHtml = `<em>No complex medical jargon detected requiring breakdown.</em>`;
+      jargonHtml = `&lt;em&gt;No complex medical jargon detected requiring breakdown.&lt;/em&gt;`;
     }
-    document.getElementById('jargon-details').innerHTML = jargonHtml;
+    document.getElementById(&#39;jargon-details&#39;).innerHTML = jargonHtml;
 
     // 8. Render Quality Audit Dashboard
-    document.getElementById('score-literacy').textContent = data.readingLevelScore || "Passed";
-    document.getElementById('score-cultural').textContent = data.culturalFitScore || "Aligned";
-    document.getElementById('score-safety').textContent = data.safetyScore || "No Meds • Safe";
+    document.getElementById(&#39;score-literacy&#39;).textContent = data.readingLevelScore || &quot;Passed&quot;;
+    document.getElementById(&#39;score-cultural&#39;).textContent = data.culturalFitScore || &quot;Aligned&quot;;
+    document.getElementById(&#39;score-safety&#39;).textContent = data.safetyScore || &quot;No Meds • Safe&quot;;
   }
 
   function switchAsianLanguage() {
-    const lang = document.getElementById('asian-lang-select').value;
-    const outBox = document.getElementById('asian-translation-output');
+    const lang = document.getElementById(&#39;asian-lang-select&#39;).value;
+    const outBox = document.getElementById(&#39;asian-translation-output&#39;);
 
     if (!latestAnalysisData) {
-      outBox.innerHTML = `<em>Run an analysis first to view the translation in ${escapeHtml(lang)}. (Initial translation defaults to Tagalog.)</em>`;
+      outBox.innerHTML = `&lt;em&gt;Run an analysis first to view the translation in ${escapeHtml(lang)}. (Initial translation defaults to Tagalog.)&lt;/em&gt;`;
       return;
     }
 
     const translations = latestAnalysisData.translations || {};
     if (translations[lang]) {
       outBox.innerText = translations[lang];
-    } else if (lang === "Tagalog" && latestAnalysisData.tagalogSummary) {
+    } else if (lang === &quot;Tagalog&quot; &amp;&amp; latestAnalysisData.tagalogSummary) {
       outBox.innerText = latestAnalysisData.tagalogSummary;
     } else {
-      outBox.innerText = `[${lang}] ` + (translations["Tagalog"] || latestAnalysisData.detailedExplanation || "");
+      outBox.innerText = `[${lang}] ` + (translations[&quot;Tagalog&quot;] || latestAnalysisData.inputMeaning || &quot;&quot;);
     }
   }
 
@@ -1909,146 +2256,151 @@ Respond ONLY with a valid JSON object matching this exact schema:
      TOP-RIGHT FOLLOW-UP QUESTION HANDLER
      ========================================= */
   async function sendFollowUpQuestion() {
-    const inputEl = document.getElementById('followup-input');
+    const inputEl = document.getElementById(&#39;followup-input&#39;);
     const question = inputEl.value.trim();
     if (!question) return;
 
-    const msgContainer = document.getElementById('followup-messages');
-    msgContainer.innerHTML += `<div class="msg-bubble msg-user">${escapeHtml(question)}</div>`;
-    inputEl.value = "";
+    const msgContainer = document.getElementById(&#39;followup-messages&#39;);
+    msgContainer.innerHTML += `&lt;div class=&quot;msg-bubble msg-user&quot;&gt;${escapeHtml(question)}&lt;/div&gt;`;
+    inputEl.value = &quot;&quot;;
     msgContainer.scrollTop = msgContainer.scrollHeight;
 
     const contextSummary = latestAnalysisData
-      ? `Previous Explanation: ${latestAnalysisData.detailedExplanation}`
-      : `Current Clinical Input: ${document.getElementById('clinical-input').value}`;
+      ? `Meaning: ${latestAnalysisData.inputMeaning}\nNormal Range: ${latestAnalysisData.normalRangeComparison}\nSymptoms if out of range: ${latestAnalysisData.outOfRangeSymptoms}`
+      : `Current Clinical Input: ${document.getElementById(&#39;clinical-input&#39;).value}`;
 
-    const prompt = `You are TranslaNurse. Answer the patient's follow-up question in 2-4 warm, plain-language sentences. NEVER suggest or prescribe any medication. Remind them to consult their doctor.\nContext: ${contextSummary}\nFollow-Up Question: ${question}`;
+    const prompt = `You are TranslaNurse. Answer the patient&#39;s follow-up question in 2-4 warm, plain-language sentences explaining what the test means, normal ranges, and what they might feel if out of range. NEVER suggest or prescribe any medication. Remind them to consult their doctor.\nContext: ${contextSummary}\nFollow-Up Question: ${question}`;
 
     try {
       const response = await fetch(`https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key=${GEMINI_API_KEY}`, {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
+        method: &quot;POST&quot;,
+        headers: { &quot;Content-Type&quot;: &quot;application/json&quot; },
         body: JSON.stringify({
-          contents: [{ role: "user", parts: [{ text: prompt }] }]
+          contents: [{ role: &quot;user&quot;, parts: [{ text: prompt }] }]
         })
       });
-      if (!response.ok) throw new Error("API Offline");
+      if (!response.ok) throw new Error(&quot;API Offline&quot;);
       const data = await response.json();
       const reply = data.candidates[0].content.parts[0].text;
-      msgContainer.innerHTML += `<div class="msg-bubble msg-nurse">${escapeHtml(reply)}</div>`;
+      msgContainer.innerHTML += `&lt;div class=&quot;msg-bubble msg-nurse&quot;&gt;${escapeHtml(reply)}&lt;/div&gt;`;
     } catch (e) {
-      msgContainer.innerHTML += `<div class="msg-bubble msg-nurse">That is a great follow-up question to bring to your doctor! Because every patient's health history is unique (and TranslaNurse never recommends medications), please share this question with your healthcare provider or call one of the NCR hotlines listed in your action plan.</div>`;
+      msgContainer.innerHTML += `&lt;div class=&quot;msg-bubble msg-nurse&quot;&gt;When a lab result is outside the normal reference range, your body may signal it through symptoms like tiredness, dizziness, or changes in thirst or urination. Because every patient is unique (and TranslaNurse never recommends medications), please share this question directly with a licensed doctor or call one of the NCR hotlines in your action plan!&lt;/div&gt;`;
     }
     msgContainer.scrollTop = msgContainer.scrollHeight;
   }
 
   /* =========================================
-     EXPORT & HISTORY MANAGEMENT
+     EXPORT &amp; HISTORY MANAGEMENT
      ========================================= */
   function exportToText() {
-    const status = document.getElementById('lab-safety-container').innerText.trim();
-    const explanation = document.getElementById('translated-output').innerText;
-    const lang = document.getElementById('asian-lang-select').value;
-    const translation = document.getElementById('asian-translation-output').innerText;
-    const actions = document.getElementById('action-plan-output').innerText;
+    const status = document.getElementById(&#39;lab-safety-container&#39;).innerText.trim();
+    const meaning = document.getElementById(&#39;explain-meaning-output&#39;).innerText;
+    const range = document.getElementById(&#39;explain-range-output&#39;).innerText;
+    const symptoms = document.getElementById(&#39;explain-symptoms-output&#39;).innerText;
+    const recommend = document.getElementById(&#39;explain-recommend-output&#39;).innerText;
+    const lang = document.getElementById(&#39;asian-lang-select&#39;).value;
+    const translation = document.getElementById(&#39;asian-translation-output&#39;).innerText;
+    const actions = document.getElementById(&#39;action-plan-output&#39;).innerText;
 
     const content = `TRANSLANURSE PATIENT EDUCATION SUMMARY\n` +
       `=========================================\n` +
       `STATUS: ${status}\n\n` +
-      `IMPORTANT NOTE: Seeking a health professional is strongly recommended. This summary is not a replacement for a doctor or health professional.\n\n` +
-      `WHAT THIS MEANS:\n${explanation}\n\n` +
+      `1. WHAT YOUR INPUT / TEST MEANS:\n${meaning}\n\n` +
+      `2. NORMAL REFERENCE RANGE VS. YOUR RESULT:\n${range}\n\n` +
+      `3. WHAT YOU MIGHT FEEL IF OUT OF RANGE:\n${symptoms}\n\n` +
+      `4. RECOMMENDATION:\n${recommend}\n\n` +
       `TRANSLATION (${lang}):\n${translation}\n\n` +
       `WHAT CAN I DO (NO MEDICATIONS SUGGESTED):\n${actions}\n`;
 
-    const blob = new Blob([content], { type: 'text/plain' });
-    const a = document.createElement('a');
+    const blob = new Blob([content], { type: &#39;text/plain&#39; });
+    const a = document.createElement(&#39;a&#39;);
     a.href = URL.createObjectURL(blob);
-    a.download = 'TranslaNurse_Patient_Summary.txt';
+    a.download = &#39;TranslaNurse_Patient_Summary.txt&#39;;
     a.click();
   }
 
   function saveToHistory(input, safetyStatus, output) {
     const item = {
       id: Date.now(),
-      time: new Date().toLocaleString([], { dateStyle: 'short', timeStyle: 'short' }),
-      input: input.length > 90 ? input.substring(0, 90) + '...' : input,
-      safety: safetyStatus || 'Safe - Great Job in being healthy',
-      output: output.length > 120 ? output.substring(0, 120) + '...' : output
+      time: new Date().toLocaleString([], { dateStyle: &#39;short&#39;, timeStyle: &#39;short&#39; }),
+      input: input.length &gt; 90 ? input.substring(0, 90) + &#39;...&#39; : input,
+      safety: safetyStatus || &#39;Safe - Great Job in being healthy&#39;,
+      output: output.length &gt; 120 ? output.substring(0, 120) + &#39;...&#39; : output
     };
 
-    let history = JSON.parse(localStorage.getItem('translanurse_v10_history')) || [];
+    let history = JSON.parse(localStorage.getItem(&#39;translanurse_v10_history&#39;)) || [];
     history.unshift(item);
-    if (history.length > 30) history = history.slice(0, 30);
-    localStorage.setItem('translanurse_v10_history', JSON.stringify(history));
+    if (history.length &gt; 30) history = history.slice(0, 30);
+    localStorage.setItem(&#39;translanurse_v10_history&#39;, JSON.stringify(history));
     renderHistory();
   }
 
   function renderHistory() {
-    const tbody = document.getElementById('history-rows');
-    const badge = document.getElementById('history-count-badge');
-    const history = JSON.parse(localStorage.getItem('translanurse_v10_history')) || [];
+    const tbody = document.getElementById(&#39;history-rows&#39;);
+    const badge = document.getElementById(&#39;history-count-badge&#39;);
+    const history = JSON.parse(localStorage.getItem(&#39;translanurse_v10_history&#39;)) || [];
 
     if (badge) badge.textContent = history.length;
 
     if (history.length === 0) {
-      tbody.innerHTML = `<tr><td colspan="4" style="text-align: center; color: var(--text-muted); padding: 18px;">No translations recorded yet.</td></tr>`;
+      tbody.innerHTML = `&lt;tr&gt;&lt;td colspan=&quot;4&quot; style=&quot;text-align: center; color: var(--text-muted); padding: 18px;&quot;&gt;No translations recorded yet.&lt;/td&gt;&lt;/tr&gt;`;
       return;
     }
 
-    tbody.innerHTML = history.map(item => {
+    tbody.innerHTML = history.map(item =&gt; {
       const upper = item.safety.toUpperCase();
-      let icon = '✅';
-      if (upper.includes('ALERT') || upper.includes('UNSAFE')) icon = '🚨';
-      else if (upper.includes('CAUTION')) icon = '⚠️';
+      let icon = &#39;✅&#39;;
+      if (upper.includes(&#39;ALERT&#39;) || upper.includes(&#39;UNSAFE&#39;)) icon = &#39;🚨&#39;;
+      else if (upper.includes(&#39;CAUTION&#39;)) icon = &#39;⚠️&#39;;
 
       return `
-      <tr>
-        <td style="font-size:0.78rem; color:var(--text-muted);">${escapeHtml(item.time)}</td>
-        <td><strong>${escapeHtml(item.input)}</strong></td>
-        <td style="font-size:0.8rem; font-weight:700;">${icon} ${escapeHtml(item.safety)}</td>
-        <td>
-          <button class="btn-small-action" onclick="reloadItem(${item.id})">Load</button>
-          <button class="btn-small-action btn-small-danger" onclick="deleteItem(${item.id})">Del</button>
-        </td>
-      </tr>
+      &lt;tr&gt;
+        &lt;td style=&quot;font-size:0.78rem; color:var(--text-muted);&quot;&gt;${escapeHtml(item.time)}&lt;/td&gt;
+        &lt;td&gt;&lt;strong&gt;${escapeHtml(item.input)}&lt;/strong&gt;&lt;/td&gt;
+        &lt;td style=&quot;font-size:0.8rem; font-weight:700;&quot;&gt;${icon} ${escapeHtml(item.safety)}&lt;/td&gt;
+        &lt;td&gt;
+          &lt;button class=&quot;btn-small-action&quot; onclick=&quot;reloadItem(${item.id})&quot;&gt;Load&lt;/button&gt;
+          &lt;button class=&quot;btn-small-action btn-small-danger&quot; onclick=&quot;deleteItem(${item.id})&quot;&gt;Del&lt;/button&gt;
+        &lt;/td&gt;
+      &lt;/tr&gt;
       `;
-    }).join('');
+    }).join(&#39;&#39;);
   }
 
   function reloadItem(id) {
-    const history = JSON.parse(localStorage.getItem('translanurse_v10_history')) || [];
-    const found = history.find(e => e.id === id);
+    const history = JSON.parse(localStorage.getItem(&#39;translanurse_v10_history&#39;)) || [];
+    const found = history.find(e =&gt; e.id === id);
     if (found) {
       openClinicalInput();
-      document.getElementById('clinical-input').value = found.input.replace('...', '');
+      document.getElementById(&#39;clinical-input&#39;).value = found.input.replace(&#39;...&#39;, &#39;&#39;);
       toggleFollowUpDrawer(false);
     }
   }
 
   function deleteItem(id) {
-    let history = JSON.parse(localStorage.getItem('translanurse_v10_history')) || [];
-    history = history.filter(e => e.id !== id);
-    localStorage.setItem('translanurse_v10_history', JSON.stringify(history));
+    let history = JSON.parse(localStorage.getItem(&#39;translanurse_v10_history&#39;)) || [];
+    history = history.filter(e =&gt; e.id !== id);
+    localStorage.setItem(&#39;translanurse_v10_history&#39;, JSON.stringify(history));
     renderHistory();
   }
 
   function clearAllHistory() {
-    if (confirm("Are you sure you want to clear your consultation history log?")) {
-      localStorage.removeItem('translanurse_v10_history');
+    if (confirm(&quot;Are you sure you want to clear your consultation history log?&quot;)) {
+      localStorage.removeItem(&#39;translanurse_v10_history&#39;);
       renderHistory();
     }
   }
 
   function escapeHtml(str) {
-    if (!str) return "";
+    if (!str) return &quot;&quot;;
     return str.toString()
-      .replace(/&/g, "&amp;")
-      .replace(/</g, "&lt;")
-      .replace(/>/g, "&gt;")
-      .replace(/"/g, "&quot;")
-      .replace(/'/g, "&#039;");
+      .replace(/&amp;/g, &quot;&amp;amp;&quot;)
+      .replace(/&lt;/g, &quot;&amp;lt;&quot;)
+      .replace(/&gt;/g, &quot;&amp;gt;&quot;)
+      .replace(/&quot;/g, &quot;&amp;quot;&quot;)
+      .replace(/&#39;/g, &quot;&amp;#039;&quot;);
   }
-</script>
+&lt;/script&gt;
 
-</body>
-</html>
+&lt;/body&gt;
+&lt;/html&gt;
